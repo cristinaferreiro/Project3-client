@@ -1,0 +1,50 @@
+.footer {
+    color: rgb(0, 0, 0);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: auto;
+    list-style-type: none;
+    position: relative;
+    width: 100%;
+    background-color: blue;
+    color: white;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px
+}
+
+.footer-list {
+    list-style-type: none;
+    padding: 30px;
+    margin-bottom: 3px;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer-list li {
+    margin-bottom: 5px;
+}
+
+.footer-list li {
+    font-size: .6em;
+}
+
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-logo {
+    font-family: "Sixtyfour", sans-serif;
+    font-size: 4em;
+    text-align: right;
+}
+
+.footer h5 {
+    font-size: .6em;
+}

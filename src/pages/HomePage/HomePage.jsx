@@ -4,7 +4,7 @@ import './HomePage.css';
 function HomePage() {
     return (
         <div>
-            <h1>HOME PAGE TEST</h1>
+            <h1>THE ROW </h1>
         </div>
     );
 }
