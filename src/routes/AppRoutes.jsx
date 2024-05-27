@@ -1,3 +1,23 @@
+import { Routes, Route } from 'react-router-dom'
+
+import HomePage from './../pages/HomePage/HomePage'
+import LoginPage from './../pages/LoginPage/LoginPage'
+import SignupPage from './../pages/SignupPage/SignupPage'
+import AboutUsPage from './../pages/AboutUsPage/AboutUsPage'
+
+import UserGalleryPage from './../pages/UserGalleryPage/UserGalleryPage'
+import UserDetailsPage from './../pages/UserDetailsPage/UserDetailsPage'
+
+import AddArtworkPage from './../pages/AddArtworkPage/AddArtworkPage'
+import ArtworkGalleryPage from './../pages/ArtworkGalleryPage/ArtworkGalleryPage'
+import ArtworkDetailsPage from './../pages/ArtworkDetailsPage/ArtworkDetailsPage'
+
+import AddExhibitionPage from './../pages/AddExhibitionPage/AddExhibitionPage'
+import ExhibitionGalleryPage from './../pages/ExhibitionGalleryPage/ExhibitionGalleryPage'
+import ExhibitionDetailsPage from './../pages/ExhibitionDetailsPage/ExhibitionDetailsPage'
+
+import ErrorPage from './../pages/ErrorPage/ErrorPage'
+
 
 
 const AppRoutes = () => {
