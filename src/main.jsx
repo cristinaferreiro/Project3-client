@@ -5,6 +5,11 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <AuthProviderWrapper>
+        <App />
+      </AuthProviderWrapper>
+    </Router>
   </React.StrictMode>,
 )
+
