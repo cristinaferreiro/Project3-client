@@ -17,7 +17,7 @@ const SignupForm = () => {
         lastname: '',
         country: '',
         birthyear: '',
-        avatar: '',
+        userimage: '',
         userbio: '',
     })
 
@@ -27,6 +27,8 @@ const SignupForm = () => {
     }
 
     const navigate = useNavigate()
+
+
 
     const handleFormSubmit = e => {
         e.preventDefault()
@@ -70,10 +72,26 @@ const SignupForm = () => {
                 <Form.Control type="text" value={signupData.birthyear} onChange={handleInputChange} name="birthyear" />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formFile">
+            <Form.Group className="mb-3">
+                <Form.Label>Image</Form.Label>
+                <Form.Control
+                    controlId="image"
+                    type="text"
+                    name="image"
+                    value={signupData.userimage}
+                    onChange={handleInputChange} />
+            </Form.Group>
+
+
+            {/* <Form.Group className="mb-3" controlId="userimage">
+                <Form.Label>Image</Form.Label>
+                <Form.Control type="text" value={signupData.userimage} onChange={handleInputChange} name="userimage" />
+            </Form.Group> */}
+
+            {/* <Form.Group className="mb-3" controlId="formFile">
                 <Form.Label>Avatar</Form.Label>
                 <Form.Control type="file" value={signupData.avatar} onChange={handleInputChange} name="avatar" />
-            </Form.Group>
+            </Form.Group> */}
 
             <Form.Group className="mb-3" controlId="userbio">
                 <Form.Label>userbio</Form.Label>

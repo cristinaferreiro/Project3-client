@@ -34,18 +34,18 @@ const AppRoutes = () => {
 
             <Route element={<PrivateRoute />}>
                 <Route path="/profile" element={<ProfilePage />} />
+
+                <Route path="/user-gallery" element={<UserGalleryPage />} />
+                <Route path="/user-details" element={<UserDetailsPage />} />
+
+                <Route path="/add-artwork" element={<AddArtworkPage />} />
+                <Route path="/artwork-gallery" element={<ArtworkGalleryPage />} />
+                <Route path="/artwork-details" element={<ArtworkDetailsPage />} />
+
+                <Route path="/add-exhibition" element={<AddExhibitionPage />} />
+                <Route path="/exhibition-gallery" element={<ExhibitionGalleryPage />} />
+                <Route path="/exhibition-details" element={<ExhibitionDetailsPage />} />
             </Route>
-
-            <Route path="/user-gallery" element={<UserGalleryPage />} />
-            <Route path="/user-details" element={<UserDetailsPage />} />
-
-            <Route path="/add-artwork" element={<AddArtworkPage />} />
-            <Route path="/artwork-gallery" element={<ArtworkGalleryPage />} />
-            <Route path="/artwork-details" element={<ArtworkDetailsPage />} />
-
-            <Route path="/add-exhibition" element={<AddExhibitionPage />} />
-            <Route path="/exhibition-gallery" element={<ExhibitionGalleryPage />} />
-            <Route path="/exhibition-details" element={<ExhibitionDetailsPage />} />
 
             <Route path="*" element={<ErrorPage />} />
 

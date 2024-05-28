@@ -40,6 +40,8 @@ function AuthProviderWrapper(props) {
         }
     };
 
+
+
     const logout = () => {
         setUser(null);
         setIsLoggedIn(false);
