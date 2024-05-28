@@ -5,7 +5,8 @@ import LoginPage from './../pages/LoginPage/LoginPage'
 import SignupPage from './../pages/SignupPage/SignupPage'
 import AboutUsPage from './../pages/AboutUsPage/AboutUsPage'
 
-import ProfilePage from './../pages/Profilepage/ProfilePage'
+import ProfilePage from './../pages/ProfilePage/ProfilePage'
+
 
 import UserGalleryPage from './../pages/UserGalleryPage/UserGalleryPage'
 import UserDetailsPage from './../pages/UserDetailsPage/UserDetailsPage'
