@@ -7,7 +7,7 @@ function ProfilePage() {
     const { user } = useContext(AuthContext)
     return (
         <div>
-            <h1>Hola {user.username} {user.lastname}</h1>
+            <h1>Hola {user.username}</h1>
         </div>
     );
 }
