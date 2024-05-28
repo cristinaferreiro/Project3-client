@@ -5,6 +5,8 @@ import LoginPage from './../pages/LoginPage/LoginPage'
 import SignupPage from './../pages/SignupPage/SignupPage'
 import AboutUsPage from './../pages/AboutUsPage/AboutUsPage'
 
+import ProfilePage from './../pages/Profilepage/ProfilePage'
+
 import UserGalleryPage from './../pages/UserGalleryPage/UserGalleryPage'
 import UserDetailsPage from './../pages/UserDetailsPage/UserDetailsPage'
 
@@ -17,6 +19,7 @@ import ExhibitionGalleryPage from './../pages/ExhibitionGalleryPage/ExhibitionGa
 import ExhibitionDetailsPage from './../pages/ExhibitionDetailsPage/ExhibitionDetailsPage'
 
 import ErrorPage from './../pages/ErrorPage/ErrorPage'
+import PrivateRoute from './PrivateRoutes'
 
 
 const AppRoutes = () => {
@@ -27,6 +30,10 @@ const AppRoutes = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/about" element={<AboutUsPage />} />
+
+            <Route element={<PrivateRoute />}>
+                <Route path="/profile" element={<ProfilePage />} />
+            </Route>
 
             <Route path="/user-gallery" element={<UserGalleryPage />} />
             <Route path="/user-details" element={<UserDetailsPage />} />

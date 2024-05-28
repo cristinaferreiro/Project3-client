@@ -32,7 +32,7 @@ const LoginForm = () => {
                 localStorage.setItem('authToken', newTokenGenerated)
 
                 authenticateUser()
-                navigate('/login')
+                navigate('/profile')
             })
             .catch(err => console.log(err))
     }

@@ -1,23 +1,32 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
+
+import './../SideBar/SideBar.css'
+
 import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
+import Offcanvas from 'react-bootstrap/Offcanvas'
+import { useState } from 'react'
 
-function TopOffCanvas() {
-    const [show, setShow] = useState(false);
+const Sidebar = () => {
+    const [show, setShow] = useState(false)
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
+
+    const handleClose = () => setShow(false)
+    const handleShow = () => setShow(true)
     return (
         <>
-            <Button variant="primary" onClick={handleShow} className="me-2">
-                THE ROW
+            <Button variant="translucent" onClick={handleShow}>
+                <p> HOLA</p>
             </Button>
-            <Offcanvas show={show} onHide={handleClose} placement="top">
+
+            <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+                    <Link to="/">
+                        <Offcanvas.Title>THE ROW</Offcanvas.Title>
+                    </Link>
+
                 </Offcanvas.Header>
+
                 <Offcanvas.Body>
                     <ul>
                         <li>
@@ -36,7 +45,7 @@ function TopOffCanvas() {
                 </Offcanvas.Body>
             </Offcanvas>
         </>
-    );
+    )
 }
 
-export default TopOffCanvas;
+export default Sidebar

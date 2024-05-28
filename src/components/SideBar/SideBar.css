@@ -1,0 +1,42 @@
+.offcanvas {
+    backdrop-filter: blur(6px);
+    background-color: rgb(215, 118, 118);
+    color: white;
+    font-size: 1.5rem;
+    /* transition: transform 0.3s ease-in-out; */
+    /* Añadir una transición suave */
+}
+
+.navIcon {
+    width: 32px;
+}
+
+.offcanvas a {
+    color: rgb(212, 23, 23);
+    text-decoration: none;
+}
+
+.offcanvas-title {
+    /* font-family: 'Sixtyfour', sans-serif !important; */
+    font-size: 2rem;
+}
+
+ul {
+    list-style-type: none;
+    font-size: 2rem;
+    padding: 1.5rem;
+}
+
+li {
+    padding: 0.9rem;
+}
+
+.form-control {
+    border-radius: 0;
+    padding: 1rem;
+}
+
+.btn-close {
+    background-color: white;
+    border-radius: 0;
+}

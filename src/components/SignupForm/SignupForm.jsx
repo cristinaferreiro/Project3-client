@@ -1,5 +1,5 @@
-import React from 'react';
-import './SignupForm.css';
+import React from 'react'
+import './SignupForm.css'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Form, Button } from "react-bootstrap"
@@ -90,4 +90,4 @@ const SignupForm = () => {
 
 
 
-export default SignupForm;
+export default SignupForm
