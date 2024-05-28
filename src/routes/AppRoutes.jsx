@@ -17,6 +17,8 @@ import ExhibitionGalleryPage from './../pages/ExhibitionGalleryPage/ExhibitionGa
 import ExhibitionDetailsPage from './../pages/ExhibitionDetailsPage/ExhibitionDetailsPage'
 
 import ErrorPage from './../pages/ErrorPage/ErrorPage'
+import ProfilePage from '../pages/ProfilePage/ProfilePage'
+import PrivateRoute from './PrivateRoutes'
 
 
 const AppRoutes = () => {
@@ -25,6 +27,11 @@ const AppRoutes = () => {
         <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
+
+            <Route element={<PrivateRoute />}>
+                <Route path="/profile" element={<ProfilePage />} />
+            </Route>
+
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/about" element={<AboutUsPage />} />
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
 .bg-body-tertiary {
     width: 100vw;
     position: fixed;
@@ -22,6 +24,7 @@
     color: #cb0000 !important;
     text-decoration: none;
     font-size: 1.5rem;
+    font-family: "Ubuntu Sans", sans-serif;
 
 }
 
