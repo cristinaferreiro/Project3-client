@@ -28,7 +28,7 @@ const AddExhibitionForm = () => {
 
         exhibitionServices
             .saveExhibition(exhibitionData)
-            .then(() => navigate('exhibition-details'))
+            .then(() => navigate('about'))
             .catch(err => console.log(err))
     }
 

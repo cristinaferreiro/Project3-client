@@ -2,11 +2,16 @@ import axios from 'axios'
 
 
 class ArtworkServices {
+
     constructor() {
+
         this.axiosApp = axios.create({
+
             baseURL: `${import.meta.env.VITE_API_URL}/api/artworks`
         })
+
         this.axiosApp.interceptors.request.use(config => {
+
             console.log('PRUEBA')
             const storedToken = localStorage.getItem('authToken');
             if (storedToken) {
@@ -14,8 +19,8 @@ class ArtworkServices {
             }
             return config
         })
-
     }
+
     getAllArtwork() {
         return this.axiosApp.get('/')
     }
