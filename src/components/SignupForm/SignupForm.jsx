@@ -1,12 +1,8 @@
-import React from 'react'
 import './SignupForm.css'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Form, Button } from "react-bootstrap"
 import authServices from "../../services/auth.services"
-
-
-
 
 const SignupForm = () => {
 
@@ -28,8 +24,6 @@ const SignupForm = () => {
 
     const navigate = useNavigate()
 
-
-
     const handleFormSubmit = e => {
         e.preventDefault()
 
@@ -38,6 +32,7 @@ const SignupForm = () => {
             .then(() => navigate('/signup'))
             .catch(err => console.log(err))
     }
+
     return (
 
         <Form onSubmit={handleFormSubmit}>

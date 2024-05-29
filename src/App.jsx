@@ -1,12 +1,8 @@
 
 import './App.css'
-import { useContext } from 'react'
 import Footer from './components/Footer/Footer'
 import Navigation from './components/Navigation/Navigation'
 import AppRoutes from './routes/AppRoutes'
-import React from 'react'
-
-
 
 function App() {
 
@@ -24,6 +20,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App

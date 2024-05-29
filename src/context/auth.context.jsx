@@ -61,42 +61,56 @@
 
 
 
-import { createContext, useEffect, useState } from "react"
-import authServices from "../services/auth.services"
+import { createContext, useEffect, useState } from "react";
+import authServices from "../services/auth.services";
 
-const AuthContext = createContext()
+const AuthContext = createContext();
 
 function AuthProviderWrapper(props) {
 
-    const [loggedUser, setLoggedUser] = useState(null)
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true)
 
     const authenticateUser = () => {
 
-        const token = localStorage.getItem('authToken')
+        setIsLoading(true)
+
+        const token = localStorage.getItem('authToken');
 
         if (token) {
-
             authServices
                 .verifyUser(token)
-                .then(({ data }) => setLoggedUser(data))
-                .catch(err => logout())
+                .then(({ data }) => {
+                    setUser(data);
+                    setIsLoggedIn(true);
+                    setIsLoading(false)
+                })
+                .catch(err => logout());
         }
-    }
+    };
+
+    const storeToken = (tokenValue) => {
+        localStorage.setItem('authToken', tokenValue);
+    };
 
     const logout = () => {
-        setLoggedUser(null)
-        localStorage.removeItem('authToken')
-    }
+        setUser(null);
+        setIsLoggedIn(false);
+        setIsLoading(false)
+        localStorage.removeItem('authToken');
+    };
 
     useEffect(() => {
-        authenticateUser()
-    }, [])
+        authenticateUser();
+    }, []);
 
     return (
-        <AuthContext.Provider value={{ loggedUser, authenticateUser, logout }}>
+        <AuthContext.Provider value={{ user, isLoggedIn, storeToken, authenticateUser, logout, isLoading }}>
             {props.children}
         </AuthContext.Provider>
-    )
+    );
 }
 
-export { AuthContext, AuthProviderWrapper }
+export { AuthContext, AuthProviderWrapper };
+

@@ -66,7 +66,8 @@ import Sidebar from '../SideBar/SideBar';
 import { AuthContext } from '../../context/auth.context'
 
 function Navigation() {
-    const { loggedUser, logout } = useContext(AuthContext);
+
+    const { user, logout } = useContext(AuthContext);
 
     return (
         <Navbar className="bg-body-tertiary rounded-navbar">
@@ -81,7 +82,7 @@ function Navigation() {
                             <Link className="nav-link" to="/about">About</Link>
                         </li>
                         {
-                            loggedUser ?
+                            user ?
                                 <>
                                     <Link to={'add-artwork'} className='nav-link'>Add Artwork</Link>
                                     <span onClick={logout} className='nav-link'>Log Out</span>

@@ -1,6 +1,5 @@
 import React from 'react';
 import './AddArtworkForm.css';
-import axios from 'axios';
 import { useState } from "react"
 import { Form, Button, InputGroup } from "react-bootstrap"
 import { useNavigate } from 'react-router-dom';
@@ -12,13 +11,12 @@ const AddArtworkForm = () => {
     const navigate = useNavigate()
 
     const [newArtwork, setNewArtwork] = useState({
-
-        title: " ",
-        technique: ' ',
-        dimension: ' ',
-        year: ' ',
-        image: ' ',
-        price: ' '
+        title: "",
+        technique: '',
+        dimension: '',
+        year: '',
+        image: '',
+        price: ''
     })
 
 
@@ -27,7 +25,7 @@ const AddArtworkForm = () => {
         setNewArtwork({
             ...newArtwork,
             [name]: value,
-        });
+        })
     };
 
     // const addImageField = () => {
@@ -55,19 +53,13 @@ const AddArtworkForm = () => {
             .saveArtwork(newArtwork)
             .then(() => navigate('/artwork-details'))
             .catch((err) => console.log(err))
-        setNewArtwork(initialState)
-
     }
 
 
     return (
         <div className="AddArtworkForm ">
 
-            <br></br>
-            <Form onSubmit={handleForSubmit} style={{ marginBottom: '10px', marginTop: '5px' }}>
-
-
-
+            <Form onSubmit={handleForSubmit} className='mt-3 mb-3'>
 
                 <Form.Group className="mb-3" controlId="title">
                     <Form.Label>Title</Form.Label>
@@ -123,7 +115,6 @@ const AddArtworkForm = () => {
                     </InputGroup>
                 </Form.Group>
 
-
                 <Form.Group className="mb-3" controlId="price">
                     <Form.Label>Price</Form.Label>
                     <Form.Control
@@ -140,9 +131,6 @@ const AddArtworkForm = () => {
             </Form>
 
         </div >
-
-
-
 
     )
 }

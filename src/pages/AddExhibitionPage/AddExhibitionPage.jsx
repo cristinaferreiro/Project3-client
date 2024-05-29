@@ -8,9 +8,7 @@ function AddExhibitionPage() {
     return (
         <div className='AddExhibitionPage mt-5'>
             <Container>
-                <h1>
-                    NEW-EXHIBITION
-                </h1>
+                <h1>NEW-EXHIBITION</h1>
                 <Row>
                     <Col md={{ span: 6, offset: 3 }}>
 

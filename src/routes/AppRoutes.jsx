@@ -43,7 +43,7 @@ const AppRoutes = () => {
                 <Route path="/artwork-details" element={<ArtworkDetailsPage />} />
 
                 <Route path="/add-exhibition" element={<AddExhibitionPage />} />
-                <Route path="/exhibition-gallery" element={<ExhibitionGalleryPage />} />
+                <Route path="exhibition-gallery/" element={<ExhibitionGalleryPage />} />
                 <Route path="/exhibition-details" element={<ExhibitionDetailsPage />} />
             </Route>
 

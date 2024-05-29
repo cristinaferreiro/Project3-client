@@ -16,7 +16,6 @@ const LoginForm = () => {
 
     const { authenticateUser } = useContext(AuthContext)
 
-
     const handleInputChange = e => {
         const { value, name } = e.target
         setLoginData({ ...loginData, [name]: value })

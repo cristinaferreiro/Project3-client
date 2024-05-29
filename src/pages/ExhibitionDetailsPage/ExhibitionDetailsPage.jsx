@@ -17,16 +17,24 @@ import { Link, useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import './ExhibitionDetailsPage.css'
+import exhibitionServices from '../../services/exhibition.services'
 
-const apiURL = import.meta.env.VITE_API_URL
 
 function ExhibitionDetailsPage() {
+
     const [exhibition, setExhibition] = useState({})
     const { exhibitionId } = useParams()
 
     useEffect(() => {
         loadExhibitionDetails()
     }, [exhibitionId])
+
+    const loadExhibitionDetails = () => {
+        exhibitionServices
+            .getOneExhibition()
+            .then(({ data }) => setExhibition(data))
+            .catch(err => console.log(err))
+    }
 
 
 
