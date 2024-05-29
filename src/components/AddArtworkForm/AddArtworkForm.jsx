@@ -65,12 +65,12 @@ const AddArtworkForm = ({ getArtworkDetail }) => {
         <div className="AddArtworkForm ">
 
             <br></br>
-            <Form onSubmit={handleForSubmit} style={{ marginBottom: '50px', marginTop: '20px' }}>
+            <Form onSubmit={handleForSubmit} style={{ marginBottom: '10px', marginTop: '5px' }}>
 
 
 
 
-                <Form.Group className="mb-10" controlId="title">
+                <Form.Group className="mb-3" controlId="title">
                     <Form.Label>Title</Form.Label>
                     <InputGroup hasValidation>
                         <Form.Control
@@ -85,7 +85,7 @@ const AddArtworkForm = ({ getArtworkDetail }) => {
                 </Form.Group>
 
 
-                <Form.Group className="mb-10" controlId="technique">
+                <Form.Group className="mb-3" controlId="technique">
                     <Form.Label>Technique</Form.Label>
                     <InputGroup hasValidation>
                         <Form.Control
@@ -99,11 +99,11 @@ const AddArtworkForm = ({ getArtworkDetail }) => {
                     </InputGroup>
                 </Form.Group>
 
-                <Form.Group className="mb-10" controlId="dimension">
+                <Form.Group className="mb-3" controlId="dimension">
                     <Form.Label>Dimension</Form.Label>
                     <InputGroup hasValidation>
                         <Form.Control
-                            as="text"
+                            as="textarea"
                             placeholder="Enter your dimensions work"
                             name="dimension"
                             value={newArtwork.dimension}
@@ -113,11 +113,11 @@ const AddArtworkForm = ({ getArtworkDetail }) => {
                     </InputGroup>
                 </Form.Group>
 
-                <Form.Group className="mb-10" controlId="year">
+                <Form.Group className="mb-3" controlId="year">
                     <Form.Label>Year of creation</Form.Label>
                     <InputGroup hasValidation>
                         <Form.Control
-                            as="text"
+                            as="textarea"
                             placeholder="Enter your creations year work"
                             name="year"
                             value={newArtwork.year}
@@ -127,33 +127,11 @@ const AddArtworkForm = ({ getArtworkDetail }) => {
                     </InputGroup>
                 </Form.Group>
 
-                {/* 
-
-            <Form.Group className="mb-3" controlId="image_url">
-                <Form.Label>Images</Form.Label>
-                {
-                    newArtwork.image_url.map((eachField, idx) => (
-                        <Form.Control
-                            type="file"
-                            placeholder="Enter your pics"
-                            value={eachField}
-                            onChange={e => handleImageChange(e, idx)}
-                        />
-                    ))}
-
-
-                <Button className="w-100" variant="secondary" onClick={addImageFild}>
-                    Add new pic
-                </Button>
-
-
-            </Form.Group> */}
-
 
                 <Form.Group className="mb-3" controlId="price">
                     <Form.Label>Price</Form.Label>
                     <Form.Control
-                        type="text"
+                        type="number"
                         placeholder="Enter your prices work"
                         name="price"
                         value={newArtwork.price}
