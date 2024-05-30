@@ -72,7 +72,7 @@ function Navigation() {
     return (
         <Navbar className="bg-body-tertiary rounded-navbar">
             <Container fluid>
-                <Sidebar />
+                {user && <Sidebar />}
                 <Navbar.Brand href="/">
                     <Link to="/" className="navbar-logo">ROW</Link>
                 </Navbar.Brand>
@@ -84,7 +84,8 @@ function Navigation() {
                         {
                             user ?
                                 <>
-                                    <Link to={'add-artwork'} className='nav-link'>Add Artwork</Link>
+                                    <Link to={'/profile'} className='nav-link'>Profile</Link>
+                                    <Link to={'/add-artwork'} className='nav-link'>Add Artwork</Link>
                                     <span onClick={logout} className='nav-link'>Log Out</span>
                                 </>
                                 :
@@ -101,3 +102,6 @@ function Navigation() {
 }
 
 export default Navigation;
+
+
+

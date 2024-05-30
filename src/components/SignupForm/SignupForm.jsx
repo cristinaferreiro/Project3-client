@@ -67,21 +67,16 @@ const SignupForm = () => {
                 <Form.Control type="text" value={signupData.birthyear} onChange={handleInputChange} name="birthyear" />
             </Form.Group>
 
-            <Form.Group className="mb-3">
+            {/* <Form.Group className="mb-3" controlId="image">
                 <Form.Label>Image</Form.Label>
-                <Form.Control
-                    controlId="image"
-                    type="text"
-                    name="image"
-                    value={signupData.userimage}
-                    onChange={handleInputChange} />
-            </Form.Group>
+                <Form.Control type="text" value={signupData.userimage} onChange={handleInputChange} name="image" />
+            </Form.Group> */}
 
 
-            {/* <Form.Group className="mb-3" controlId="userimage">
+            <Form.Group className="mb-3" controlId="userimage">
                 <Form.Label>Image</Form.Label>
                 <Form.Control type="text" value={signupData.userimage} onChange={handleInputChange} name="userimage" />
-            </Form.Group> */}
+            </Form.Group>
 
             {/* <Form.Group className="mb-3" controlId="formFile">
                 <Form.Label>Avatar</Form.Label>

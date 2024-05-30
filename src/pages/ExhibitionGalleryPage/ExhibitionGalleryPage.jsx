@@ -8,6 +8,7 @@ function ExhibitionGalleryPage() {
 
     const [allExhibitions, setAllExhibitions] = useState([])
 
+
     useEffect(() => {
         fetchExhibitions()
     }, [])

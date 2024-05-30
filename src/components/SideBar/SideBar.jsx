@@ -41,18 +41,18 @@ function TopOffCanvas() {
                         <li>
                             <Link to={'/artwork-gallery'}>Artwork Gallery</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to={'/artwork-details'}>Artwork Details</Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link to={'/add-exhibition'}>Add Exhibition</Link>
                         </li>
                         <li>
                             <Link to={'/exhibition-gallery'}>Exhibition Gallery</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link to={'/exhibition-details'}>Exhibition Details</Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </Offcanvas.Body>
             </Offcanvas>
