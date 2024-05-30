@@ -3,7 +3,7 @@ import './EditExhibitionForm.css';
 
 function EditExhibitionForm() {
     return (
-        <div>
+        <div className="EditExhibitionForm">
             <h1>EditExhibitionForm</h1>
         </div>
     );

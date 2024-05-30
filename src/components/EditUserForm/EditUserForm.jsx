@@ -4,7 +4,7 @@ import './EditUserForm.css';
 
 function EditUserForm() {
     return (
-        <div>
+        <div className="EditUserForm">
             <h1>EditUserForm</h1>
         </div>
     );

@@ -4,7 +4,7 @@ import './SearchBar.css';
 
 function SearchBar() {
     return (
-        <div>
+        <div className="SearchBar">
             <h1>SEARCH BAR</h1>
         </div>
     );

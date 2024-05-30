@@ -3,7 +3,7 @@ import './CommentArtworkForm.css';
 
 function CommentArtworkForm() {
     return (
-        <div>
+        <div className="CommentArtworkForm ">
             <h1>CommentArtworkForm</h1>
         </div>
     );
