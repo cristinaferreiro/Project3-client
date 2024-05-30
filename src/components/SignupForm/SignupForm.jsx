@@ -14,6 +14,7 @@ const SignupForm = () => {
         country: '',
         birthyear: '',
         userimage: '',
+        backgrdimage: '',
         userbio: '',
     })
 
@@ -29,7 +30,7 @@ const SignupForm = () => {
 
         authServices
             .signupUser(signupData)
-            .then(() => navigate('/signup'))
+            .then(() => navigate('/login'))
             .catch(err => console.log(err))
     }
 
@@ -67,21 +68,15 @@ const SignupForm = () => {
                 <Form.Control type="text" value={signupData.birthyear} onChange={handleInputChange} name="birthyear" />
             </Form.Group>
 
-            {/* <Form.Group className="mb-3" controlId="image">
-                <Form.Label>Image</Form.Label>
-                <Form.Control type="text" value={signupData.userimage} onChange={handleInputChange} name="image" />
-            </Form.Group> */}
-
-
             <Form.Group className="mb-3" controlId="userimage">
                 <Form.Label>Image</Form.Label>
                 <Form.Control type="text" value={signupData.userimage} onChange={handleInputChange} name="userimage" />
             </Form.Group>
 
-            {/* <Form.Group className="mb-3" controlId="formFile">
-                <Form.Label>Avatar</Form.Label>
-                <Form.Control type="file" value={signupData.avatar} onChange={handleInputChange} name="avatar" />
-            </Form.Group> */}
+            <Form.Group className="mb-3" controlId="backgrdimage">
+                <Form.Label>Background Image</Form.Label>
+                <Form.Control type="text" value={signupData.backgrdimage} onChange={handleInputChange} name="backgrdimage" />
+            </Form.Group>
 
             <Form.Group className="mb-3" controlId="userbio">
                 <Form.Label>userbio</Form.Label>
