@@ -40,10 +40,10 @@ const AppRoutes = () => {
 
                 <Route path="/add-artwork" element={<AddArtworkPage />} />
                 <Route path="/artwork-gallery" element={<ArtworkGalleryPage />} />
-                <Route path="/artwork-details" element={<ArtworkDetailsPage />} />
+                <Route path="/artwork-details/:artworkId" element={<ArtworkDetailsPage />} />
 
                 <Route path="/add-exhibition" element={<AddExhibitionPage />} />
-                <Route path="exhibition-gallery/" element={<ExhibitionGalleryPage />} />
+                <Route path="/exhibition-gallery/" element={<ExhibitionGalleryPage />} />
                 <Route path="/exhibition-details" element={<ExhibitionDetailsPage />} />
             </Route>
 

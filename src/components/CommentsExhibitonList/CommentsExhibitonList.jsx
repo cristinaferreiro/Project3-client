@@ -3,7 +3,7 @@ import './CommentsExhibitionList.css';
 
 function CommentsExhibitonList() {
     return (
-        <div>
+        <div className="CommentsExhibitionList">
             <h1>CommentsExhibitonList</h1>
         </div>
     );

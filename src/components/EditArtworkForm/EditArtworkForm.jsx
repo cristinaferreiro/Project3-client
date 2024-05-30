@@ -3,7 +3,7 @@ import './EditArtworkForm.css';
 
 function EditArtworkForm() {
     return (
-        <div>
+        <div className="EditArtworkForm">
             <h1>EditArtworkForm</h1>
         </div>
     );

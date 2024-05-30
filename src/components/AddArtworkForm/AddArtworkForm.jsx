@@ -66,9 +66,11 @@ const AddArtworkForm = () => {
                     <Form.Control
                         controlId="title"
                         type="text"
+                        placeholder="Enter your title work..."
                         name="title"
                         value={newArtwork.title}
                         onChange={handleArtworkChange}
+                        required
                     />
                 </Form.Group>
 
@@ -78,7 +80,7 @@ const AddArtworkForm = () => {
                     <InputGroup hasValidation>
                         <Form.Control
                             as="textarea"
-                            placeholder="Enter your techniques work"
+                            placeholder="Enter your techniques work..."
                             name="technique"
                             value={newArtwork.technique}
                             onChange={handleArtworkChange}
@@ -92,7 +94,7 @@ const AddArtworkForm = () => {
                     <InputGroup hasValidation>
                         <Form.Control
                             as="textarea"
-                            placeholder="Enter your dimensions work"
+                            placeholder="Enter your dimensions work..."
                             name="dimension"
                             value={newArtwork.dimension}
                             onChange={handleArtworkChange}
@@ -106,7 +108,7 @@ const AddArtworkForm = () => {
                     <InputGroup hasValidation>
                         <Form.Control
                             as="textarea"
-                            placeholder="Enter your creations year work"
+                            placeholder="Enter your creations year work..."
                             name="year"
                             value={newArtwork.year}
                             onChange={handleArtworkChange}
@@ -119,7 +121,7 @@ const AddArtworkForm = () => {
                     <Form.Label>Price</Form.Label>
                     <Form.Control
                         type="number"
-                        placeholder="Enter your prices work"
+                        placeholder="Enter your prices work..."
                         name="price"
                         value={newArtwork.price}
                         onChange={handleArtworkChange} />

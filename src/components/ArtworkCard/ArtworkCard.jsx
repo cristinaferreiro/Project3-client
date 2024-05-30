@@ -1,9 +1,6 @@
-
-
-
-
-
-
+import React from "react"
+import { Link } from "react-router-dom"
+import './ArtworkCard.css'
 
 
 const ArtworkCard = ({ _id, title, technique, dimension, year, price }) => {
@@ -12,7 +9,7 @@ const ArtworkCard = ({ _id, title, technique, dimension, year, price }) => {
 
         <div className="ArtworkCard">
 
-            <Link to={`/${artworkId}`}>
+            <Link to={`/artwork-details/${_Id}`}>
                 <CarrSlider _id={ObjectId} title={title} technique={technique} dimension={dimension} year={year} price={price} />
             </Link>
 

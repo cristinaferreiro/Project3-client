@@ -24,7 +24,7 @@ class ArtworkServices {
     getAllArtwork() {
         return this.axiosApp.get('/')
     }
-    getOneEArtwork(artworkId) {
+    getOneArtwork(artworkId) {
         return this.axiosApp.get(`/${artworkId}`)
     }
     saveArtwork(artworkData) {
