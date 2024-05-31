@@ -1,62 +1,70 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Container, Row, Col, Image, ListGroup, Spinner } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
-import exhibitionServices from '../../services/exhibition.services'
-import './ExhibitionDetailsPage.css'
+
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col, Image, ListGroup, Spinner, Card, Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import exhibitionServices from '../../services/exhibition.services';
+import './ExhibitionDetailsPage.css';
 
 function ExhibitionDetailsPage() {
-    const { exhibitionId } = useParams()
-
-    const [exhibitionData, setExhibitionInfo] = useState({})
-    const [isLoading, setIsLoading] = useState(true)
+    const [exhibitionData, setExhibitionInfo] = useState({});
+    const { exhibitionId } = useParams();
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        loadExhibitionDetails()
-    }, [exhibitionId])
+        loadExhibitionDetails();
+    }, [exhibitionId]);
 
     const loadExhibitionDetails = () => {
         exhibitionServices
             .getOneExhibition(exhibitionId)
             .then(({ data }) => {
-                setExhibitionInfo(data)
-                setIsLoading(false)
+                data.date = new Date(data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) //////
+                data.dateend = new Date(data.dateend).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) ///////
+                setExhibitionInfo(data);
+                setIsLoading(false);
             })
-            .catch(err => console.log(err))
-    }
+            .catch(err => console.log(err));
+    };
+
+
 
     return (
         <div className="ExhibitionDetailsPage">
             <Container>
-
-                {
-                    isLoading
-                        ?
+                <h1 className="text-center my-4">Exhibition Details</h1>
+                {isLoading ? (
+                    <div className="d-flex justify-content-center">
                         <Spinner animation="border" size="sm" />
-                        :
-                        <>
-                            <h1>{exhibitionData?.title}</h1>
-                            <hr />
-                            <Row className="align-items-center">
-                                <Col md={4} className="img-col">
-                                    <Image src={exhibitionData?.cover} alt={exhibitionData?.title} />
-                                </Col>
-                                <Col md={6} className="details-col">
-                                    <ListGroup variant="flush">
-                                        <ListGroup.Item><h4>Title: {exhibitionData?.title}</h4></ListGroup.Item>
-                                        <ListGroup.Item><h5>Date: {exhibitionData?.date}</h5></ListGroup.Item>
-                                        <ListGroup.Item><h5>Description: {exhibitionData?.description}</h5></ListGroup.Item>
-                                        <ListGroup.Item><h6>Place: {exhibitionData?.place}</h6></ListGroup.Item>
-                                        <ListGroup.Item><h6>Owner: {exhibitionData?.owner}</h6></ListGroup.Item>
-
-                                    </ListGroup>
-                                </Col>
-                            </Row>
-                        </>
-                }
+                    </div>
+                ) : (
+                    <Row className="justify-content-center">
+                        <Col md={{ span: 6 }}>
+                            <Card className="text-center">
+                                <Card.Img
+                                    variant="top"
+                                    src={exhibitionData.cover}
+                                    alt={exhibitionData.title}
+                                    className="card-img-top-custom"
+                                />
+                                <Card.Body>
+                                    <Card.Title>{exhibitionData.owner?.username} {exhibitionData.owner?.lastname}</Card.Title>
+                                    <Card.Text>
+                                        <ListGroup variant="flush">
+                                            <ListGroup.Item><h6>{exhibitionData.title}</h6></ListGroup.Item>
+                                            <ListGroup.Item><h6>{exhibitionData.date} - {exhibitionData.dateend}</h6></ListGroup.Item>
+                                            <ListGroup.Item><h6>{exhibitionData.place}</h6></ListGroup.Item>
+                                            <ListGroup.Item><h6>{exhibitionData.description}</h6></ListGroup.Item>
+                                        </ListGroup>
+                                    </Card.Text>
+                                    <Button variant="primary">Go somewhere</Button>
+                                </Card.Body>
+                            </Card>
+                        </Col>
+                    </Row>
+                )}
             </Container>
         </div>
-    )
+    );
 }
 
-export default ExhibitionDetailsPage
-
+export default ExhibitionDetailsPage;

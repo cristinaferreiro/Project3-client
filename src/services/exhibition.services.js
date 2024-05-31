@@ -31,11 +31,11 @@ class ExhibitionServices {
         return this.axiosApp.post('/', exhibitionData)
     }
 
-    editExhibition(exhibitionData) {
+    editExhibition(exhibitionId, exhibitionData) {
         return this.axiosApp.put(`/${exhibitionId}`, exhibitionData)
     }
 
-    deleteExhibition() {
+    deleteExhibition(exhibitionId) {
         return this.axiosApp.delete(`/${exhibitionId}`)
     }
 

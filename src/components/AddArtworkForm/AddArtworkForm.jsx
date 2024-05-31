@@ -28,30 +28,16 @@ const AddArtworkForm = () => {
         })
     };
 
-    // const addImageField = () => {
-    //     const image_urlCopy = [...newArtwork.image_url]
-    //     image_urlCopy.push('')
-    //     setNewArtwork({ ...newArtwork, image_url: image_urlCopy })
-    // }
-
-    // const handleImageChange = (e, index) => {
-    //     const { value } = e.target
-
-    //     const image_urlCopy = [...newArtwork.image_url]
-    //     image_urlCopy[index] = value
-
-    //     setNewArtwork({ ...newArtwork, image_url: image_urlCopy })
-    // }
-
-
-
 
     const handleForSubmit = e => {
         e.preventDefault()
 
         artworkServices
             .saveArtwork(newArtwork)
-            .then(() => navigate('/artwork-details'))
+            .then(response => {
+                const artworkId = response.data._id
+                navigate(`/artwork-details/${artworkId}`);
+            })
             .catch((err) => console.log(err))
     }
 
@@ -115,6 +101,16 @@ const AddArtworkForm = () => {
                             required
                         />
                     </InputGroup>
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Label>Image</Form.Label>
+                    <Form.Control
+                        controlId="image"
+                        type="text"
+                        name="image"
+                        value={newArtwork.image}
+                        onChange={handleArtworkChange} />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="price">

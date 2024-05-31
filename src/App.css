@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+img {
+  width: 100%;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -19,9 +23,7 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-/* body {
-  padding-top: 2rem;
-} */
+
 
 img {
   width: 100%;

@@ -24,16 +24,19 @@ class ArtworkServices {
     getAllArtwork() {
         return this.axiosApp.get('/')
     }
+    getAllArtworkByArtist(userId) {
+        return this.axiosApp.get(`/artist/${userId}`)
+    }
     getOneArtwork(artworkId) {
         return this.axiosApp.get(`/${artworkId}`)
     }
     saveArtwork(artworkData) {
         return this.axiosApp.post('/', artworkData)
     }
-    editArtwork(artworkData) {
+    editArtwork(artworkId, artworkData) {
         return this.axiosApp.put(`/${artworkId}`, artworkData)
     }
-    deleteArtwork() {
+    deleteArtwork(artworkId) {
         return this.axiosApp.delete(`/${artworkId}`)
     }
 }

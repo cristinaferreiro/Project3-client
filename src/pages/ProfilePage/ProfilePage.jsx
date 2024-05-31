@@ -3,7 +3,6 @@ import './ProfilePage.css'
 import { AuthContext } from './../../context/auth.context'
 import userServices from '../../services/user.services'
 import { Container, Row, Col, Carousel, Spinner } from "react-bootstrap"
-import ExhibibtionList from '../../components/ExhibitionList/Exhibitionlist'
 
 function ProfilePage() {
 
@@ -57,6 +56,35 @@ function ProfilePage() {
                             </Row>
 
                             <hr />
+                            <h2>ARTWORKS</h2>
+                            {/* <Row>
+                                {
+                                    artworkData?.map(artwork => (
+                                        <Col md={4} key={artwork._id}>
+                                            <div className="artwork-card">
+                                                <img src={artwork.image} alt={artwork.title} className="img-fluid" />
+                                                <h5>{artwork.title}</h5>
+                                                <p>{artwork.technique}</p>
+                                            </div>
+                                        </Col>
+                                    ))
+                                }
+                            </Row>
+                            <div className="carousel-container">
+                                <Carousel>
+                                    {artworkData.map((artwork, index) => (
+                                        <Carousel.Item key={index} interval={9000}>
+                                            <div className='HomePage'>
+                                                <img src={artwork.image} alt={artwork.title} className="coverImage" />
+                                            </div>
+                                        </Carousel.Item>
+                                    ))}
+                                </Carousel>
+                            </div>
+                            <hr /> */}
+
+
+                            {/* <hr />
                             <h2>ARTWOKS{
                                 artworkData?.map(elm => <p>{elm.title}</p>)
                             }</h2>
@@ -73,15 +101,49 @@ function ProfilePage() {
                                         </div>
                                     </Carousel.Item>
                                 </Carousel>
-                            </div>
+                            </div> */}
+
+
+
+                            <Row>
+                                {
+                                    artworkData?.map(elm => (
+                                        <Col md={4} key={elm._id}>
+                                            <div className="exhibition-card">
+                                                <h3>{userData?.username} {elm.lastname}</h3>
+                                                <p>{elm.title}</p>
+                                                <p>{elm.date}</p>
+                                                <p>{elm.place}</p>
+
+                                            </div>
+                                        </Col>
+                                    ))
+                                }
+                            </Row>
+
+
+
+
 
 
                             <hr />
-                            <h2>Expos: {
-                                exhibitionData?.map(elm => <p>{elm.title}</p>)
-                            }
-                            </h2>
-                            {/* <ExhibibtionList exhibitions={exhibitionData} /> */}
+                            <h2>Expos</h2>
+                            <Row>
+                                {
+                                    exhibitionData?.map(elm => (
+                                        <Col md={4} key={elm._id}>
+                                            <div className="exhibition-card">
+                                                <h3>{userData?.username} {elm.lastname}</h3>
+                                                <p>{elm.title}</p>
+                                                <p>{elm.date}</p>
+                                                <p>{elm.place}</p>
+
+                                            </div>
+                                        </Col>
+                                    ))
+                                }
+                            </Row>
+
                         </>
                 }
             </Container>
@@ -90,63 +152,3 @@ function ProfilePage() {
 }
 
 export default ProfilePage
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useContext, useEffect, useState } from 'react'
-// import './ProfilePage.css'
-// import { AuthContext } from './../../context/auth.context'
-// import userServices from '../../services/user.services'
-
-// function ProfilePage() {
-//     const { user } = useContext(AuthContext)
-//     const [userData, setUserInfo] = useState({})
-//     const [userData, setUserInfo] = useState({})
-//     const [userData, setUserInfo] = useState({})
-
-//     useEffect(() => {
-//         loadUserInfo()
-//     }, [user])
-
-//     const loadUserInfo = () => {
-//         userServices
-//             .getOneUsers(user._id)
-//             .then(({ data }) => setUserInfo(data))
-//             .catch(err => console.log(err))
-//     }
-
-//     // if (!userInfo) {
-//     //     return <div>Loading...</div>
-//     // }
-
-//     const { userInfo, artworksInfo, exhibitionsInfo } = userData
-
-//     return (
-//         <div>
-//             <h1>PERFIL DE USUARIO</h1>
-//             <h1>Hola {userInfo?.username}</h1>
-//             <hr />
-//             <h2>Bio: {userInfo?.userbio}</h2>
-//             <h2>Last Name: {userInfo?.lastname}</h2>
-//             <h2>Country: {userInfo?.country}</h2>
-//             <hr />
-//         </div>
-//     )
-// }
-
-// export default ProfilePage
-

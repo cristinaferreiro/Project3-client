@@ -1,0 +1,16 @@
+.ArtworkDetailsPage {
+    padding-top: 20px;
+}
+
+.card-img-top-custom {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    /* Ajusta el tamaño máximo de la imagen */
+    object-fit: cover;
+}
+
+.my-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}

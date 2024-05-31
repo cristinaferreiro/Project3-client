@@ -31,11 +31,11 @@ class UserServices {
         return this.axiosApp.post('/', userData)
     }
 
-    editUsers(userData) {
+    editUsers(userId, userData) {
         return this.axiosApp.put(`/${userId}`, userData)
     }
 
-    deleteUsers() {
+    deleteUsers(userId) {
         return this.axiosApp.delete(`/${userId}`)
     }
 
