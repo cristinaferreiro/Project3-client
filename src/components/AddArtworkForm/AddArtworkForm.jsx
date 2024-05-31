@@ -1,7 +1,7 @@
 import React from 'react';
 import './AddArtworkForm.css';
 import { useState } from "react"
-import { Form, Button, InputGroup } from "react-bootstrap"
+import { Form, Button, InputGroup } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import artworkServices from '../../services/artwork.services';
 
@@ -28,38 +28,40 @@ const AddArtworkForm = () => {
         })
     };
 
-    // const addImageField = () => {
-    //     const image_urlCopy = [...newArtwork.image_url]
-    //     image_urlCopy.push('')
-    //     setNewArtwork({ ...newArtwork, image_url: image_urlCopy })
-    // }
-
-    // const handleImageChange = (e, index) => {
-    //     const { value } = e.target
-
-    //     const image_urlCopy = [...newArtwork.image_url]
-    //     image_urlCopy[index] = value
-
-    //     setNewArtwork({ ...newArtwork, image_url: image_urlCopy })
-    // }
-
-
-
-
-    const handleForSubmit = e => {
+    const handleFormSubmit = e => {
         e.preventDefault()
 
         artworkServices
             .saveArtwork(newArtwork)
-            .then(() => navigate('/artwork-details'))
+            .then(response => {
+                const artworkId = response.data._id
+                navigate(`/artwork-details/${artworkId}`)
+            })
             .catch((err) => console.log(err))
     }
+
+
+    const handleFileUpload = e => {
+
+        const formData = new FormData()
+        formData.append('imageData', e.target.files[0])
+
+        uploadServices
+            .uploadimage(formData)
+            .then(({ data }) => {
+            })
+        console.log(data)
+            .catch(err => console.log(err))
+    }
+
+
+
 
 
     return (
         <div className="AddArtworkForm ">
 
-            <Form onSubmit={handleForSubmit} className='mt-3 mb-3'>
+            <Form onSubmit={handleFormSubmit} className='mt-3 mb-3'>
 
                 <Form.Group className="mb-3" controlId="title">
                     <Form.Label>Title</Form.Label>
@@ -117,6 +119,11 @@ const AddArtworkForm = () => {
                     </InputGroup>
                 </Form.Group>
 
+                <Form.Group className="mb-3" controlId="image">
+                    <Form.Label>Imagen (URL)</Form.Label>
+                    <Form.Control type="file" onChange={handleFileUpload} />
+                </Form.Group>
+
                 <Form.Group className="mb-3" controlId="price">
                     <Form.Label>Price</Form.Label>
                     <Form.Control
@@ -135,7 +142,8 @@ const AddArtworkForm = () => {
         </div >
 
     )
-}
 
+
+}
 
 export default AddArtworkForm;
