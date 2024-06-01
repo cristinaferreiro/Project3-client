@@ -2,7 +2,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import './ProfilePage.css'
 import { AuthContext } from './../../context/auth.context'
 import userServices from '../../services/user.services'
-import { Container, Row, Col, Carousel, Spinner } from "react-bootstrap"
+import { Container, Row, Col, Spinner, Button } from "react-bootstrap"
+import { Link } from 'react-router-dom'
 
 function ProfilePage() {
 
@@ -30,6 +31,13 @@ function ProfilePage() {
             .catch(err => console.log(err))
     }
 
+    // const goToEdit = () => {
+    //     const navigate = useNavigate();
+    //     const userId = ":userId"
+
+    //     const handleEditProfile = () => {
+    //         navigate(`/profile/edit-profile/:userId`);
+    //     }
 
     return (
         <div>
@@ -48,7 +56,8 @@ function ProfilePage() {
                                     <img src={userData?.imageuser} alt="User Image" className="img-fluid" />
                                 </Col>
                                 <Col md={6}>
-                                    <h2>{userData?.username} {userData?.lastname}</h2>
+                                    <h2>{userData?.username}</h2>
+                                    <h2>{userData?.lastname}</h2>
                                     <h2>{userData?.country}</h2>
                                     <h2>{userData?.birthyear}</h2>
                                     <h5>Bio: {userData?.userbio}</h5>
@@ -121,11 +130,6 @@ function ProfilePage() {
                                 }
                             </Row>
 
-
-
-
-
-
                             <hr />
                             <h2>Expos</h2>
                             <Row>
@@ -146,6 +150,10 @@ function ProfilePage() {
 
                         </>
                 }
+                {/* <Button className="w-100" variant="secondary" onClick={handleEditProfile}>Edit profile
+
+                </Button> */}
+
             </Container>
         </div>
     )
