@@ -1,56 +1,67 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
-
-.bg-body-tertiary {
-    width: 100vw;
+.navbar-container {
+    width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
     z-index: 1000;
-    margin-bottom: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
     backdrop-filter: blur(6px);
-    background-color: #00000000 !important;
+    background-color: rgba(0, 0, 0, 0);
 
 }
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 0.5;
+
+    background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.navbar {
+    width: 100%;
+    background-color: transparent !important;
+
+}
+
 
 .navbar-brand {
-
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 20px;
     font-style: normal;
-    font-variation-settings:
-        "BLED" 0,
-        "SCAN" 0;
+    font-variation-settings: "BLED" 0, "SCAN" 0;
 }
 
-.navbar-logo {
-    color: #CB0000 !important;
+.navbar-brand a {
+    color: #FF0000 !important;
+
     text-decoration: none;
     font-size: 2rem;
 }
 
-.nav-link {
-    color: #CB0000 !important;
-    text-decoration: none;
-    font-size: 1rem;
-    margin-right: 15px;
-
-}
-
 .container-fluid {
+    width: 100%;
     padding-right: 0;
     padding-left: 0;
 }
 
 .navbar-collapse {
-    justify-content: flex-end;
+    padding-right: 10px;
+}
 
+.rounded-circle {
+    margin-right: 10px;
 }
 
 .btn-primary {
-    --bs-btn-bg: #CB0000 !important;
-    --bs-btn-border-color: #CB0000 !important;
+    --bs-btn-bg: #000dff !important;
+    --bs-btn-border-color: #000dff !important;
     --bs-btn-hover-bg: grey;
     --bs-btn-hover-border-color: grey;
+}
+
+.navbar-nav .nav-link {
+    color: #FF0000 !important;
+    /* Cambiar el color de los enlaces a rojo */
+}
+
+.bg-body-tertiary {
+    --bs-bg-opacity: 0.2;
+    background-color: #E91E63 !important;
 }

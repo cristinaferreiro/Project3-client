@@ -110,6 +110,7 @@ import { Container, Row, Col, Carousel, Spinner } from "react-bootstrap";
 import ArtworkCard from '../../components/ArtworkCard/ArtworkCard';
 import './ProfilePage.css';
 import ExhibitionCard from '../../components/ExhibitionCard/ExhibitionCard';
+import UserCard from '../../components/UserCard/UserCard';
 
 function ProfilePage() {
     const { user } = useContext(AuthContext);
@@ -148,7 +149,7 @@ function ProfilePage() {
                     <Spinner animation="border" size="sm" />
                 ) : (
                     <>
-                        <Row className="d-flex align-items-center">
+                        {/* <Row className="d-flex align-items-center">
                             <Col md={{ span: 3, offset: 3 }}>
                                 <img src={userData?.userimage} alt="User Image" className="img-fluid" />
                             </Col>
@@ -158,7 +159,14 @@ function ProfilePage() {
                                 <h2>{userData?.birthyear}</h2>
                                 <h5>Bio: {userData?.userbio}</h5>
                             </Col>
+                        </Row> */}
+
+                        <Row className="d-flex align-items-center">
+                            <Col md={{ span: 3, offset: 3 }}>
+                                <UserCard userData={userData} />
+                            </Col>
                         </Row>
+
                         <hr />
                         <h2>ARTWORKS</h2>
                         <Carousel>

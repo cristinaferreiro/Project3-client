@@ -10,15 +10,12 @@ import ProfilePage from './../pages/ProfilePage/ProfilePage'
 import EditUserPage from './../pages/EditUserPage/EditUserPage'
 
 
-import UserGalleryPage from '../pages/xXUserGalleryPage/UserGalleryPage'
-import UserDetailsPage from '../pages/XXUserDetailsPage/UserDetailsPage'
-
 import AddArtworkPage from './../pages/AddArtworkPage/AddArtworkPage'
-import ArtworkGalleryPage from '../pages/XArtworkGalleryPage/ArtworkGalleryPage'
+import EditArtworkPage from './../pages/EditArtworkPage/EditArtworkPage'
 import ArtworkDetailsPage from './../pages/ArtworkDetailsPage/ArtworkDetailsPage'
 
 import AddExhibitionPage from './../pages/AddExhibitionPage/AddExhibitionPage'
-import ExhibitionGalleryPage from '../pages/XxhibitionGalleryPage/ExhibitionGalleryPage'
+import EditExhibitionPage from './../pages/EditExhibitionPage/EditExhibitionPage'
 import ExhibitionDetailsPage from './../pages/ExhibitionDetailsPage/ExhibitionDetailsPage'
 
 import ErrorPage from './../pages/ErrorPage/ErrorPage'
@@ -39,19 +36,17 @@ const AppRoutes = () => {
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/profile/edit-profile/:userId" element={<EditUserPage />} />
 
-
-                {/* <Route path="/user-gallery" element={<UserGalleryPage />} />
-                <Route path="/user-details" element={<UserDetailsPage />} /> */}
-
                 <Route path="/add-artwork" element={<AddArtworkPage />} />
-                {/* <Route path="/artwork-gallery" element={<ArtworkGalleryPage />} /> */}
+                <Route path="/edit-artwork/:artworkId" element={<EditArtworkPage />} />
                 <Route path="/artwork-details/:artworkId" element={<ArtworkDetailsPage />} />
-                <Route path="/artists" element={<ArtistsPage />} />
-
 
                 <Route path="/add-exhibition" element={<AddExhibitionPage />} />
-                {/* <Route path="exhibition-gallery/" element={<ExhibitionGalleryPage />} /> */}
+                <Route path="/edit-exhibition/:exhibitionId" element={<EditExhibitionPage />} />
                 <Route path="/exhibition-details/:exhibitionId" element={<ExhibitionDetailsPage />} />
+
+                <Route path="/artists" element={<ArtistsPage />} />
+                <Route path="/artists/:userId" element={<ArtistsPage />} />
+
             </Route>
 
             <Route path="*" element={<ErrorPage />} />

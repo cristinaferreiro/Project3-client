@@ -154,10 +154,10 @@ const ArtworkCard = ({ _id, title, owner, dimension, year, price, technique, ima
                                         <ListGroup.Item><h5>{technique}</h5></ListGroup.Item>
                                         <ListGroup.Item><h5>{dimension}</h5></ListGroup.Item>
                                         <ListGroup.Item><h5>{year}</h5></ListGroup.Item>
-                                        <ListGroup.Item><h5>{price} €</h5></ListGroup.Item>
+                                        {/* <ListGroup.Item><h5>{price} €</h5></ListGroup.Item> */}
                                     </ListGroup>
                                 </Card.Text>
-                                <Button variant="primary">Go somewhere</Button>
+
                             </Card.Body>
                         </Card>
 

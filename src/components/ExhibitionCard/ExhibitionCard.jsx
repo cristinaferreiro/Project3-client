@@ -27,31 +27,29 @@
 
 
 
-// ExhibitionCard.jsx
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Card, Button, ListGroup, Spinner } from 'react-bootstrap';
+import { Card, ListGroup, Spinner } from 'react-bootstrap';
 import './ExhibitionCard.css';
 import { AuthContext } from '../../context/auth.context';
 import userServices from '../../services/user.services';
 
-const ExhibitionCard = ({ _id, title, date, description, place, owner, image }) => {
+const ExhibitionCard = ({ _id, title, date, place, image }) => {
     const { user } = useContext(AuthContext);
-    const [userData, setUserData] = useState({});
+    const [userData, setUserData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        if (owner && owner._id) {
-            loadUserInfo(owner._id);
+        if (user && user._id) {
+            loadUserInfo(user._id);
         } else {
-            setUserData(owner);
             setIsLoading(false);
         }
-    }, [owner]);
+    }, [user]);
 
-    const loadUserInfo = (ownerId) => {
+    const loadUserInfo = (userId) => {
         userServices
-            .getOneUsers(ownerId)
+            .getOneUsers(userId)
             .then(({ data }) => {
                 setUserData(data);
                 setIsLoading(false);
@@ -61,6 +59,8 @@ const ExhibitionCard = ({ _id, title, date, description, place, owner, image }) 
                 setIsLoading(false);
             });
     };
+
+    const formattedDate = new Date(date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
     return (
         <div className="ExhibitionCard">
@@ -73,15 +73,11 @@ const ExhibitionCard = ({ _id, title, date, description, place, owner, image }) 
                     </Link>
                     <Card.Body>
                         <Card.Title>{userData?.username} {userData?.lastname}</Card.Title>
-                        <Card.Text>
-                            <ListGroup variant="flush">
-                                <ListGroup.Item><h5><em>{title}</em></h5></ListGroup.Item>
-                                <ListGroup.Item><h5>{date}</h5></ListGroup.Item>
-                                <ListGroup.Item><h5>{place}</h5></ListGroup.Item>
-                                <ListGroup.Item><h5>{description}</h5></ListGroup.Item>
-                            </ListGroup>
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
+                        <ListGroup variant="flush">
+                            <ListGroup.Item><em>{title}</em></ListGroup.Item>
+                            <ListGroup.Item>{formattedDate}</ListGroup.Item>
+                            <ListGroup.Item>{place}</ListGroup.Item>
+                        </ListGroup>
                     </Card.Body>
                 </Card>
             )}
