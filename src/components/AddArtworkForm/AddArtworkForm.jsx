@@ -10,13 +10,12 @@ import uploadServices from "../../services/upload.services"
 const AddArtworkForm = () => {
 
     const navigate = useNavigate()
-
     const [newArtwork, setNewArtwork] = useState({
         title: '',
         technique: '',
         dimension: '',
         year: '',
-        image: '',
+        imageURL: '',
         price: ''
     })
 
@@ -34,10 +33,8 @@ const AddArtworkForm = () => {
             [name]: value,
         })
     }
-
     const handleForSubmit = e => {
         e.preventDefault()
-
         artworkServices
             .saveArtwork(newArtwork)
             .then(response => {
@@ -47,14 +44,11 @@ const AddArtworkForm = () => {
             .catch((err) => console.log(err))
     }
 
-
     const handleFileUpload = e => {
 
         setLoadingImage(true)
-
         const formData = new FormData()
         formData.append('imageData', e.target.files[0])
-
         uploadServices
             .uploadimage(formData)
             .then(res => {
@@ -63,7 +57,6 @@ const AddArtworkForm = () => {
             })
             .catch(err => console.log(err))
     }
-
 
     return (
         <div className="AddArtworkForm ">
@@ -74,7 +67,6 @@ const AddArtworkForm = () => {
                     :
                     <>
                         <Form onSubmit={handleForSubmit} className='mt-3 mb-3'>
-
                             <Form.Group className="mb-3" controlId="title">
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control
@@ -102,7 +94,6 @@ const AddArtworkForm = () => {
                                     />
                                 </InputGroup>
                             </Form.Group>
-
                             <Form.Group className="mb-3" controlId="dimension">
                                 <Form.Label>Dimension</Form.Label>
                                 <InputGroup hasValidation>
@@ -116,7 +107,6 @@ const AddArtworkForm = () => {
                                     />
                                 </InputGroup>
                             </Form.Group>
-
                             <Form.Group className="mb-3" controlId="year">
                                 <Form.Label>Year of creation</Form.Label>
                                 <InputGroup hasValidation>
@@ -155,10 +145,6 @@ const AddArtworkForm = () => {
                     </>
             }
         </div >
-
     )
-
-
 }
-
 export default AddArtworkForm
