@@ -48,6 +48,9 @@ function TopOffCanvas() {
                             <Link to={'/add-exhibition'}>Add Exhibition</Link>
                         </li>
                         <li>
+                            <Link to={'/artists'}>Artists</Link>
+                        </li>
+                        <li>
                             <Link to={'/exhibition-gallery'}>Exhibition Gallery</Link>
                         </li>
                         {/* <li>

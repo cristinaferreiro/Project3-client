@@ -62,12 +62,14 @@ const EditUserForm = () => {
                     <Form.Group className="mb-3" controlId="username">
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" value={editUser.username} name="username" disabled />
+                        <Form.Control type="text" value={editUser.lastname} name="username" disabled />
+
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="lastName">
+                    {/* <Form.Group className="mb-3" controlId="lastName">
                         <Form.Label>Last Name</Form.Label>
                         <Form.Control type="text" value={editUser.lastname} name="lastname" placeholder='holaaa' onChange={handleInputChange} />
-                    </Form.Group>
+                    </Form.Group> */}
 
 
                     <Form.Group className="mb-3" controlId="country">
