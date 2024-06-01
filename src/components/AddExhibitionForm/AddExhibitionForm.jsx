@@ -7,7 +7,6 @@ import { AuthContext } from './../../context/auth.context'
 import uploadServices from "../../services/upload.services"
 
 
-
 const AddExhibitionForm = () => {
 
     const navigate = useNavigate()
@@ -51,8 +50,6 @@ const AddExhibitionForm = () => {
     }
 
     const handleExhibitionFormSubmit = e => {
-
-
         e.preventDefault()
 
         const formattedStartDate = new Date(exhibitionData.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' }) //////
@@ -67,13 +64,15 @@ const AddExhibitionForm = () => {
             .catch(err => console.log(err))
     }
 
+
     const handleArtworksChange = (e, artworkId) => {
         const { checked } = e.target
         const updatedArtworks = checked
             ? [...exhibitionData.artworks, artworkId]
             : exhibitionData.artworks.filter(id => id !== artworkId)
-        setExhibitionData({ ...exhibitionData, artworks: updatedArtworks })
+        setExhibitionData({ ...exhibitionData, artworks: updatedArtworks }) ////7
     }
+
 
     const handleFileUpload = e => {
 
@@ -85,7 +84,7 @@ const AddExhibitionForm = () => {
         uploadServices
             .uploadimage(formData)
             .then(res => {
-                setArtworksData({ ...exhibitionData, imageUrl: res.data.cloudinary_url })
+                setExhibitionData({ ...exhibitionData, image: res.data.cloudinary_url })
                 setLoadingImage(false)
             })
             .catch(err => console.log(err))
@@ -157,42 +156,55 @@ const AddExhibitionForm = () => {
                                     onChange={handleInputChange} />
                             </Form.Group>
 
-                            {/* <Form.Group className="mb-3">
-                                <Form.Label>Image</Form.Label>
-                                <Form.Control
-                                    controlId="image"
-                                    type="text"
-                                    name="image"
-                                    value={exhibitionData.image}
-                                    onChange={handleInputChange} />
-                            </Form.Group> */}
-
 
 
                             <Form.Group as={Col} controlId="image">
-                                <Form.Label>Imagen (URL)</Form.Label>
+                                <Form.Label>Image </Form.Label>
                                 <Form.Control type="file" onChange={handleFileUpload} />
                             </Form.Group>
 
-                            <Form>
-                                <Form.Group className="mb-3">
-                                    <Form.Label>Select Works Available</Form.Label>
-                                    {isLoading ? <p>Loading artworks...</p> :
-                                        <div>
-                                            {artworksData.map(artwork => (
-                                                <Form.Check
-                                                    key={artwork._id}
-                                                    type="checkbox"
-                                                    id={`artwork_${artwork._id}`}
-                                                    label={artwork.title}
-                                                    checked={exhibitionData.artworks.includes(artwork._id)}
-                                                    onChange={(e) => handleArtworksChange(e, artwork._id)}
-                                                />
-                                            ))}
-                                        </div>
-                                    }
-                                </Form.Group>
-                            </Form>
+                            {/* <Form.Group className="mb-3">
+                                <Form.Label>Select Works Available</Form.Label>
+                                {isLoading ? <p>Loading artworks...</p> : (
+                                    <div>
+                                        {artworksData.map(artwork => (
+                                            <Form.Check
+                                                key={artwork._id}
+                                                type="checkbox"
+                                                id={`artwork_${artwork._id}`}
+                                                label={artwork.title}
+                                                checked={exhibitionData.artworks.includes(artwork._id)}
+                                                onChange={(e) => handleArtworksChange(e, artwork._id)}
+                                            />
+                                        ))}
+                                    </div>
+                                )}
+                            </Form.Group> */}
+
+                            <Form.Group className="mb-3">
+                                <Form.Label>Select Works Available</Form.Label>
+                                {isLoading ? <p>Loading artworks...</p> : (
+                                    <div>
+                                        {
+                                            Array.isArray(artworksData) && artworksData.length > 0 ? (
+                                                artworksData.map(artwork => (
+                                                    <Form.Check
+                                                        key={artwork._id}
+                                                        type="checkbox"
+                                                        id={`artwork_${artwork._id}`}
+                                                        label={artwork.title}
+                                                        checked={exhibitionData.artworks.includes(artwork._id)}
+                                                        onChange={(e) => handleArtworksChange(e, artwork._id)}
+                                                    />
+                                                ))
+                                            ) : (
+                                                <p>No artworks available</p>
+                                            )
+                                        }
+                                    </div>
+                                )}
+                            </Form.Group>
+
 
                             <Button variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Loading Image...' : ' Add Exhibition'}
                                 Add Exhibition

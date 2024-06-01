@@ -1,0 +1,22 @@
+.userProfile .image-container {
+    position: relative;
+    text-align: center;
+}
+
+.userProfile .img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+.userProfile .overlay {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left;
+    font-size: 3%;
+
+}

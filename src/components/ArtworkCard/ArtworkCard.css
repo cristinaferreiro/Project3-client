@@ -1,0 +1,22 @@
+.artwork-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.artwork-card:hover {
+    transform: scale(1.05);
+}
+
+.exhibition-card {
+    text-align: center;
+}
+
+.exhibition-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
