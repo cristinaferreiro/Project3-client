@@ -1,0 +1,7 @@
+.artist {
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.artist:hover {
+    color: #9e9da4;
+}

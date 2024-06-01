@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 
-
 import HomePage from './../pages/HomePage/HomePage'
 import LoginPage from './../pages/LoginPage/LoginPage'
 import SignupPage from './../pages/SignupPage/SignupPage'
@@ -21,6 +20,7 @@ import ExhibitionDetailsPage from './../pages/ExhibitionDetailsPage/ExhibitionDe
 import ErrorPage from './../pages/ErrorPage/ErrorPage'
 import PrivateRoute from './PrivateRoutes'
 import ArtistsPage from '../pages/ArtistsPage/ArtistsPage'
+import ArtistDetailPage from '../pages/ArtistDetailPage/ArtistDetailPage'
 
 
 const AppRoutes = () => {
@@ -31,6 +31,9 @@ const AppRoutes = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/about" element={<AboutUsPage />} />
+            <Route path="/artists" element={<ArtistsPage />} />
+            <Route path="/artists-details/:userId" element={<ArtistDetailPage />} />
+
 
             <Route element={<PrivateRoute />}>
                 <Route path="/profile" element={<ProfilePage />} />
