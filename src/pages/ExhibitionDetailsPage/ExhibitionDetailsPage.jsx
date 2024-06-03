@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, ListGroup, Spinner, Button } from 'react-bootstrap'
+import { Container, Row, Col, Spinner, Button } from 'react-bootstrap'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import exhibitionServices from '../../services/exhibition.services'
@@ -48,24 +48,33 @@ function ExhibitionDetailsPage() {
                 ) : (
                     <Row className="justify-content-center">
                         <Col md={{ span: 8 }}>
+                            <hr />
 
-                            <ListGroup variant="flush">
-                                <ListGroup.Item className="exhibition-image">
+                            <div className="exhibition-details">
+                                <div className="exhibition-image">
                                     <img src={exhibitionData.image} alt={exhibitionData.title} />
-                                </ListGroup.Item>
-                                <ListGroup.Item className="exhibition-info">
-                                    <ListGroup variant="flush" className="exhibition-info">
-                                        <ListGroup.Item className="exhibition-title"><strong>{exhibitionData.title}</strong></ListGroup.Item>
-                                        <ListGroup.Item>{exhibitionData.date} - {exhibitionData.dateend}</ListGroup.Item>
-                                        <ListGroup.Item><h5>{exhibitionData.place}</h5></ListGroup.Item>
-                                        <ListGroup.Item>{exhibitionData.description}</ListGroup.Item>
-                                    </ListGroup>
+                                </div>
 
-                                </ListGroup.Item>
-                            </ListGroup>
+                                <div className="exhibition-info">
+                                    <hr />
+                                    <h5><strong>{exhibitionData?.username} {exhibitionData?.lastname}</strong></h5>
+                                    <h5 className="exhibition-title"><strong>{exhibitionData.title}</strong></h5>
+                                    <h5><strong>{exhibitionData.date} - {exhibitionData.dateend}</strong></h5>
+                                    <h5><strong>{exhibitionData.place}</strong></h5>
+
+                                    <hr />
+
+                                    <h6>{exhibitionData.description}</h6>
+
+                                    <hr />
+                                </div>
+                            </div>
+
                         </Col>
                     </Row>
-                )}
+                )
+                }
+
                 <div>
                     <Button variant="danger" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
                 </div>
@@ -77,8 +86,8 @@ function ExhibitionDetailsPage() {
                         Edit Exhibition
                     </Link>
                 </div>
-            </Container>
-        </div>
+            </Container >
+        </div >
     )
 }
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&family=Poppins:ital,wght@0,300;0,400;0,700;1,300&family=Quicksand:wght@300..700&display=swap');
 
 .navbar-container {
     width: 100% !important;
@@ -72,4 +73,12 @@
 .bg-body-tertiary {
     --bs-bg-opacity: 0.2 !important;
     background-color: #E91E63 !important;
+}
+
+.navbar-logo {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 5em !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    font-optical-sizing: auto !important;
 }

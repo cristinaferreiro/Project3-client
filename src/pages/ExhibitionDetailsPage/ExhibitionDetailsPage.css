@@ -1,35 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* Contenedor principal */
 .exhibition-details {
-    color: #FF0000;
-    /* Color de texto rojo */
-    text-align: center;
-    /* Alinea el contenido al centro */
+    padding-top: 20px;
+    text-align: left !important;
+    /* Justificar a la izquierda */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 }
 
-.exhibition-details .exhibition-image img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
-
-.exhibition-details .exhibition-info {
-    font-size: 0.8em;
-    width: 100%;
-}
-
-.exhibition-details .exhibition-info .list-group-item {
-    color: #FF0000;
-}
-
-.exhibition-details .my-4 {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.Exhibition-list .exhibition-card .exhibition-image {
-    width: 100%;
+/* Imagen de la exhibición */
+.exhibition-image img {
+    width: 70%;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
-    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+    object-position: center;
+}
+
+/* Contenedor de información de la exhibición */
+.exhibition-info {
+    color: #FF0000;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Línea divisoria */
+.exhibition-info hr {
+    border: 1px solid #FF0000;
+    text-align: left !important;
+    /* Justificar a la izquierda */
+}
+
+/* Títulos */
+.exhibition-info h5 {
+    font-size: 2em !important;
+    margin-bottom: 1em;
+    font-weight: bold;
+    /* Hace que el texto sea negrita */
+}
+
+.exhibition-info h6 {
+    font-size: 1.5em !important;
+    margin-bottom: 1em;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+/* Título principal */
+.exhibition-info .exhibition-title {
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    /* Hace que el texto sea negrita */
+}
+
+/* Texto en negrita */
+.exhibition-info strong {
+    font-weight: bold;
+    /* Hace que el texto sea negrita */
 }

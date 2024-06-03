@@ -1,25 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/* Establece la fuente y color para todo el contenido */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button,
+input,
+textarea {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+    color: #FF0000 !important;
+}
+
+/* Estilos específicos para la tarjeta de exposición */
 .exhibition-card {
     border: none !important;
-    overflow: hidden;
+    overflow: hidden !important;
     margin: 10px !important;
     padding: 15px !important;
-    transition: transform 0.2s;
-    display: flex;
-    align-items: center;
+    transition: transform 0.2s !important;
+    display: flex !important;
+    align-items: center !important;
+    background-color: #FFF;
+    font-size: 1em !important;
+}
+
+.exhibition-card:hover {
+    transform: scale(1.05) !important;
 }
 
 .exhibition-details {
-    text-align: center;
+    text-align: center !important;
     font-size: 0.8em !important;
     color: #FF0000 !important;
     font-family: 'Poppins', sans-serif !important;
 }
 
-.exhibition-card:hover {
-    transform: scale(1.05);
+.exhibition-details h5 {
+    font-weight: bold !important;
+    color: #FF0000 !important;
+    font-size: 0.9em !important;
 }
 
-.exhibition-details h6 {
-    font-style: italic !important;
+.exhibition-details h5 em {
     font-weight: bold !important;
+    font-size: 1.2em !important;
+    color: #FF0000 !important;
+}
+
+.cedulacard {
+    font-weight: bold !important;
+
+    color: #FF0000 !important;
 }

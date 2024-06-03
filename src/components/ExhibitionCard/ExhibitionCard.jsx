@@ -71,12 +71,12 @@ const ExhibitionCard = ({ _id, title, date, place, image }) => {
                     <Link to={`/exhibition-details/${_id}`}>
                         <Card.Img variant="top" src={image} alt={title} />
                     </Link>
-                    <Card.Body>
-                        <Card.Title>{userData?.username} {userData?.lastname}</Card.Title>
+                    <Card.Body className="cedulacard">
+                        <Card.Title><h5>{userData?.username} {userData?.lastname}</h5></Card.Title>
                         <div>
-                            <h6><em>{title}</em></h6>
-                            <h6>{formattedDate}</h6>
-                            <h6>{place}</h6>
+                            <h5>{title}</h5>
+                            <h5>{formattedDate}</h5>
+                            <h5>{place}</h5>
                         </div>
                     </Card.Body>
 

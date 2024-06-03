@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
 
+/* Establece la fuente y color para todo el contenido */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button,
+input,
+textarea {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+    color: #FF0000 !important;
+    /* Color rojo */
+}
+
+
 .exhibition-card {
     border: none !important;
     overflow: hidden !important;
@@ -14,7 +36,6 @@
     text-align: center !important;
     font-size: 0.8em !important;
     color: #FF0000 !important;
-    /* Cambia el color del texto a rojo */
     font-family: 'Poppins', sans-serif !important;
 }
 
@@ -24,15 +45,34 @@
 
 .exhibition-details h6 {
     font-size: 0.9em !important;
-    font-style: italic !important;
     font-weight: bold !important;
     color: #FF0000 !important;
-    /* Asegura que el color del texto sea rojo */
 }
 
+
 .artwork-details h5 em {
-    font-style: italic !important;
+    font-weight: bold !important;
+    font-size: 1.2em !important;
+    color: #FF0000 !important;
+}
+
+
+.artwork-details h5 {
+    font-style: normal !important;
     font-weight: bold !important;
     color: #FF0000 !important;
-    /* Asegura que el color del texto sea rojo */
+    font-size: 0.9em !important;
+}
+
+
+.artwork-details .list-group-item h5 {
+    font-style: normal !important;
+    font-weight: bold !important;
+    color: #FF0000 !important;
+}
+
+.ArtworkCard {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+    color: #FF0000 !important;
 }

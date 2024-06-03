@@ -23,7 +23,7 @@
     left: 60px;
     transform: translateY(-50%);
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: white !important;
     font-size: 4em;
     font-weight: 900;
     font-style: normal;
@@ -93,7 +93,7 @@ align-items-center {
 
 .exhibition-details h6 {
     font-size: 0.em !important;
-    font-style: italic !important;
+
     font-weight: bold !important;
     color: #FF0000 !important;
 }
@@ -142,7 +142,7 @@ align-items-center {
 }
 
 .ExhibitionCard h5 {
-    font-size: 16px;
+    font-size: 1em;
     margin-bottom: 10px;
 }
 
@@ -158,4 +158,10 @@ align-items-center {
     font-weight: 100 !important;
     font-style: normal !important;
     font-size: 1.2em;
+}
+
+
+.carrusel {
+    width: 60%;
+    margin: 0 auto;
 }

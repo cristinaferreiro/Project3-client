@@ -3,18 +3,14 @@ import './ArtworkDetailsPage.css';
 import { Container, Row, Col, Image, ListGroup, Spinner, Button } from 'react-bootstrap'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import artworkServices from '../../services/artwork.services'
-
 function ArtworkDetailsPage() {
-
     const [artwork, setArtwork] = useState({})
     const { artworkId } = useParams()
     const [isLoading, setIsLoading] = useState(true)
     const navigate = useNavigate();
-
     useEffect(() => {
         loadArtworkDetails()
     }, [artworkId])
-
     const loadArtworkDetails = () => {
         artworkServices
             .getOneArtwork(artworkId)
@@ -24,18 +20,15 @@ function ArtworkDetailsPage() {
             })
             .catch(err => console.log(err))
     }
-
     const handleDeleteArtwork = () => {
         artworkServices
             .deleteArtwork(artworkId)
             .then(() => {
                 console.log("Artwork deleted successfully");
-                // Redirige al usuario a la página de perfil después de eliminar el artwork
                 navigate('/profile');
             })
             .catch(err => console.log(err))
     }
-
     return (
         <div className="ArtworkDetailsPage">
             <Container className='Container'>
@@ -68,7 +61,7 @@ function ArtworkDetailsPage() {
                     <Button variant="danger" onClick={handleDeleteArtwork}>Delete Artwork</Button>
                 </div>
                 <div>
-                    <Link to="/profile" className="btn btn-secondary">
+                    <Link to={`/artists/${artwork.owner?._id}`} className="btn btn-secondary">
                         Back
                     </Link>
                     <Link to={`/edit-artwork/${artworkId}`} className="btn btn-primary" style={{ marginLeft: '10px' }}>
@@ -79,7 +72,13 @@ function ArtworkDetailsPage() {
         </div>
     );
 }
-
 export default ArtworkDetailsPage;
+
+
+
+
+
+
+
 
 
