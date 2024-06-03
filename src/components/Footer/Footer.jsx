@@ -27,7 +27,7 @@ function Footer() {
                 </Row>
             </div> */}
             <div>
-                <p className="text-center mt-4 mb-4">
+                <p className="text-center mt-4 mb-5">
                     <h5>All Rights Reserved. © 2024</h5>
                 </p>
             </div>

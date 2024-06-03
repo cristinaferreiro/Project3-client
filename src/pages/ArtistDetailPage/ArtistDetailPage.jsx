@@ -60,12 +60,15 @@ function ArtistDetailPage() {
                         <hr />
                         <h2>ARTWORKS</h2>
                         <Carousel>
-                            {artworkData.map((artwork, index) => (
-                                <Carousel.Item key={index} interval={9000}>
-                                    <ArtworkCard {...artwork} />
-                                </Carousel.Item>
-                            ))}
+                            {
+                                artworkData.map((artwork, index) => (
+                                    <Carousel.Item key={index} interval={9000}>
+                                        <ArtworkCard {...artwork} />
+                                    </Carousel.Item>
+                                ))
+                            }
                         </Carousel>
+
                         <hr />
 
                         <h2>Expos</h2>

@@ -9,9 +9,9 @@ const EditArtworkPage = () => {
 
     return (
         <Container>
-            <Row className="justify-content-center mt-5">
-                <Col md={8}>
-                    <h1>Edit Artwork</h1>
+            <Row className="justify-content-center">
+                <Col md={8} className="text-center">
+                    <h1>Edit your Artwork</h1>
                     <EditArtworkForm artworkId={artworkId} />
                 </Col>
             </Row>

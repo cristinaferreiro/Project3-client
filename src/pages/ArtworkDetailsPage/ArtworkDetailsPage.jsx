@@ -30,7 +30,6 @@ function ArtworkDetailsPage() {
             .deleteArtwork(artworkId)
             .then(() => {
                 console.log("Artwork deleted successfully");
-                // Redirige al usuario a la página de perfil después de eliminar el artwork
                 navigate('/profile');
             })
             .catch(err => console.log(err))
@@ -68,7 +67,7 @@ function ArtworkDetailsPage() {
                     <Button variant="danger" onClick={handleDeleteArtwork}>Delete Artwork</Button>
                 </div>
                 <div>
-                    <Link to="/profile" className="btn btn-secondary">
+                    <Link to={`/artists/${artwork.owner?._id}`} className="btn btn-secondary">
                         Back
                     </Link>
                     <Link to={`/edit-artwork/${artworkId}`} className="btn btn-primary" style={{ marginLeft: '10px' }}>
