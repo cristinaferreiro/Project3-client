@@ -162,7 +162,7 @@ function ProfilePage() {
                         </Row> */}
 
                         <Row className="d-flex align-items-center">
-                            <Col md={{ span: 3, offset: 3 }}>
+                            <Col md={{ span: 9 }}>
                                 <UserCard userData={userData} />
                             </Col>
                         </Row>

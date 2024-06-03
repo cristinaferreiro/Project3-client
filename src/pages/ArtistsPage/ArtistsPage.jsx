@@ -2,6 +2,7 @@
 import { Container, Row, Col } from 'react-bootstrap'
 import React from 'react'
 import ArtistsList from '../../components/ArtistsList/ArtistsList.jsx'
+import './ArtistsPage.css'
 
 const ArtistsPage = () => {
 
@@ -9,9 +10,13 @@ const ArtistsPage = () => {
 
         <Container>
 
-            <Row>
+            <Row className="justify-content-center mt-10 w-100">
+                {/* <div className="image-container">
+                    <img src="path/to/initial-image.jpg" alt="Initial" />
+                    <img src="path/to/hover-image.jpg" alt="Hover" className="hover-image" />
+                </div> */}
 
-                <Col md={{ offset: 3, span: 6 }}>
+                <Col md={12}>
 
                     <ArtistsList />
 
