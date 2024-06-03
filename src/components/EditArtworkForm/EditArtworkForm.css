@@ -1,0 +1,13 @@
+.ArtworkForm {
+
+    text-align: left;
+
+}
+
+.Form {
+
+    width: 100% !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}

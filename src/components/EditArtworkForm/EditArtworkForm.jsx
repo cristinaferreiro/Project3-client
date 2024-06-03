@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './EditArtworkForm.css'
-import { Form, Button, InputGroup, Col, Spinner, Image } from 'react-bootstrap'
+import { Form, Button, InputGroup, Col, Spinner, Image, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import artworkServices from '../../services/artwork.services'
 import uploadServices from "../../services/upload.services"
@@ -69,6 +69,11 @@ const ArtworkForm = ({ artworkId }) => {
                 })
                 .catch(err => console.log(err))
         }
+
+
+    }
+    const handleCancel = () => {
+        navigate(`/artwork-details/${artworkId}`)
     }
 
     return (
@@ -76,8 +81,9 @@ const ArtworkForm = ({ artworkId }) => {
             {isLoading ? (
                 <Spinner animation="border" size="sm" />
             ) : (
-                <Form onSubmit={handleSubmit} className="mt-3 mb-3">
-                    <Form.Group className="mb-3" controlId="title">
+                // <Form onSubmit={handleSubmit} className="Form">
+                <Form>
+                    <Form.Group className="mt-3 mb-3" controlId="title">
                         <Form.Label>Title</Form.Label>
                         <Form.Control
                             type="text"
@@ -88,59 +94,53 @@ const ArtworkForm = ({ artworkId }) => {
                             required
                         />
                     </Form.Group>
-
                     <Form.Group className="mb-3" controlId="technique">
                         <Form.Label>Technique</Form.Label>
-                        <InputGroup hasValidation>
-                            <Form.Control
-                                as="textarea"
-                                placeholder="Enter your techniques work..."
-                                name="technique"
-                                value={artworkData.technique}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </InputGroup>
+                        <Form.Control
+                            type="textarea"
+                            placeholder="Enter your techniques work..."
+                            name="technique"
+                            value={artworkData.technique}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="dimension">
                         <Form.Label>Dimension</Form.Label>
-                        <InputGroup hasValidation>
-                            <Form.Control
-                                as="textarea"
-                                placeholder="Enter your dimensions work..."
-                                name="dimension"
-                                value={artworkData.dimension}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </InputGroup>
+                        <Form.Control
+                            type="textarea"
+                            placeholder="Enter your dimensions work..."
+                            name="dimension"
+                            value={artworkData.dimension}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="year">
                         <Form.Label>Year of creation</Form.Label>
-                        <InputGroup hasValidation>
-                            <Form.Control
-                                as="textarea"
-                                placeholder="Enter your creations year work..."
-                                name="year"
-                                value={artworkData.year}
-                                onChange={handleInputChange}
-                                required
-                            />
-                        </InputGroup>
+                        <Form.Control
+                            type="textarea"
+                            placeholder="Enter your creations year work..."
+                            name="year"
+                            value={artworkData.year}
+                            onChange={handleInputChange}
+                            required
+                        />
                     </Form.Group>
 
-                    <h5>Imagen actual</h5>
-                    <Image src={artworkData.imageURL} style={{ width: 100 }} />
+                    <Row>
+                        <Col>
+                            <h5>Actual image</h5>
+                            <Image src={artworkData.imageURL} style={{ width: 100 }} />
+                        </Col>
+                        <Col>
+                            <Form.Group as={Col} controlId="image">
+                                <Form.Label>Replace image</Form.Label>
+                                <Form.Control type="file" onChange={handleFileUpload} />
+                            </Form.Group>
+                        </Col>
+                    </Row>
 
-                    <Form.Group as={Col} controlId="image">
-                        <Form.Label>Sustituir imagen</Form.Label>
-                        <Form.Control type="file" onChange={handleFileUpload} />
-                    </Form.Group>
-
-                    {/* <Form.Group as={Col} controlId="image">
-                        <Form.Label>Image (URL)</Form.Label>
-                        <Form.Control type="file" onChange={handleFileUpload} />
-                    </Form.Group> */}
 
                     <Form.Group className="mb-3" controlId="price">
                         <Form.Label>Price</Form.Label>
@@ -152,9 +152,24 @@ const ArtworkForm = ({ artworkId }) => {
                             onChange={handleInputChange} />
                     </Form.Group>
 
-                    <Button variant="primary" type="submit" disabled={loadingImage}>
-                        {loadingImage ? 'Loading Image...' : artworkId ? 'Update Artwork' : 'Add Artwork'}
-                    </Button>
+
+                    <Row>
+                        <Col>
+                            <div className="d-grid">
+                                <Button className="mb-5" style={{ span: 4, offset: 2 }} variant="outline-danger" type="submit" disabled={loadingImage}>
+                                    {loadingImage ? 'Loading Image...' : artworkId ? 'Update Artwork' : 'Add Artwork'}
+                                </Button>
+                            </div>
+                        </Col>
+                        <Col>
+                            <div className="d-grid">
+                                <Button variant="outline-danger" type="cancel"
+                                    onClick={handleCancel}>
+                                    Cancel update
+                                </Button>
+                            </div>
+                        </Col>
+                    </Row>
                 </Form>
             )}
         </div>
