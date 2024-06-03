@@ -4,7 +4,7 @@ import './UserGalleryPage.css';
 function UserGalleryPage() {
     return (
         <div>
-            <h1>User Gallery Page TEST</h1>
+            <h1>PUTAddd</h1>
         </div>
     );
 }
