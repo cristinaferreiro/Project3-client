@@ -32,16 +32,15 @@ function ArtistsList() {
         <div className="artistsList">
             <h1>Artists</h1>
             <hr />
-            <Container>
-                {isLoading ? (
-                    <Spinner animation="border" size="sm" />
-                ) : (
-                    <>
-                        {usersData.length > 0 ? (
-                            usersData.map(user => (
-                                <Row key={user._id} className="artist">
-                                    <Col md={12}>
-                                        {/* <ul class="featureds">
+            {isLoading ? (
+                <Spinner animation="border" size="sm" />
+            ) : (
+                <>
+                    {usersData.length > 0 ? (
+                        usersData.map(user => (
+                            <Row key={user._id} className="artist">
+                                <Col md={12}>
+                                    {/* <ul class="featureds">
                                             <li>
                                                 <a href="https://curatedbyshop.com/product/pocket-t-shirt/" data-id="1">
                                                     <span>Julia Zamora</span>
@@ -74,18 +73,17 @@ function ArtistsList() {
                                             </li>
                                            
                                         </ul> */}
-                                        <Link to={`/artists/${user._id}`} className="username">
-                                            <h2>{user.username} {user.lastname}</h2>
-                                        </Link>
-                                    </Col>
-                                </Row>
-                            ))
-                        ) : (
-                            <p>No artists available</p>
-                        )}
-                    </>
-                )}
-            </Container>
+                                    <Link to={`/artists/${user._id}`} className="username">
+                                        <h2>{user.username} {user.lastname}</h2>
+                                    </Link>
+                                </Col>
+                            </Row>
+                        ))
+                    ) : (
+                        <p>No artists available</p>
+                    )}
+                </>
+            )}
         </div>
     );
 }

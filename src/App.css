@@ -1,43 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
 
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
-
 img {
   width: 100%;
 }
 
+* {
+  color: #FF0000;
+}
 
 
 body {
   padding-top: 2rem;
-  color: #FF0000;
   font-family: "Poppins", sans-serif !important;
   font-weight: 200 !important;
   font-style: normal !important;
   margin-top: 30px;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
   padding-top: 2rem;
 }
 
-
-.container-fluid {
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-
 #content {
-  padding-top: 0px;
+  padding-top: 100px;
 
 }
 

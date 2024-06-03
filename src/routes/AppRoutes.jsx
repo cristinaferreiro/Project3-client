@@ -36,6 +36,7 @@ const AppRoutes = () => {
 
 
             <Route element={<PrivateRoute />}>
+
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/profile/edit-profile/:userId" element={<EditUserPage />} />
 
@@ -48,7 +49,7 @@ const AppRoutes = () => {
                 <Route path="/exhibition-details/:exhibitionId" element={<ExhibitionDetailsPage />} />
 
                 <Route path="/artists" element={<ArtistsPage />} />
-                <Route path="/artists/:userId" element={<ArtistsPage />} />
+                <Route path="/artists/:userId" element={<ArtistDetailPage />} />
 
             </Route>
 

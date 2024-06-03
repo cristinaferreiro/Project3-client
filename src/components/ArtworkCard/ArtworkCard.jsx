@@ -113,19 +113,19 @@ const ArtworkCard = ({ _id, title, owner, dimension, year, price, technique, ima
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        if (owner && owner._id) {
-            loadUserInfo(owner._id)
+        if (user && user._id) {
+            loadUserInfo(user._id)
         } else {
-            setUserData(owner)
+            setUserData(user)
             setIsLoading(false)
         }
-    }, [owner])
+    }, [user])
 
     const loadUserInfo = (ownerId) => {
         userServices
             .getOneUsers(ownerId)
             .then(({ data }) => {
-                setUserData(data)
+                setUserData(data.userInfo)
                 setIsLoading(false)
             })
             .catch(err => {

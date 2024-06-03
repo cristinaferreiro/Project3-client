@@ -8,17 +8,12 @@ const ArtistsPage = () => {
 
         <Container>
 
-            <Row className="justify-content-center mt-10 w-100">
-                {/* <div className="image-container">
+            {/* <div className="image-container">
                     <img src="path/to/initial-image.jpg" alt="Initial" />
                     <img src="path/to/hover-image.jpg" alt="Hover" className="hover-image" />
                 </div> */}
 
-                <Col md={12}>
-
-                    <ArtistsList />
-                </Col>
-            </Row>
+            <ArtistsList />
         </Container>
     )
 }

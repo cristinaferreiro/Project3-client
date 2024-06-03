@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Button, Col, Form, Spinner } from 'react-bootstrap'
+import { Button, Col, Form, Image, Spinner } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import exhibitionServices from '../../services/exhibition.services'
 import artworkServices from '../../services/artwork.services'
@@ -167,10 +167,17 @@ const EditExhibitionForm = ({ exhibitionId }) => {
                             />
                         </Form.Group>
 
+                        <hr />
+
+                        <h5>Imagen actual</h5>
+                        <Image src={exhibitionData.image} style={{ width: 100 }} />
+
                         <Form.Group as={Col} controlId="image">
-                            <Form.Label>Image</Form.Label>
+                            <Form.Label>Sustituir imagen</Form.Label>
                             <Form.Control type="file" onChange={handleFileUpload} />
                         </Form.Group>
+
+
 
                         <Form.Group className="mb-3">
                             <Form.Label>Select Works Available</Form.Label>

@@ -98,7 +98,6 @@ function ProfilePage() {
                         <h1>{userData?.username} {userData?.lastname}</h1>
                     </div>
 
-
                 </div>
 
                 <hr />
@@ -106,15 +105,22 @@ function ProfilePage() {
                     <Spinner animation="border" size="sm" />
                 ) : (
                     <>
-                        <Row className="align-items-center">
-                            <Col md={8}>
-                                <h2>{userData?.username} {userData?.lastname}</h2>
-                                <h2>{userData?.country}</h2>
-                                <h2>{userData?.birthyear}</h2>
-                                <h5>Bio: {userData?.userbio}</h5>
+                        <h2>{userData?.username} {userData?.lastname}</h2>
+                        <h2>{userData?.country}</h2>
+                        <h2>{userData?.birthyear}</h2>
+                        <Row>
+                            <Col className="User-info" md={8}>
+                                <div>
+
+                                    {/* <h2>{userData?.username} {userData?.lastname}</h2>
+                                    <h2>{userData?.country}</h2>
+                                    <h2>{userData?.birthyear}</h2> */}
+                                </div>
+                                <hr />
+                                <h5>{userData?.userbio}</h5>
                             </Col>
-                            <Col md={4}>
-                                <img src={userData?.userimage} alt="User Image" className="img-fluid" />
+                            <Col className="Img-profile" md={4}>
+                                <img src={userData?.userimage} alt="User Image" className="img-fluid-profile" />
                             </Col>
                         </Row>
 

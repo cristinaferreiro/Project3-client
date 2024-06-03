@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './EditArtworkForm.css'
-import { Form, Button, InputGroup, Col, Spinner } from 'react-bootstrap'
+import { Form, Button, InputGroup, Col, Spinner, Image } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import artworkServices from '../../services/artwork.services'
 import uploadServices from "../../services/upload.services"
@@ -129,10 +129,18 @@ const ArtworkForm = ({ artworkId }) => {
                         </InputGroup>
                     </Form.Group>
 
+                    <h5>Imagen actual</h5>
+                    <Image src={artworkData.imageURL} style={{ width: 100 }} />
+
                     <Form.Group as={Col} controlId="image">
-                        <Form.Label>Image (URL)</Form.Label>
+                        <Form.Label>Sustituir imagen</Form.Label>
                         <Form.Control type="file" onChange={handleFileUpload} />
                     </Form.Group>
+
+                    {/* <Form.Group as={Col} controlId="image">
+                        <Form.Label>Image (URL)</Form.Label>
+                        <Form.Control type="file" onChange={handleFileUpload} />
+                    </Form.Group> */}
 
                     <Form.Group className="mb-3" controlId="price">
                         <Form.Label>Price</Form.Label>

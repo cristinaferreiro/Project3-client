@@ -51,7 +51,7 @@ const ExhibitionCard = ({ _id, title, date, place, image }) => {
         userServices
             .getOneUsers(userId)
             .then(({ data }) => {
-                setUserData(data);
+                setUserData(data.userInfo);
                 setIsLoading(false);
             })
             .catch(err => {
