@@ -1,0 +1,35 @@
+.exhibition-details {
+    color: #FF0000;
+    /* Color de texto rojo */
+    text-align: center;
+    /* Alinea el contenido al centro */
+}
+
+.exhibition-details .exhibition-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.exhibition-details .exhibition-info {
+    font-size: 0.8em;
+    width: 100%;
+}
+
+.exhibition-details .exhibition-info .list-group-item {
+    color: #FF0000;
+}
+
+.exhibition-details .my-4 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.Exhibition-list .exhibition-card .exhibition-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 20px;
+}

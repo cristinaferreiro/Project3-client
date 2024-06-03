@@ -1,16 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
 img {
   width: 100%;
 }
 
+
+
 body {
+  padding-top: 2rem;
+  color: #FF0000;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200 !important;
+  font-style: normal !important;
+  margin-top: 30px;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
   padding-top: 2rem;
 }
 
-:root {
 
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+#content {
+  padding-top: 0px;
+
+}
+
+
+:root {
   --bs-border-radius-sm: 0;
 }
 
-#content {
-  padding-top: 0px
+:global(body) {
+  color: #FF0000;
+}
+
+
+.card {
+  border: none !important;
+  overflow: hidden !important;
+  margin: 10px !important;
+  padding: 15px !important;
+  transition: transform 0.2s !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.card-body {
+  text-align: center !important;
+  font-size: 0.8em !important;
+  color: #FF0000 !important;
+  /* Cambia el color del texto a rojo */
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.card:hover {
+  transform: scale(1.05) !important;
+}
+
+.card-body h5,
+.card-body h6,
+.card-body em {
+  font-size: 0.9em !important;
+  font-style: italic !important;
+  font-weight: bold !important;
+  color: #FF0000 !important;
+  /* Asegura que el color del texto sea rojo */
 }

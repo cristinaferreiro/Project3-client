@@ -1,22 +1,117 @@
-.userProfile .image-container {
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
+
+.ArtworkDetailsPage {
+    padding-top: 20px !important;
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.artwork-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.artwork-image {
+    width: 600px !important;
+    height: auto !important;
+    max-height: 400px !important;
+    object-fit: cover !important;
+    margin-bottom: 20px;
+}
+
+.artwork-details {
+    font-size: 0.8em !important;
+    color: #FF0000 !important;
+    font-family: 'Poppins', sans-serif !important;
+    width: 100%;
+}
+
+.artwork-details .list-group-item {
+    color: #FF0000 !important;
+}
+
+.my-4 {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.exhibition-card {
+    border: none !important;
+    overflow: hidden !important;
+    margin: 10px !important;
+    padding: 15px !important;
+    transition: transform 0.2s !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.exhibition-card:hover {
+    transform: scale(1.05) !important;
+}
+
+.exhibition-details {
+    text-align: center !important;
+    font-size: 0.8em !important;
+    color: #FF0000 !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.exhibition-details h6 {
+    font-size: 0.em !important;
+    font-style: italic !important;
+    font-weight: bold !important;
+    color: #FF0000 !important;
+}
+
+.editable-h5 {
+    font-size: 0.8em !important;
+    color: #FF0000 !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 100 !important;
+    font-style: normal !important;
+    border: 1px solid transparent;
+    padding: 5px;
+}
+
+.editable-h5[contenteditable="true"] {
+    border: 1px dashed #ccc !important;
+    outline: none !important;
+}
+
+.Exhibition-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 0;
+}
+
+.Exhibition-list>.col-md-3 {
+    padding: 5px;
+}
+
+.ExhibitionCard {
     position: relative;
+    overflow: hidden;
+}
+
+.ExhibitionCard img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.ExhibitionCard .card-body {
+    padding: 10px;
     text-align: center;
 }
 
-.userProfile .img-fluid {
-    width: 100%;
-    height: auto;
-}
-
-.userProfile .overlay {
-    position: absolute;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: left;
-    font-size: 3%;
-
+.ExhibitionCard h5 {
+    font-size: 16px;
+    margin-bottom: 10px;
 }

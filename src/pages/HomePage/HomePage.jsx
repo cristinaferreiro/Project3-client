@@ -31,7 +31,7 @@ function HomePage() {
 
     return (
         <div className='HomePage'>
-            <h1>THE ROW</h1>
+            {/* <h1>THE ROW</h1> */}
             <Carousel>
                 {artworks.map((artwork) => (
                     <Carousel.Item key={artwork._id}>

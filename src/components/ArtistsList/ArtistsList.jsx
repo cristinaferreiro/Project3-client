@@ -1,33 +1,32 @@
-
-
-import React, { useContext, useEffect, useState } from 'react'
-import { AuthContext } from './../../context/auth.context'
-import userServices from '../../services/user.services'
-import { Container, Row, Col, Spinner } from "react-bootstrap"
-import { Link } from 'react-router-dom'
-import './ArtistsList.css'
+// ArtistsList.jsx
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from './../../context/auth.context';
+import userServices from '../../services/user.services';
+import { Container, Row, Col, Spinner } from "react-bootstrap";
+import { Link } from 'react-router-dom';
+import './ArtistsList.css';
 
 function ArtistsList() {
-    const { user } = useContext(AuthContext)
-    const [usersData, setUsersData] = useState([])
-    const [isLoading, setIsLoading] = useState(true)
+    const { user } = useContext(AuthContext);
+    const [usersData, setUsersData] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        loadAllUsers()
-    }, [user])
+        loadAllUsers();
+    }, [user]);
 
     const loadAllUsers = () => {
         userServices
             .getAllUsers()
             .then(({ data }) => {
-                setUsersData(data)
-                setIsLoading(false)
+                setUsersData(data);
+                setIsLoading(false);
             })
             .catch(err => {
-                console.error(err)
-                setIsLoading(false)
-            })
-    }
+                console.error(err);
+                setIsLoading(false);
+            });
+    };
 
     return (
         <div className="artistsList">
@@ -42,7 +41,7 @@ function ArtistsList() {
                             usersData.map(user => (
                                 <Row key={user._id} className="artist">
                                     <Col md={12}>
-                                        <Link to={`/artists/${user._id}`} className="username">
+                                        <Link to={`/artists-details/${user._id}`} className="artist">
                                             <h2>{user.username} {user.lastname}</h2>
                                         </Link>
                                     </Col>
@@ -58,5 +57,4 @@ function ArtistsList() {
     );
 }
 
-export default ArtistsList
-
+export default ArtistsList;

@@ -1,28 +1,28 @@
 
-// import React, { useContext, useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
-// import './ArtworkCard.css';
-// import { AuthContext } from '../../context/auth.context';
-// import userServices from '../../services/user.services';
+// import React, { useContext, useEffect, useState } from "react"
+// import { Link } from "react-router-dom"
+// import './ArtworkCard.css'
+// import { AuthContext } from '../../context/auth.context'
+// import userServices from '../../services/user.services'
 
 // const ArtworkCard = ({ _id, title, owner, dimension, year, price, technique, image }) => {
-//     // const { user } = useContext(AuthContext);
-//     // const [userData, setUserInfo] = useState({});
-//     // const [isLoading, setIsLoading] = useState(true);
+//     // const { user } = useContext(AuthContext)
+//     // const [userData, setUserInfo] = useState({})
+//     // const [isLoading, setIsLoading] = useState(true)
 
 //     // useEffect(() => {
-//     //     loadUserInfo();
-//     // }, [user]);
+//     //     loadUserInfo()
+//     // }, [user])
 
 //     // const loadUserInfo = () => {
 //     //     userServices
 //     //         .getOneUsers(owner._id)
 //     //         .then(({ data }) => {
-//     //             setUserInfo(data);
-//     //             setIsLoading(false);
+//     //             setUserInfo(data)
+//     //             setIsLoading(false)
 //     //         })
-//     //         .catch(err => console.log(err));
-//     // };
+//     //         .catch(err => console.log(err))
+//     // }
 
 
 // //////////////
@@ -42,37 +42,37 @@
 //                 </div>
 //             </Link>
 //         </div>
-//     );
-// };
+//     )
+// }
 
-// export default ArtworkCard;
+// export default ArtworkCard
 
 
-// // // import React, { useContext, useEffect, useState } from "react";
-// // // import { Link } from "react-router-dom";
-// // // import { Card, Button, ListGroup } from 'react-bootstrap';
-// // // import './ArtworkCard.css';
-// // // import { AuthContext } from '../../context/auth.context';
-// // // import userServices from '../../services/user.services';
+// // // import React, { useContext, useEffect, useState } from "react"
+// // // import { Link } from "react-router-dom"
+// // // import { Card, Button, ListGroup } from 'react-bootstrap'
+// // // import './ArtworkCard.css'
+// // // import { AuthContext } from '../../context/auth.context'
+// // // import userServices from '../../services/user.services'
 
 // // // const ArtworkCard = ({ _id, title, owner, dimension, year, price, technique, image }) => {
-// // //     const { user } = useContext(AuthContext);
-// // //     const [userData, setUserInfo] = useState({});
-// // //     const [isLoading, setIsLoading] = useState(true);
+// // //     const { user } = useContext(AuthContext)
+// // //     const [userData, setUserInfo] = useState({})
+// // //     const [isLoading, setIsLoading] = useState(true)
 
 // // //     useEffect(() => {
-// // //         loadUserInfo();
-// // //     }, [user]);
+// // //         loadUserInfo()
+// // //     }, [user])
 
 // // //     const loadUserInfo = () => {
 // // //         userServices
 // // //             .getOneUsers(owner)
 // // //             .then(({ data }) => {
-// // //                 setUserInfo(data);
-// // //                 setIsLoading(false);
+// // //                 setUserInfo(data)
+// // //                 setIsLoading(false)
 // // //             })
-// // //             .catch(err => console.log(err));
-// // //     };
+// // //             .catch(err => console.log(err))
+// // //     }
 
 // // //     return (
 // // //         <Card className="artwork-card">
@@ -94,45 +94,45 @@
 // // //                 <Button variant="primary">Go somewhere</Button>
 // // //             </Card.Body>
 // // //         </Card>
-// // //     );
-// // // };
+// // //     )
+// // // }
 
-// // // export default ArtworkCard;
+// // // export default ArtworkCard
 
 
-import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Card, Button, ListGroup, Spinner } from 'react-bootstrap';
-import './ArtworkCard.css';
-import { AuthContext } from '../../context/auth.context';
-import userServices from '../../services/user.services';
+import React, { useContext, useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import { Card, Button, ListGroup, Spinner } from 'react-bootstrap'
+import './ArtworkCard.css'
+import { AuthContext } from '../../context/auth.context'
+import userServices from '../../services/user.services'
 
 const ArtworkCard = ({ _id, title, owner, dimension, year, price, technique, image }) => {
-    const { user } = useContext(AuthContext);
-    const [userData, setUserData] = useState({});
-    const [isLoading, setIsLoading] = useState(true);
+    const { user } = useContext(AuthContext)
+    const [userData, setUserData] = useState({})
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
         if (owner && owner._id) {
-            loadUserInfo(owner._id);
+            loadUserInfo(owner._id)
         } else {
-            setUserData(owner);
-            setIsLoading(false);
+            setUserData(owner)
+            setIsLoading(false)
         }
-    }, [owner]);
+    }, [owner])
 
     const loadUserInfo = (ownerId) => {
         userServices
             .getOneUsers(ownerId)
             .then(({ data }) => {
-                setUserData(data);
-                setIsLoading(false);
+                setUserData(data)
+                setIsLoading(false)
             })
             .catch(err => {
-                console.log(err);
-                setIsLoading(false);
-            });
-    };
+                console.log(err)
+                setIsLoading(false)
+            })
+    }
     ////////german <Card.Title>{userData?.username.owner} {userData?.lastname.owner}</Card.Title>
     return (
         <div className="ArtworkCard ">
@@ -146,7 +146,7 @@ const ArtworkCard = ({ _id, title, owner, dimension, year, price, technique, ima
                             <Link to={`/artwork-details/${_id}`}>
                                 <Card.Img variant="top" src={image} alt={title} />
                             </Link>
-                            <Card.Body>
+                            <Card.Body className="artwork-details">
                                 <Card.Title>{userData?.username} {userData?.lastname}</Card.Title>
                                 <Card.Text>
                                     <ListGroup variant="flush">
@@ -164,8 +164,8 @@ const ArtworkCard = ({ _id, title, owner, dimension, year, price, technique, ima
                     </>
             }
         </div >
-    );
-};
+    )
+}
 
-export default ArtworkCard;
+export default ArtworkCard
 

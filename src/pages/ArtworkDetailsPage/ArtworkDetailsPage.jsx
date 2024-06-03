@@ -38,15 +38,15 @@ function ArtworkDetailsPage() {
 
     return (
         <div className="ArtworkDetailsPage">
-            <Container>
+            <Container className='Container'>
                 <h1 className="text-center my-4">Artwork Details</h1>
                 {isLoading ? (
                     <div className="d-flex justify-content-center">
                         <Spinner animation="border" size="sm" />
                     </div>
                 ) : (
-                    <Row className="justify-content-center">
-                        <Col md={{ span: 6 }} className="text-center">
+                    <Row className="justify-content-center" >
+                        <Col md={{ span: 6 }} className="mb-5r">
                             <img
                                 src={artwork.image}
                                 alt={artwork.title}

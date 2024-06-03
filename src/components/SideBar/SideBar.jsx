@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
-import navIcon from '../../assets/navIcon.png'
+import navIcon from '../../assets/navIcon.png';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
-import './SideBar.css'
+import './SideBar.css';
 
 function Sidebar() {
     const [show, setShow] = useState(false);
@@ -19,7 +18,7 @@ function Sidebar() {
             </Button>
             <Offcanvas show={show} onHide={handleClose} placement="top">
                 <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>MENU</Offcanvas.Title>
+                    <Offcanvas.Title>THE ROW</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
                     <ul>

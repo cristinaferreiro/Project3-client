@@ -1,5 +1,15 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Playfair Display", serif;
+  color: #FF0000;
   line-height: 1.5;
   font-weight: 400;
 
@@ -18,16 +28,20 @@ a {
   color: #646cff;
   text-decoration: inherit;
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
-  margin: 0;
+  margin-top: 30px;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200 !important;
+  font-style: normal !important;
 }
 
 h1 {
@@ -46,9 +60,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,10 +75,12 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
-}
+} */

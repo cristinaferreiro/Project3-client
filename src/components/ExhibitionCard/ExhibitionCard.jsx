@@ -73,12 +73,13 @@ const ExhibitionCard = ({ _id, title, date, place, image }) => {
                     </Link>
                     <Card.Body>
                         <Card.Title>{userData?.username} {userData?.lastname}</Card.Title>
-                        <ListGroup variant="flush">
-                            <ListGroup.Item><em>{title}</em></ListGroup.Item>
-                            <ListGroup.Item>{formattedDate}</ListGroup.Item>
-                            <ListGroup.Item>{place}</ListGroup.Item>
-                        </ListGroup>
+                        <div>
+                            <h6><em>{title}</em></h6>
+                            <h6>{formattedDate}</h6>
+                            <h6>{place}</h6>
+                        </div>
                     </Card.Body>
+
                 </Card>
             )}
         </div>

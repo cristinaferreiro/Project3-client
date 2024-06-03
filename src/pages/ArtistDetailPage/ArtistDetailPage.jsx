@@ -1,34 +1,36 @@
 
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../context/auth.context';
-import userServices from '../../services/user.services';
-import { Container, Row, Col, Carousel, Spinner } from "react-bootstrap";
-import ArtworkCard from '../../components/ArtworkCard/ArtworkCard';
-import ExhibitionCard from '../../components/ExhibitionCard/ExhibitionCard';
+import React, { useContext, useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom' // Importa el hook useParams
+import { AuthContext } from '../../context/auth.context'
+import userServices from '../../services/user.services'
+import { Container, Row, Col, Carousel, Spinner } from "react-bootstrap"
+import ArtworkCard from '../../components/ArtworkCard/ArtworkCard'
+import ExhibitionCard from '../../components/ExhibitionCard/ExhibitionCard'
 import './ArtistDetailPage.css'
 
 function ArtistDetailPage() {
-    const { user } = useContext(AuthContext);
-    const [userData, setUserInfo] = useState({});
-    const [artworkData, setArtworkInfo] = useState([]);
-    const [exhibitionData, setExhibitionInfo] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const { user } = useContext(AuthContext)
+    const { userId } = useParams()
+    const [userData, setUserInfo] = useState({})
+    const [artworkData, setArtworkInfo] = useState([])
+    const [exhibitionData, setExhibitionInfo] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        loadUserInfo();
-    }, [user]);
+        loadUserInfo()
+    }, [userId])
 
     const loadUserInfo = () => {
         userServices
-            .getOneUsers(user._id)
+            .getOneUsers(userId)
             .then(({ data }) => {
-                setUserInfo(data.userInfo);
-                setArtworkInfo(data.artworksInfo);
-                setExhibitionInfo(data.exhibitionsInfo);
-                setIsLoading(false);
+                setUserInfo(data.userInfo)
+                setArtworkInfo(data.artworksInfo)
+                setExhibitionInfo(data.exhibitionsInfo)
+                setIsLoading(false)
             })
-            .catch(err => console.log(err));
-    };
+            .catch(err => console.log(err))
+    }
 
     return (
         <div className="ArtistDetailPage">
@@ -78,7 +80,7 @@ function ArtistDetailPage() {
                 )}
             </Container>
         </div>
-    );
+    )
 }
 
-export default ArtistDetailPage;
+export default ArtistDetailPage
