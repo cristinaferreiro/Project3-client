@@ -13,7 +13,7 @@ const LoginPage = () => {
 
                 <Col md={{ offset: 3, span: 6 }}>
 
-                    <h1>Log In</h1>
+                    <h2 className="therow-title">LOG IN</h2>
 
                     <hr />
 

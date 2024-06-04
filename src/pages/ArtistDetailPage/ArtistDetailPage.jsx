@@ -36,42 +36,50 @@ function ArtistDetailPage() {
         <div className="ArtistDetailPage">
             <div className="image-container">
                 <img src={userData?.backgrdimage} alt="User Background" className="img-fluid" />
-                <div className="overlay">
+                <div className="artist-backgrd-text">
                     <h1>{userData?.username} {userData?.lastname}</h1>
                 </div>
             </div>
-            <hr />
             <Container>
                 {isLoading ? (
                     <Spinner animation="border" size="sm" />
                 ) : (
                     <>
-                        <Row className="d-flex align-items-center">
-                            <Col md={{ span: 3, offset: 3 }}>
-                                <img src={userData?.userimage} alt="User Image" className="img-fluid" />
-                            </Col>
-                            <Col md={6}>
-                                <h2>{userData?.username} {userData?.lastname}</h2>
-                                <h2>{userData?.country}</h2>
-                                <h2>{userData?.birthyear}</h2>
+                        <hr />
+                        <div className='artist-profile'>
+                            <h3><strong>{userData?.username} {userData?.lastname}</strong></h3>
+                            <h4>{userData?.country}</h4>
+                            <h5>{userData?.birthyear}</h5>
+                        </div>
+
+                        <hr />
+
+
+                        <Row className="d-flex align-items-start">
+                            <Col className="User-info h-100" md={7}>
                                 <h5>Bio: {userData?.userbio}</h5>
                             </Col>
+                            <Col className="Img-profile h-100" md={5}>
+                                <img src={userData?.userimage} alt="User Image" className="img-fluid" />
+                            </Col>
                         </Row>
+
+
                         <hr />
-                        <h2>ARTWORKS</h2>
-                        <Carousel>
-                            {
-                                artworkData.map((artwork, index) => (
-                                    <Carousel.Item key={index} interval={9000}>
-                                        <ArtworkCard {...artwork} />
-                                    </Carousel.Item>
-                                ))
+
+                        <h2 className="therow-title">ARTWORKS</h2>
+                        <Carousel className="carrusel">
+                            {artworkData.map((artwork, index) => (
+                                <Carousel.Item key={index} interval={9000}>
+                                    <ArtworkCard {...artwork} />
+                                </Carousel.Item>
+                            ))
                             }
                         </Carousel>
 
                         <hr />
 
-                        <h2>Expos</h2>
+                        <h2 className="therow-title">ARTWORKS</h2>
                         <Row>
                             {exhibitionData.map((exhibition, index) => (
                                 <Col md={4} key={index}>

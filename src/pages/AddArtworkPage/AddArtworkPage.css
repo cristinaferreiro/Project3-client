@@ -1,0 +1,52 @@
+.therow-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 2em;
+    text-align: center;
+    /* Centra el texto horizontalmente */
+    margin: 20px 0;
+    /* Añade margen superior e inferior */
+    letter-spacing: 0.8em;
+    /* Añade separación entre letras */
+}
+
+/* AddArtworkPage.css */
+
+/* Estilo para el título */
+.therow-title {
+    font-size: 1.5em !important;
+    text-align: center !important;
+    color: #FF0000 !important;
+    /* Ejemplo de color */
+}
+
+/* Estilo para el hr */
+.hr-full-width {
+    width: 100% !important;
+    margin: 0 auto !important;
+    /* Centra la línea horizontal */
+    border: 1px solid #FF0000 !important;
+    /* Color de la línea */
+}
+
+/* Ajusta el estilo del formulario */
+.add-artwork-form {
+    font-size: 0.8em !important;
+    /* Tamaño de fuente más pequeño */
+    color: #333;
+    /* Color del texto */
+}
+
+/* Estilos para los campos del formulario */
+.add-artwork-form input,
+.add-artwork-form textarea,
+.add-artwork-form select {
+    width: 100% !important;
+    /* Asegura que los campos ocupen todo el ancho */
+    padding: 0.5em !important;
+    /* Añade un poco de relleno */
+    margin-bottom: 1em !important;
+    /* Espacio inferior entre campos */
+    font-size: 0.9em !important;
+    /* Tamaño de fuente ajustado */
+}

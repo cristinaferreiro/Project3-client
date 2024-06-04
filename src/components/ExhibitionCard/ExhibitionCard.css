@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
 /* Establece la fuente y color para todo el contenido */
 body,
 h1,
@@ -18,6 +16,8 @@ textarea {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300 !important;
     color: #FF0000 !important;
+    /* Color rojo */
+    text-align: center !important;
 }
 
 /* Estilos específicos para la tarjeta de exposición */
@@ -29,8 +29,10 @@ textarea {
     transition: transform 0.2s !important;
     display: flex !important;
     align-items: center !important;
-    background-color: #FFF;
+    background-color: #FFF !important;
     font-size: 1em !important;
+    text-align: center !important;
+    height: 400px;
 }
 
 .exhibition-card:hover {
@@ -41,13 +43,15 @@ textarea {
     text-align: center !important;
     font-size: 0.8em !important;
     color: #FF0000 !important;
-    font-family: 'Poppins', sans-serif !important;
 }
 
-.exhibition-details h5 {
-    font-weight: bold !important;
+.exhibition-details h5,
+.cedulacard {
+    /* Aplica el estilo a cedulacard también */
+    font-weight: 300 !important;
     color: #FF0000 !important;
     font-size: 0.9em !important;
+    text-align: center !important;
 }
 
 .exhibition-details h5 em {
@@ -56,8 +60,27 @@ textarea {
     color: #FF0000 !important;
 }
 
-.cedulacard {
-    font-weight: bold !important;
+.exhibition-profile-card {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+    /* Cambiado a 300 para thin */
+    font-style: normal !important;
+    font-size: 1em !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+}
 
-    color: #FF0000 !important;
+.exhibition-profile-card h5 {
+    font-weight: 300 !important;
+    /* Aplica thin al h5 dentro de artist-profile-card */
+    margin: 0 !important;
+    /* Ajusta el margen de los h5 */
+}
+
+.exhibition-profile-card h4 {
+    font-weight: 300 !important;
+    font-size: 1.3em !important;
+    /* Agregado estilo itálico */
+    margin: 0 !important;
+    /* Ajusta el margen */
 }

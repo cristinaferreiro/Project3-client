@@ -11,7 +11,7 @@ function SignupPage() {
 
                 <Col md={{ span: 6, offset: 3 }}>
 
-                    <h1>REGISTRO TEST</h1>
+                    <h2 className="therow-title">SIGN UP</h2>
 
                     <hr />
 

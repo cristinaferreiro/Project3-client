@@ -18,14 +18,14 @@ const ExhibitionCard = ({ _id, title, date, place, image, owner }) => {
                 <Link to={`/exhibition-details/${_id}`}>
                     <Card.Img variant="top" src={image} alt={title} />
                 </Link>
-                <Card.Body>
+                <Card.Body className="exhibition-details">
                     {/* <Card.Title>{userData?.username} {userData?.lastname}</Card.Title> */}
                     <Card.Title>{owner.username} {owner.lastname}</Card.Title>
 
-                    <div>
-                        <h6><em>{title}</em></h6>
-                        <h6>{formattedDate}</h6>
-                        <h6>{place}</h6>
+                    <div className='exhibition-profile-card'>
+                        <h4><strong>{title}</strong></h4>
+                        <h5>{formattedDate}</h5>
+                        <h5>{place}</h5>
                     </div>
                 </Card.Body>
 

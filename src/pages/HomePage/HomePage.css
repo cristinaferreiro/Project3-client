@@ -1,3 +1,66 @@
 body {
     margin-top: 30px;
 }
+
+.home-page {
+    background-color: rgb(239, 214, 214);
+    /* Color de fondo rojo */
+    width: 100vw;
+    /* Ancho igual al ancho de la ventana del navegador */
+    height: 100vh;
+    /* Altura igual a la altura de la ventana del navegador */
+}
+
+.spinner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 7em;
+    white-space: nowrap;
+}
+
+.spinner-text strong {
+    font: bold;
+}
+
+.spinner-text,
+.spinner-border {
+    color: none;
+
+}
+
+.spinner-text,
+.spinner-border {
+    color: #001bff;
+}
+
+.spinner-border {
+    --bs-spinner-width: 2rem;
+    --bs-spinner-height: 2rem;
+    --bs-spinner-vertical-align: -0.125em;
+    --bs-spinner-border-width: 1em;
+    --bs-spinner-animation-speed: 15s !important;
+    --bs-spinner-animation-name: spinner-border;
+    border: var(--bs-spinner-border-width) solid currentcolor;
+    border-right-color: #130cff;
+}
+
+.spinner:hover {
+    animation-play-state: paused;
+}
+
+
+.spinner-border {
+
+    border: none !important;
+
+    width: 2rem;
+    height: 2rem;
+
+}
+
+.red-background {
+    background-color: red;
+}

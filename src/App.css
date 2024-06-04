@@ -68,3 +68,7 @@ body {
   color: #FF0000 !important;
   /* Asegura que el color del texto sea rojo */
 }
+
+#content {
+  min-height: 100vh;
+}

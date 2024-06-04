@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
 /* Contenedor principal */
 .exhibition-details {
     padding-top: 20px;
-    text-align: left !important;
-    /* Justificar a la izquierda */
+    text-align: center !important;
+    /* Alinea el texto al centro */
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: center;
+    /* Centra los elementos en el eje horizontal */
 }
 
 /* Imagen de la exhibición */
@@ -18,6 +17,7 @@
     object-fit: cover;
     display: block;
     margin: 0 auto;
+    /* Centra la imagen horizontalmente */
     object-position: center;
 }
 
@@ -25,13 +25,17 @@
 .exhibition-info {
     color: #FF0000;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
+    /* Alinea el texto al centro */
 }
 
 /* Línea divisoria */
 .exhibition-info hr {
     border: 1px solid #FF0000;
-    text-align: left !important;
-    /* Justificar a la izquierda */
+    text-align: center !important;
+    /* Alinea el texto al centro */
+    margin: 20px auto;
+    /* Centra la línea horizontalmente y agrega un margen */
 }
 
 /* Títulos */

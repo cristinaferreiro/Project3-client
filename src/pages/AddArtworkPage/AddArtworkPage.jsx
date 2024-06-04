@@ -8,8 +8,9 @@ function AddArtworkPage() {
         <Container>
             <Row>
                 <Col md={{ span: 6, offset: 3 }}>
-                    <h1 className="text-center">Add your artwork</h1>
-                    <hr className="mx-auto d-block w-50" style={{ backgroundColor: 'none' }} />
+                    <h2 className="therow-title">ADD NEW ARTWORK</h2>
+                    <hr className="hr-full-width" />
+
                     <AddArtworkForm />
                 </Col>
             </Row>

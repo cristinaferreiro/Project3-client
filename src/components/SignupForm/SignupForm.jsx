@@ -78,14 +78,14 @@ const SignupForm = () => {
                                 <Form.Control type="text" value={signupData.lastname} onChange={handleInputChange} name="lastname" />
                             </Form.Group>
 
-                            <Form.Group className="mb-3" controlId="password">
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" value={signupData.password} onChange={handleInputChange} name="password" />
-                            </Form.Group>
-
                             <Form.Group className="mb-3" controlId="email">
                                 <Form.Label>Email</Form.Label>
                                 <Form.Control type="email" value={signupData.email} onChange={handleInputChange} name="email" />
+                            </Form.Group>
+
+                            <Form.Group className="mb-3" controlId="password">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" value={signupData.password} onChange={handleInputChange} name="password" />
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="country">
@@ -99,7 +99,7 @@ const SignupForm = () => {
                             </Form.Group>
 
                             <Form.Group as={Col} controlId="image">
-                                <Form.Label>Image (URL)</Form.Label>
+                                <Form.Label>Profile Image</Form.Label>
                                 <Form.Control type="file" onChange={handleFileUpload} />
                             </Form.Group>
 

@@ -1,6 +1,7 @@
 /* Importa las fuentes necesarias */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
 
+/* Estilos para la página ArtworkDetailsPage */
 .ArtworkDetailsPage {
     padding-top: 20px !important;
     text-align: center !important;
@@ -9,11 +10,11 @@
     align-items: center;
 }
 
+/* Estilos para la imagen del artwork */
 .artwork-image {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    /* max-height: 400px !important; */
     object-fit: cover !important;
     display: block !important;
     margin: 0 auto !important;
@@ -21,21 +22,25 @@
     object-fit: contain !important;
 }
 
+/* Detalles del artwork */
 .artwork-details {
     font-size: 0.8em !important;
     color: #FF0000 !important;
     font-family: 'Poppins', sans-serif !important;
 }
 
+/* Estilos para los elementos de la lista en los detalles del artwork */
 .artwork-details .list-group-item {
     color: #FF0000 !important;
 }
 
+/* Espaciado vertical */
 .my-4 {
     margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
 }
 
+/* Estilos para las tarjetas de exposición */
 .exhibition-card {
     border: none !important;
     overflow: hidden !important;
@@ -47,10 +52,12 @@
     width: 100% !important;
 }
 
+/* Efecto de aumento al pasar el cursor sobre la tarjeta de exposición */
 .exhibition-card:hover {
     transform: scale(1.05) !important;
 }
 
+/* Detalles de la exposición */
 .exhibition-details {
     text-align: center !important;
     font-size: 0.8em !important;
@@ -58,6 +65,7 @@
     font-family: 'Poppins', sans-serif !important;
 }
 
+/* Estilos para los subtítulos de los detalles de la exposición */
 .exhibition-details h6 {
     font-size: 0.9em !important;
     font-style: italic !important;
@@ -65,11 +73,13 @@
     color: #FF0000 !important;
 }
 
+/* Estilos para las letras en cursiva negrita en los detalles del artwork */
 .artwork-details h5 em {
     font-style: italic !important;
     font-weight: bold !important;
 }
 
+/* Estilos para centrar el contenido */
 .center-content {
     display: flex;
     justify-content: center;
@@ -78,10 +88,18 @@
     width: 100%;
 }
 
+/* Estilos para los contenedores */
 .Container {
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 auto !important;
     padding: 0 15px !important;
     box-sizing: border-box !important;
+}
+
+/* Estilos para la línea horizontal de ancho completo */
+.hr-full-width {
+    width: 100% !important;
+    margin: 0 auto !important;
+    border: 1px solid #FF0000 !important;
 }

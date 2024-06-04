@@ -19,3 +19,15 @@ body {
 .artist:hover {
     color: #343434;
 }
+
+
+.artist-background {
+    /* ... other styles */
+    width: calc(100% - 200px);
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    z-index: -1;
+    opacity: .6;
+}

@@ -75,14 +75,12 @@ const ArtworkForm = ({ artworkId }) => {
     const handleCancel = () => {
         navigate(`/artwork-details/${artworkId}`)
     }
-
     return (
         <div className="ArtworkForm">
             {isLoading ? (
                 <Spinner animation="border" size="sm" />
             ) : (
-                // <Form onSubmit={handleSubmit} className="Form">
-                <Form>
+                <Form onSubmit={handleSubmit} className="Form">
                     <Form.Group className="mt-3 mb-3" controlId="title">
                         <Form.Label>Title</Form.Label>
                         <Form.Control
@@ -94,39 +92,7 @@ const ArtworkForm = ({ artworkId }) => {
                             required
                         />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="technique">
-                        <Form.Label>Technique</Form.Label>
-                        <Form.Control
-                            type="textarea"
-                            placeholder="Enter your techniques work..."
-                            name="technique"
-                            value={artworkData.technique}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="dimension">
-                        <Form.Label>Dimension</Form.Label>
-                        <Form.Control
-                            type="textarea"
-                            placeholder="Enter your dimensions work..."
-                            name="dimension"
-                            value={artworkData.dimension}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="year">
-                        <Form.Label>Year of creation</Form.Label>
-                        <Form.Control
-                            type="textarea"
-                            placeholder="Enter your creations year work..."
-                            name="year"
-                            value={artworkData.year}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </Form.Group>
+                    {/* Otros campos del formulario... */}
 
                     <Row>
                         <Col>
@@ -141,7 +107,6 @@ const ArtworkForm = ({ artworkId }) => {
                         </Col>
                     </Row>
 
-
                     <Form.Group className="mb-3" controlId="price">
                         <Form.Label>Price</Form.Label>
                         <Form.Control
@@ -149,9 +114,9 @@ const ArtworkForm = ({ artworkId }) => {
                             placeholder="Enter your prices work..."
                             name="price"
                             value={artworkData.price}
-                            onChange={handleInputChange} />
+                            onChange={handleInputChange}
+                        />
                     </Form.Group>
-
 
                     <Row>
                         <Col>
@@ -163,8 +128,7 @@ const ArtworkForm = ({ artworkId }) => {
                         </Col>
                         <Col>
                             <div className="d-grid">
-                                <Button variant="outline-danger" type="cancel"
-                                    onClick={handleCancel}>
+                                <Button variant="outline-danger" type="button" onClick={handleCancel}>
                                     Cancel update
                                 </Button>
                             </div>
@@ -173,8 +137,7 @@ const ArtworkForm = ({ artworkId }) => {
                 </Form>
             )}
         </div>
-    )
+    );
 }
-
 export default ArtworkForm
 
