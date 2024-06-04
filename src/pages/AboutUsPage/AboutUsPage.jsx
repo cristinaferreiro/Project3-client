@@ -1,126 +1,26 @@
-// import React from 'react';
-// import "./AboutUsPage.css";
-// import { Container, Row, Col } from 'react-bootstrap'
-// import ArtistsList from '../../components/ArtistsList/ArtistsList.jsx'
-
-// function AboutUsPage() {
-//     return (
-//         <div>
-//             <h2 className="therow-title">ABOUT US</h2>
-//             <hr className="hr-full-width" />
-
-//             <h1> </h1>
-
-//             <Container>
-
-//                 <li>
-//                     <a href="https://curatedbyshop.com/product/lisbon-cotton-shirt/" data-id="4">
-//                         <span>Xu Zhen</span>
-//                     </a>
-//                 </li>
-
-//             </Container>
-//         </div>
-//     );
-// }
-
-// export default AboutUsPage;
-
-// {/* <div className="image-container">
-//     <img src="path/to/initial-image.jpg" alt="Initial" />
-//     <img src="path/to/hover-image.jpg" alt="Hover" className="hover-image" />
-// </div>
-
-
-
-
-// <ArtistsList /> */}
-
-
-
-// // // import React, { useState } from 'react';
-// // // import { Container } from 'react-bootstrap';
-// // // import './AboutUsPage.css'; // Asegúrate de tener este archivo CSS en tu proyecto
-
-// // // function AboutUsPage() {
-// // //     const [isHovered, setIsHovered] = useState(false);
-// // //     const [isImageVisible, setIsImageVisible] = useState(false);
-
-// // //     const handleMouseEnter = () => {
-// // //         setIsHovered(true);
-// // //         setIsImageVisible(true);
-// // //     };
-
-// // //     const handleMouseLeave = () => {
-// // //         setIsHovered(false);
-// // //     };
-
-// // //     return (
-// // //         <div className="about-us-page">
-// // //             <h2 className="therow-title">ABOUT US</h2>
-// // //             <hr className="hr-full-width" />
-
-// // //             <Container>
-// // //                 <li
-// // //                     onMouseEnter={handleMouseEnter}
-// // //                     onMouseLeave={handleMouseLeave}
-// // //                     className="hover-container"
-// // //                 >
-// // //                     <a href="https://curatedbyshop.com/product/lisbon-cotton-shirt/" data-id="4">
-// // //                         <span>Xu Zhen</span>
-// // //                     </a>
-// // //                     {isImageVisible && (
-// // //                         <img src={'https://res.cloudinary.com/dydvmhge1/image/upload/v1717435462/vxgtmyigtiavkuswpype.jpg'} alt="Preview" className="preview-image" />
-// // //                     )}
-// // //                 </li>
-// // //             </Container>
-// // //         </div>
-// // //     );
-// // // }
-
-// // // export default AboutUsPage;
-
-
-
-AboutUsPage.jsx
-import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
-import ArtistsList from '../../components/ArtistsList/ArtistsList.jsx';
-import './AboutUsPage.css'; // Asegúrate de tener este archivo CSS en tu proyecto
+import React from 'react';
+import { Card, Button } from 'react-bootstrap';
+import './AboutUsPage.css';
 
 function AboutUsPage() {
-
     return (
-<<<<<<< HEAD
-        <div className="about-us-page">
-            <h2 className="therow-title">ABOUT US</h2>
-            <hr className="hr-full-width" />
-            <Container>
-                <ArtistsList />
-            </Container>
+        <div className="aboutus-container">
+            <Card className="text-center custom-card">
+                <Card.Body>
+                    <Card.Title>Erno y Cris</Card.Title>
+                    <Card.Text>
+                        om Carboniferous forests to the smokestacks of the Industrial era, Panchronic Garden journeys some 300 million years through time, inviting visitors to commune with the woodlands that today constitutes our coal fields.
+
+                        Inside this large-scale immersive installation, the visitor is steeped in darkness, surrounded by vegetation. The vegetal presence is represented by horsetails, ferns and cycads, along with other species which reach back to the biomes that deep time would transfigure into hydrocarbons. Desaturated by infrared lights, this foliage appears blackened, reverberating in red. Entering this subterranean world, the visitor navigates a floor panelled with anthracite, while crackling sounds appear to rush around them. Produced using specialised contact microphones and sensors, Panchronic Garden sonically relays the umwelt of the greenery it hosts, acknowledging the agency of plants as integral co-producers of life on this planet. It is through their transformation of solar energy into matter, that plants have bequeathed altered environs for future generations. In turn, their fossilized sunshine becomes archives of former eras, releasing memories of long dead habitats when burnt as fuel.
+
+                        Panchronic Garden walks the visitor back, or perhaps forwards, in time, lapsing occasionally into stroboscopic flashes. Within these bright brea
+                    </Card.Text>
+                </Card.Body>
+            </Card>
         </div>
+
     );
 }
 
 export default AboutUsPage;
-=======
-        <Container>
 
-            <Row>
-
-                <Col md={{ span: 6, offset: 3 }}>
-
-                    <h1>about usss</h1>
-
-                    <hr />
-
-
-                </Col>
-            </Row>
-
-        </Container>
-    )
-}
-
-export default AboutUsPage
->>>>>>> 72c148c1b29796eac1c6cba34dc36931c65c444d

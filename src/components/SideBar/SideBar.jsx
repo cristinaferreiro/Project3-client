@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from 'react-router-dom';
 import './SideBar.css';
+import hamb from '../../assets/hamb.png'
 
 function Sidebar() {
     const [show, setShow] = useState(false);
@@ -14,7 +15,7 @@ function Sidebar() {
     return (
         <>
             <Button variant="translucent" onClick={handleShow}>
-                <img src={navIcon} alt='Navicon' className='navIcon' />
+                <img src={hamb} alt='Hamb' className='hamb' />
             </Button>
             <Offcanvas show={show} onHide={handleClose} placement="top">
                 <Offcanvas.Header closeButton>

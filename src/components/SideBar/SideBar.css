@@ -9,8 +9,9 @@
     font-size: 1.5rem !important;
 }
 
-.navIcon {
+.hamb {
     width: 32px !important;
+    color: red !important;
 }
 
 .offcanvas a {
@@ -25,7 +26,14 @@
 }
 
 .offcanvas-title {
+    color: white !important;
     font-size: 2rem !important;
+}
+
+.offcanvas-title .btn-close {
+
+    color: white;
+
 }
 
 ul {
@@ -55,6 +63,8 @@ li {
 }
 
 .btn-close {
-    background-color: white !important;
+    background-color: transparent !important;
+    color: white !important;
     border-radius: 0 !important;
+
 }
