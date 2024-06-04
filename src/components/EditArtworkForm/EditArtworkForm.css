@@ -4,10 +4,22 @@
 
 }
 
-.Form {
+.ArtworkForm {
+    width: 100%;
+}
 
-    width: 100% !important;
-    max-width: 500px !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
+.ArtworkForm .form-control {
+    color: black !important;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.btn-outline-danger {
+    border-color: red !important;
+    color: red !important;
+}
+
+.btn-outline-danger:hover {
+    background-color: red !important;
+    color: white !important;
 }

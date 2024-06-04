@@ -34,12 +34,10 @@
     /* Justificar a la izquierda */
 }
 
-/* Títulos */
 .exhibition-info h5 {
     font-size: 2em !important;
     margin-bottom: 1em;
     font-weight: bold;
-    /* Hace que el texto sea negrita */
 }
 
 .exhibition-info h6 {

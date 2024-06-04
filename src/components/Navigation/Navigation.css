@@ -50,12 +50,12 @@
     margin-right: 10px !important;
 }
 
-.btn-primary {
+/* .btn-primary {
     --bs-btn-bg: #000dff !important;
     --bs-btn-border-color: #000dff !important;
     --bs-btn-hover-bg: grey !important;
     --bs-btn-hover-border-color: grey !important;
-}
+} */
 
 .navbar-nav .nav-link {
     color: #FF0000 !important;

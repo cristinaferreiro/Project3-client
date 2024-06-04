@@ -138,7 +138,7 @@ const AddArtworkForm = () => {
 
 
 
-                            <Button variant="primary" type="submit" disabled={loadingImage}>
+                            <Button variant="outline-danger" type="submit" disabled={loadingImage}>
                                 {loadingImage ? 'Loading Image...' : ' Add Artwork'}
                             </Button>
                         </Form>

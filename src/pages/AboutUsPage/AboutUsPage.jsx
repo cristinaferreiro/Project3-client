@@ -1,12 +1,24 @@
+import { Container, Row, Col } from 'react-bootstrap'
 import React from 'react';
-import "./AboutUsPage.css";
 
 function AboutUsPage() {
     return (
-        <div>
-            <h1>About Us Page TEST</h1>
-        </div>
-    );
+        <Container>
+
+            <Row>
+
+                <Col md={{ span: 6, offset: 3 }}>
+
+                    <h1>about usss</h1>
+
+                    <hr />
+
+
+                </Col>
+            </Row>
+
+        </Container>
+    )
 }
 
-export default AboutUsPage;
+export default AboutUsPage

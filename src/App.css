@@ -68,3 +68,9 @@ body {
   color: #FF0000 !important;
   /* Asegura que el color del texto sea rojo */
 }
+
+.container .AddExhibitionForm {
+
+  margin-bottom: -2;
+
+}

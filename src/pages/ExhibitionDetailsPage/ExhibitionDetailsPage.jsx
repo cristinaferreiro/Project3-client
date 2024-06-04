@@ -74,18 +74,26 @@ function ExhibitionDetailsPage() {
                     </Row>
                 )
                 }
+                <Row>
+                    <Col>
+                        <Button variant="outline-danger" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
+                    </Col>
+                    <Col>
+                        <Button>
+                            <Link to="/profile" className="btn" variant="outline-danger">
+                                Back
+                            </Link>
+                        </Button>
+                    </Col>
+                    <Col>
+                        <Button>
+                            <Link to={`/edit-exhibition/${exhibitionId}`} className="btn" style={{ marginLeft: '10px' }} variant="outline-danger">
+                                Edit Exhibition
+                            </Link>
+                        </Button>
+                    </Col>
+                </Row>
 
-                <div>
-                    <Button variant="danger" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
-                </div>
-                <div>
-                    <Link to="/profile" className="btn btn-secondary">
-                        Back
-                    </Link>
-                    <Link to={`/edit-exhibition/${exhibitionId}`} className="btn btn-primary" style={{ marginLeft: '10px' }}>
-                        Edit Exhibition
-                    </Link>
-                </div>
             </Container >
         </div >
     )

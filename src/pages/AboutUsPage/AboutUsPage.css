@@ -1,0 +1,20 @@
+.aboutus {
+    display: flex;
+}
+
+.item-list {
+    list-style-type: none;
+    padding: 0;
+    margin-right: 20px;
+}
+
+.item-list li {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.image-preview img {
+    max-width: 200px;
+    border: 1px solid #ddd;
+    padding: 10px;
+}

@@ -6,6 +6,8 @@ import artworkServices from "../../services/artwork.services"
 import { AuthContext } from './../../context/auth.context'
 import uploadServices from "../../services/upload.services"
 
+import "./AddExhibitionForm.css"
+
 
 const AddExhibitionForm = () => {
 
@@ -107,6 +109,7 @@ const AddExhibitionForm = () => {
                                     controlId="title"
                                     type="text"
                                     name="title"
+                                    placeholder="Enter your title exhibition..."
                                     value={exhibitionData.title}
                                     onChange={handleInputChange}
                                 />
@@ -140,6 +143,7 @@ const AddExhibitionForm = () => {
                                     rows={5}
                                     controlId="description"
                                     name="description"
+                                    placeholder="Enter your description exhibition..."
                                     value={exhibitionData.description}
                                     onChange={handleInputChange}
                                 />
@@ -152,6 +156,7 @@ const AddExhibitionForm = () => {
                                     controlId="place"
                                     type="text"
                                     name="place"
+                                    placeholder="Enter your place exhibition..."
                                     value={exhibitionData.place}
                                     onChange={handleInputChange} />
                             </Form.Group>
@@ -163,26 +168,10 @@ const AddExhibitionForm = () => {
                                 <Form.Control type="file" onChange={handleFileUpload} />
                             </Form.Group>
 
-                            {/* <Form.Group className="mb-3">
-                                <Form.Label>Select Works Available</Form.Label>
-                                {isLoading ? <p>Loading artworks...</p> : (
-                                    <div>
-                                        {artworksData.map(artwork => (
-                                            <Form.Check
-                                                key={artwork._id}
-                                                type="checkbox"
-                                                id={`artwork_${artwork._id}`}
-                                                label={artwork.title}
-                                                checked={exhibitionData.artworks.includes(artwork._id)}
-                                                onChange={(e) => handleArtworksChange(e, artwork._id)}
-                                            />
-                                        ))}
-                                    </div>
-                                )}
-                            </Form.Group> */}
 
-                            <Form.Group className="mb-3">
-                                <Form.Label>Select Works Available</Form.Label>
+                            <Form.Group className="mb-3 mt-3 artworks-labels
+                            ">
+                                <Form.Label>Select Works Available:</Form.Label>
                                 {isLoading ? <p>Loading artworks...</p> : (
                                     <div>
                                         {
@@ -204,11 +193,9 @@ const AddExhibitionForm = () => {
                                     </div>
                                 )}
                             </Form.Group>
-
-
-                            <Button variant="primary" type="submit" disabled={loadingImage}>{loadingImage ? 'Loading Image...' : ' Add Exhibition'}
-                                Add Exhibition
-                            </Button>
+                            <div className="d-grid">
+                                <Button variant="outline-danger mb-5" type="submit" disabled={loadingImage}>{loadingImage ? 'Loading Image...' : ' Add Exhibition'}</Button>
+                            </div>
                         </Form>
                     </>
             }

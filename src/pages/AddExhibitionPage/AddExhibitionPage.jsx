@@ -6,7 +6,7 @@ import { Container, Row, Col } from "react-bootstrap"
 function AddExhibitionPage() {
 
     return (
-        <div className='AddExhibitionPage mt-5'>
+        <div className='AddExhibitionPage mt-3'>
             <Container>
                 <h1>NEW-EXHIBITION</h1>
                 <Row>
