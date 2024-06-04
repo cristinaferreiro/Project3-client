@@ -31,3 +31,23 @@ body {
     z-index: -1;
     opacity: .6;
 }
+
+/* ArtistsList.css */
+
+.artist-col a {
+    text-decoration: none !important;
+    /* Quita el subrayado */
+}
+
+
+
+.artist-container {
+    margin-top: 50px !important;
+}
+
+.artist-container h2 {
+    margin-top: 0 !important;
+    font-size: 2rem !important;
+    text-decoration: none !important;
+    /* Quita el subrayado */
+}

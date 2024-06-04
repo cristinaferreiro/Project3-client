@@ -12,7 +12,6 @@ class ArtworkServices {
 
         this.axiosApp.interceptors.request.use(config => {
 
-            console.log('PRUEBA')
             const storedToken = localStorage.getItem('authToken');
             if (storedToken) {
                 config.headers = { Authorization: `Bearer ${storedToken}` };

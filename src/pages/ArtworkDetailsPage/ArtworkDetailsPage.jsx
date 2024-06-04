@@ -1,16 +1,34 @@
+
 import React, { useState, useEffect } from 'react';
 import './ArtworkDetailsPage.css';
 import { Container, Row, Col, Image, ListGroup, Spinner, Button } from 'react-bootstrap'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import artworkServices from '../../services/artwork.services'
+import artworkServices from '../../services/artwork.services';
+import AuctionForm from '../../components/AuctionForm/AuctionForm';
+import AuctionList from '../../components/AuctionList/AuctionList';
+import bidServices from '../../services/bid.services';
+
+
 function ArtworkDetailsPage() {
     const [artwork, setArtwork] = useState({})
     const { artworkId } = useParams()
     const [isLoading, setIsLoading] = useState(true)
+    const [bidsData, setBidsData] = useState([]);
     const navigate = useNavigate();
+
     useEffect(() => {
-        loadArtworkDetails()
+        loadArtworkDetails();
+        loadAuctions();
     }, [artworkId])
+
+
+    const loadAuctions = () => {
+        bidServices
+            .getBidsFromArtiwork(artworkId)
+            .then(({ data }) => setBidsData(data.auction.bids))
+            .catch(err => console.log(err))
+    }
+
     const loadArtworkDetails = () => {
         artworkServices
             .getOneArtwork(artworkId)
@@ -20,6 +38,7 @@ function ArtworkDetailsPage() {
             })
             .catch(err => console.log(err))
     }
+
     const handleDeleteArtwork = () => {
         artworkServices
             .deleteArtwork(artworkId)
@@ -29,6 +48,11 @@ function ArtworkDetailsPage() {
             })
             .catch(err => console.log(err))
     }
+
+    const handleBidPosted = () => {
+        loadAuctions();
+    };
+
     return (
         <div className="ArtworkDetailsPage">
             <Container className='Container'>
@@ -57,6 +81,18 @@ function ArtworkDetailsPage() {
                         </Col>
                     </Row>
                 )}
+                <hr />
+                <Row className="justify-content-center" >
+                    <Col md={{ span: 6 }} className="mb-5r">
+                        <div className='auctionCommets'>
+
+                            <AuctionForm artworkId={artwork._id} bidsData={bidsData} onBidPosted={handleBidPosted} />
+                            <hr />
+                            <AuctionList artworkId={artwork._id} bidsData={bidsData} />
+                        </div>
+                        <hr />
+                    </Col>
+                </Row>
                 <div>
                     <Button variant="outline-danger" onClick={handleDeleteArtwork}>Delete Artwork</Button>
                 </div>
@@ -72,13 +108,5 @@ function ArtworkDetailsPage() {
         </div>
     );
 }
+
 export default ArtworkDetailsPage;
-
-
-
-
-
-
-
-
-
