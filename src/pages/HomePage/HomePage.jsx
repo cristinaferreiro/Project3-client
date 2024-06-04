@@ -1,38 +1,33 @@
-import { Container, Row, Col, Spinner, Button } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import './HomePage.css';
 
 function HomePage() {
     return (
-        <div className="video-background">
-            <video autoPlay loop playsInline muted>
+        <>
+            <video autoPlay loop playsInline muted className="video-background">
                 <source src="https://www.julian-charriere.net/media/pages/projects/controlled-burn/c68b610a44-1686223648/05_juliancharriere_controlledburn_websiteclips_lessthan100mb.mp4" type="video/mp4" />
             </video>
-            <div className="content">
-                <Link to="/all-tracks" className="link">
-                    <Spinner
-                        animation="border"
-                        role="status"
-                        className="spinner"
-                    >
-                        <span className="visually-hidden">Loading...</span>
-                    </Spinner>
-                    <h4 className="spinner-text"><strong>THE</strong> ROW</h4>
-                </Link>
-                <div className="red-background">
-                    <Spinner
-                        animation="border"
-                        role="status"
-                        style={{ width: '250px', height: '250px' }}
-                        className="spinner"
-                    >
-                        <span className="visually-hidden">DROP HIT</span>
-                        <h4 className="spinner-text"><strong>ALL</strong> TRACKS</h4>
-                    </Spinner>
+
+            <div className="container-background">
+                <div className="spinner-container">
+                    {/* <Link to="/all-tracks" style={{ textDecoration: 'none' }}> */}
+                    <div className="spinner-box">
+                        <Spinner animation="border" role="status" className="spinner">
+                            <span className="visually-hidden">THE ROW</span>
+                        </Spinner>
+                        <div className="spinner-text">
+                            <strong>THE</strong> ROW
+                        </div>
+                    </div>
+                    {/* </Link>
+                    <div className="red-background">
+                        <h1>ROWROWROROW</h1>
+                    </div> */}
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 

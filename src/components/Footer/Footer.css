@@ -79,8 +79,7 @@ body {
 
 .footer h5 {
     font-size: .6em;
-    margin: 0;
-    /* Asegúrate de que no haya margen extra */
+    /* margin: 0; */
+    color: white !important;
     text-align: center;
-    /* Alinea el texto al centro */
 }
