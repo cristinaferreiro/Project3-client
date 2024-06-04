@@ -32,10 +32,10 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     list-style-type: none;
-    position: relative;
+    /* position: fixed; */
     width: 100%;
     background-color: #CB0000;
-    color: white;
+    color: white !important;
     padding: 0;
     /* Elimina cualquier padding interno que pueda afectar el ancho */
     margin: 0;
@@ -67,7 +67,6 @@ body {
 
 .footer a {
     text-decoration: none;
-    color: inherit;
 }
 
 .footer-logo {

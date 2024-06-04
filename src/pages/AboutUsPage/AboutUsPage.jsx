@@ -91,6 +91,7 @@ import './AboutUsPage.css'; // Asegúrate de tener este archivo CSS en tu proyec
 function AboutUsPage() {
 
     return (
+<<<<<<< HEAD
         <div className="about-us-page">
             <h2 className="therow-title">ABOUT US</h2>
             <hr className="hr-full-width" />
@@ -102,3 +103,24 @@ function AboutUsPage() {
 }
 
 export default AboutUsPage;
+=======
+        <Container>
+
+            <Row>
+
+                <Col md={{ span: 6, offset: 3 }}>
+
+                    <h1>about usss</h1>
+
+                    <hr />
+
+
+                </Col>
+            </Row>
+
+        </Container>
+    )
+}
+
+export default AboutUsPage
+>>>>>>> 72c148c1b29796eac1c6cba34dc36931c65c444d

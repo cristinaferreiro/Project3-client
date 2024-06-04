@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { Button, Col, Form, Image, Spinner } from 'react-bootstrap'
+import { Button, Col, Form, Image, Spinner, Row } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
 import exhibitionServices from '../../services/exhibition.services'
 import artworkServices from '../../services/artwork.services'
@@ -104,6 +104,9 @@ const EditExhibitionForm = ({ exhibitionId }) => {
                 .catch(err => console.log(err))
         }
     }
+    const handleCancel = () => {
+        navigate(`/exhibition-details/${exhibitionId}`)
+    }
 
     return (
         <div className="EditExhibitionForm">
@@ -197,9 +200,22 @@ const EditExhibitionForm = ({ exhibitionId }) => {
                             )}
                         </Form.Group>
 
-                        <Button variant="primary" type="submit" disabled={loadingImage}>
-                            {loadingImage ? 'Loading Image...' : 'Update Exhibition'}
-                        </Button>
+
+                        <Row>
+                            <Col xs={6}>
+                                <Button variant="outline-danger" style={{ span: 4, offset: 2 }} type="submit" disabled={loadingImage}>
+                                    {loadingImage ? 'Loading Image...' : 'Update Exhibition'}
+                                </Button>
+                            </Col>
+                            <Col xs={6}>
+                                <div className="d-grid">
+                                    <Button variant="outline-danger" type="cancel"
+                                        onClick={handleCancel}>
+                                        Cancel update
+                                    </Button>
+                                </div>
+                            </Col>
+                        </Row>
                     </Form>
             }
         </div>

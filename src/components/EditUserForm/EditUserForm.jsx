@@ -96,7 +96,7 @@ const EditUserForm = () => {
                     </Form.Group>
 
                     <div className="d-grid">
-                        <Button variant="dark" type="submit">Save changes</Button>
+                        <Button variant="outline-danger" type="submit">Save changes</Button>
                     </div>
                 </Form>
             )}

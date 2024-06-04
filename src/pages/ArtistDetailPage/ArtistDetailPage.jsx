@@ -3,10 +3,13 @@ import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom' // Importa el hook useParams
 import { AuthContext } from '../../context/auth.context'
 import userServices from '../../services/user.services'
-import { Container, Row, Col, Carousel, Spinner } from "react-bootstrap"
+import { Container, Row, Col, Carousel, Spinner, Button } from "react-bootstrap"
 import ArtworkCard from '../../components/ArtworkCard/ArtworkCard'
 import ExhibitionCard from '../../components/ExhibitionCard/ExhibitionCard'
 import './ArtistDetailPage.css'
+import { useNavigate } from 'react-router-dom'
+
+
 
 function ArtistDetailPage() {
     const { user } = useContext(AuthContext)
@@ -15,6 +18,8 @@ function ArtistDetailPage() {
     const [artworkData, setArtworkInfo] = useState([])
     const [exhibitionData, setExhibitionInfo] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const navigate = useNavigate()
+
 
     useEffect(() => {
         loadUserInfo()
@@ -30,6 +35,10 @@ function ArtistDetailPage() {
                 setIsLoading(false)
             })
             .catch(err => console.log(err))
+    }
+
+    const handleCancel = () => {
+        navigate(`/artists`)
     }
 
     return (
@@ -87,6 +96,9 @@ function ArtistDetailPage() {
                                 </Col>
                             ))}
                         </Row>
+                        <Button variant="outline-danger" type="cancel"
+                            onClick={handleCancel}>
+                            Back                                    </Button>
                     </>
                 )}
             </Container>

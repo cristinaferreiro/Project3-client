@@ -88,6 +88,7 @@ function ArtistsList() {
 
 
 
+
     return (
         <Container className="artistsListContainer">
             <div className="artistsList">

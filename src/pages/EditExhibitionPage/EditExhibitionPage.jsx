@@ -10,7 +10,7 @@ const EditExhibitionPage = () => {
         <Container>
             <Row className="justify-content-center mt-5">
                 <Col md={8}>
-                    <h1>Edit Exhibition</h1>
+                    <h1>Edit your exhibition</h1>
                     <EditExhibitionForm exhibitionId={exhibitionId} />
                 </Col>
             </Row>

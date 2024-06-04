@@ -58,7 +58,7 @@ function ArtworkDetailsPage() {
                     </Row>
                 )}
                 <div>
-                    <Button variant="danger" onClick={handleDeleteArtwork}>Delete Artwork</Button>
+                    <Button variant="outline-danger" onClick={handleDeleteArtwork}>Delete Artwork</Button>
                 </div>
                 <div>
                     <Link to={`/artists/${artwork.owner?._id}`} className="btn btn-secondary">

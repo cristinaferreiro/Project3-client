@@ -38,12 +38,10 @@
     /* Centra la línea horizontalmente y agrega un margen */
 }
 
-/* Títulos */
 .exhibition-info h5 {
     font-size: 2em !important;
     margin-bottom: 1em;
     font-weight: bold;
-    /* Hace que el texto sea negrita */
 }
 
 .exhibition-info h6 {
