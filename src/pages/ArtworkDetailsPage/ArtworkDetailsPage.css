@@ -22,6 +22,19 @@
     letter-spacing: 0.8em;
 }
 
+.therow-title h3 {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 1em;
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 0.8em;
+}
+
+.artist-profile-card strong {
+    font-weight: 900 !important;
+}
+
 .therow-title {
     font-size: 1.5em !important;
     text-align: center !important;

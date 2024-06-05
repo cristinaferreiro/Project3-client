@@ -67,7 +67,7 @@ const AddArtworkForm = () => {
                     :
                     <>
                         <Form onSubmit={handleForSubmit} className='mb-3'>
-                            <Form.Group className="mb-3" controlId="title">
+                            <Form.Group className="mt-3 mb-3" controlId="title">
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control
                                     controlId="title"

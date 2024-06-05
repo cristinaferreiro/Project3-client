@@ -1,3 +1,5 @@
+
+
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from './../../context/auth.context';
 import userServices from '../../services/user.services';
@@ -9,7 +11,7 @@ function ArtistsList() {
     const { user } = useContext(AuthContext);
     const [usersData, setUsersData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [hoveredUserId, setHoveredUserId] = useState('');
+    const [hoveredUserImage, setHoveredUserImage] = useState('')
 
     useEffect(() => {
         const loadAllUsers = async () => {
@@ -24,50 +26,45 @@ function ArtistsList() {
         };
 
         loadAllUsers();
-    }, [user]);
+    }, [user])
+
+
 
     return (
-
         <Container className="artistsListContainer">
             <div className="artistsList">
+
                 {isLoading ? (
                     <Spinner animation="border" size="sm" />
                 ) : (
-                    <Row className="justify-content-center">
-                        <Col md={8}>
-                            {usersData.length > 0 ? (
-                                <Row className="artistsRow">
-                                    {usersData.map((user) => (
+                    <>
+                        <div
+                            className="artist-background"
+                            style={{ backgroundImage: `url(${hoveredUserImage})` }}
+                        />
+                        {usersData.length > 0 ? (
+                            <Row className="artistsRow">
+                                {
+                                    usersData.map((user) => (
                                         <Col key={user._id} md={4} className="artist-col">
-
-
                                             <Link
                                                 to={`/artists/${user._id}`}
                                                 className="artist-link"
-                                                onMouseEnter={() => setHoveredUserId(user._id)}
-                                                onMouseLeave={() => setHoveredUserId(user._id)}
+                                                onMouseEnter={() => setHoveredUserImage(user.backgrdimage)}
+                                                onMouseLeave={() => setHoveredUserImage('')}
                                             >
                                                 <div className="artist-container">
                                                     <h2>{user.username} {user.lastname}</h2>
-                                                    {hoveredUserId === user._id && (
-                                                        <img
-                                                            src={user.backgrdimage}
-                                                            alt="User background"
-                                                            className="artist-background"
-                                                        />
-                                                    )}
                                                 </div>
                                             </Link>
-
-
                                         </Col>
-                                    ))}
-                                </Row>
-                            ) : (
-                                <p>No artists available</p>
-                            )}
-                        </Col>
-                    </Row>
+                                    ))
+                                }
+                            </Row>
+                        ) : (
+                            <p>No artists available</p>
+                        )}
+                    </>
                 )}
             </div>
         </Container>

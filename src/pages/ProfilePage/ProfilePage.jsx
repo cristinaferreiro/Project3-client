@@ -63,7 +63,7 @@ function ProfilePage() {
                 </div>
             </div>
 
-            <hr className="hr-full-width" />
+            {/* <hr className="hr-full-width" /> */}
 
 
             <Container className="conteiner mt-5">

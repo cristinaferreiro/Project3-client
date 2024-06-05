@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Spinner, Button } from 'react-bootstrap';
+import { Container, Row, Col, Spinner, Button, ButtonGroup } from 'react-bootstrap';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import exhibitionServices from '../../services/exhibition.services';
 import './ExhibitionDetailsPage.css';
@@ -69,7 +69,7 @@ function ExhibitionDetailsPage() {
                             </Col>
                         </Row>
                     )}
-                    <Row>
+                    {/* <Row>
                         <Col>
                             <Button variant="outline-danger" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
                         </Col>
@@ -87,26 +87,14 @@ function ExhibitionDetailsPage() {
                                 </Link>
                             </Button>
                         </Col>
-                    </Row>
-                    <Row>
-                        <Col>
-                            <Button variant="outline-danger mb-5" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
-                        </Col>
-                        <Col>
-                            <Button variant="outline-danger mb-5">
-                                <Link to="/profile" className="btn" variant="outline-danger">
-                                    Back
-                                </Link>
-                            </Button>
-                        </Col>
-                        <Col>
-                            <Button variant="outline-danger mb-5">
-                                <Link to={`/edit-exhibition/${exhibitionId}`} className="btn" style={{ marginLeft: '10px' }} variant="outline-danger">
-                                    Edit Exhibition
-                                </Link>
-                            </Button>
-                        </Col>
-                    </Row>
+                    </Row> */}
+                    <ButtonGroup className="mb-2">
+                        <Button variant="outline-danger" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
+                        <Button as={Link} to="/profile" variant="outline-danger">Back</Button>
+                        <Button as={Link} to={`/edit-exhibition/${exhibitionId}`} style={{ marginLeft: '10px' }} variant="outline-danger">Edit Exhibition</Button>
+                    </ButtonGroup>
+
+
                     <ScrollToTop smooth />
                 </div>
             </Container>

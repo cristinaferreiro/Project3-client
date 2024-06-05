@@ -23,9 +23,9 @@ function Navigation() {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
                     <Nav>
-                        <Nav.Link as={Link} to="/artists">Artists</Nav.Link>
                         {user ? (
                             <>
+                                <Nav.Link as={Link} to="/artists">Artists</Nav.Link>
                                 <Nav.Link as={Link} to="/profile">Profile</Nav.Link>
                                 <Nav.Link onClick={logout}>Log Out</Nav.Link>
                             </>

@@ -28,7 +28,7 @@ class BidServices {
         return this.axiosApp.delete(`/${bidId}`);
     }
 
-    getBidsFromArtiwork(artworkId) {
+    getBidsFromArtwork(artworkId) {
         return this.axiosApp.get(`/${artworkId}`);
     }
 

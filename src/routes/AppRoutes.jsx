@@ -31,10 +31,10 @@ const AppRoutes = () => {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/about" element={<AboutUsPage />} />
+
+
             <Route path="/artists" element={<ArtistsPage />} />
             <Route path="/artists-details/:userId" element={<ArtistDetailPage />} />
-
-
             <Route element={<PrivateRoute />}>
 
                 <Route path="/profile" element={<ProfilePage />} />
