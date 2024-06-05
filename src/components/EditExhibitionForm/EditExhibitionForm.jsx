@@ -5,6 +5,8 @@ import exhibitionServices from '../../services/exhibition.services'
 import artworkServices from '../../services/artwork.services'
 import { AuthContext } from '../../context/auth.context'
 import uploadServices from '../../services/upload.services'
+import ScrollToTop from "react-scroll-to-top";
+
 
 const EditExhibitionForm = ({ exhibitionId }) => {
 
@@ -171,51 +173,58 @@ const EditExhibitionForm = ({ exhibitionId }) => {
                         </Form.Group>
 
                         <hr />
+                        <Row>
+                            <Col>
+                                <p>Actual image</p>
+                                <Image src={exhibitionData.image} style={{ width: 100 }} />
 
-                        <h5>Imagen actual</h5>
-                        <Image src={exhibitionData.image} style={{ width: 100 }} />
+                                <Form.Group as={Col} controlId="image">
+                                    <Form.Label>Select new image</Form.Label>
+                                    <Form.Control className="mb-3" type="file" onChange={handleFileUpload} />
+                                </Form.Group>
 
-                        <Form.Group as={Col} controlId="image">
-                            <Form.Label>Sustituir imagen</Form.Label>
-                            <Form.Control type="file" onChange={handleFileUpload} />
-                        </Form.Group>
+                            </Col>
+                            <Col>
 
 
-
-                        <Form.Group className="mb-3">
-                            <Form.Label>Select Works Available</Form.Label>
-                            {isLoading ? <p>Loading artworks...</p> : (
-                                <div>
-                                    {artworksData.map(artwork => (
-                                        <Form.Check
-                                            key={artwork._id}
-                                            type="checkbox"
-                                            id={`artwork_${artwork._id}`}
-                                            label={artwork.title}
-                                            checked={exhibitionData.artworks.includes(artwork._id)}
-                                            onChange={(e) => handleArtworksChange(e, artwork._id)}
-                                        />
-                                    ))}
-                                </div>
-                            )}
-                        </Form.Group>
+                                <Form.Group className="mb-3">
+                                    <Form.Label>Select Works Available</Form.Label>
+                                    {isLoading ? <p>Loading artworks...</p> : (
+                                        <div>
+                                            {artworksData.map(artwork => (
+                                                <Form.Check
+                                                    key={artwork._id}
+                                                    type="checkbox"
+                                                    id={`artwork_${artwork._id}`}
+                                                    label={artwork.title}
+                                                    checked={exhibitionData.artworks.includes(artwork._id)}
+                                                    onChange={(e) => handleArtworksChange(e, artwork._id)}
+                                                />
+                                            ))}
+                                        </div>
+                                    )}
+                                </Form.Group>
+                            </Col>
+                        </Row>
 
 
                         <Row>
                             <Col xs={6}>
-                                <Button variant="outline-danger" style={{ span: 4, offset: 2 }} type="submit" disabled={loadingImage}>
+                                <Button variant="outline-danger mb-5" type="submit" disabled={loadingImage}>
                                     {loadingImage ? 'Loading Image...' : 'Update Exhibition'}
                                 </Button>
                             </Col>
                             <Col xs={6}>
                                 <div className="d-grid">
-                                    <Button variant="outline-danger" type="cancel"
+                                    <Button variant="outline-danger mb-5" type="cancel"
                                         onClick={handleCancel}>
                                         Cancel update
                                     </Button>
                                 </div>
                             </Col>
                         </Row>
+                        <ScrollToTop smooth />
+
                     </Form>
             }
         </div>

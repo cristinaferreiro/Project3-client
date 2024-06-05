@@ -66,7 +66,7 @@ const AddArtworkForm = () => {
                     <Spinner animation="border" size="sm" />
                     :
                     <>
-                        <Form onSubmit={handleForSubmit} className='mt-3 mb-3'>
+                        <Form onSubmit={handleForSubmit} className='mb-3'>
                             <Form.Group className="mb-3" controlId="title">
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control
@@ -138,7 +138,7 @@ const AddArtworkForm = () => {
 
 
 
-                            <Button variant="outline-danger" type="submit" disabled={loadingImage}>
+                            <Button variant="outline-danger mb-3" type="submit" disabled={loadingImage}>
                                 {loadingImage ? 'Loading Image...' : ' Add Artwork'}
                             </Button>
                         </Form>

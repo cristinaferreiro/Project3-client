@@ -2,6 +2,8 @@ import React from 'react';
 import './AddExhibitionPage.css';
 import AddExhibitionForm from '../../components/AddExhibitionForm/AddExhibitionForm'
 import { Container, Row, Col } from "react-bootstrap"
+import ScrollToTop from "react-scroll-to-top";
+
 
 function AddExhibitionPage() {
 
@@ -18,6 +20,8 @@ function AddExhibitionPage() {
 
                     </Col>
                 </Row>
+                <ScrollToTop smooth />
+
             </Container>
         </div >
     )

@@ -22,7 +22,6 @@
     font-weight: 200;
     font-style: normal;
     font-size: 0.9em;
-    /* Cambia el tamaño de la fuente */
 }
 
 .offcanvas-title {
@@ -41,20 +40,14 @@ ul {
     font-size: 2rem !important;
     padding: 1.5rem !important;
     display: flex !important;
-    /* Cambia la disposición a flexbox */
     justify-content: center !important;
-    /* Centra los elementos horizontalmente */
     flex-wrap: wrap !important;
-    /* Permite que los elementos se envuelvan si es necesario */
     margin: 0 !important;
-    /* Elimina el margen predeterminado de la lista */
 }
 
 li {
     padding: 0.9rem !important;
-    /* No necesitas display: inline !important; */
     margin-right: 1rem !important;
-    /* Espaciado entre elementos de lista */
 }
 
 .form-control {

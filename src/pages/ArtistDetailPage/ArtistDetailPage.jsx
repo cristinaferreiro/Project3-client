@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom' // Importa el hook useParams
 import { AuthContext } from '../../context/auth.context'
@@ -8,8 +7,6 @@ import ArtworkCard from '../../components/ArtworkCard/ArtworkCard'
 import ExhibitionCard from '../../components/ExhibitionCard/ExhibitionCard'
 import './ArtistDetailPage.css'
 import { useNavigate } from 'react-router-dom'
-
-
 
 function ArtistDetailPage() {
     const { user } = useContext(AuthContext)
@@ -63,7 +60,6 @@ function ArtistDetailPage() {
 
                         <hr />
 
-
                         <Row className="d-flex align-items-start">
                             <Col className="User-info h-100" md={7}>
                                 <h5>Bio: {userData?.userbio}</h5>
@@ -72,7 +68,6 @@ function ArtistDetailPage() {
                                 <img src={userData?.userimage} alt="User Image" className="img-fluid" />
                             </Col>
                         </Row>
-
 
                         <hr />
 

@@ -17,7 +17,7 @@ function EditUserPage() {
                     <Col
                         md={{ span: 6, offset: 3 }}
                         style={{}}
-                        className="mt-5 mb-5"
+                        className="mt-2 mb-5"
                     >
                         <EditUserForm />
                     </Col>

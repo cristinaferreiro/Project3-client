@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .therow-title {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 900 !important;
@@ -25,17 +26,16 @@
 }
 
 
+=======
+>>>>>>> bd0ef684fdffdf7f45dc48ef1367806fa4d95e7d
 .exhibition-details {
     padding-top: 20px;
     text-align: center !important;
-    /* Alinea el texto al centro */
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centra los elementos en el eje horizontal */
 }
 
-/* Imagen de la exhibición */
 .exhibition-image img {
     width: 70%;
     max-width: 100%;
@@ -43,25 +43,19 @@
     object-fit: cover;
     display: block;
     margin: 0 auto;
-    /* Centra la imagen horizontalmente */
     object-position: center;
 }
 
-/* Contenedor de información de la exhibición */
 .exhibition-info {
     color: #FF0000;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    /* Alinea el texto al centro */
 }
 
-/* Línea divisoria */
 .exhibition-info hr {
     border: 1px solid #FF0000;
     text-align: center !important;
-    /* Alinea el texto al centro */
     margin: 20px auto;
-    /* Centra la línea horizontalmente y agrega un margen */
 }
 
 .exhibition-info h5 {
@@ -77,16 +71,17 @@
     line-height: 1.6;
 }
 
-/* Título principal */
 .exhibition-info .exhibition-title {
     font-size: 1.2em;
     margin-bottom: 1rem;
     font-weight: bold;
-    /* Hace que el texto sea negrita */
 }
 
-/* Texto en negrita */
 .exhibition-info strong {
     font-weight: bold;
-    /* Hace que el texto sea negrita */
+}
+
+.scroll-to-top {
+    box-shadow: none !important;
+    background-color: transparent !important;
 }
