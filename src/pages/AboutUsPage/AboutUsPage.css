@@ -29,6 +29,16 @@
 
 }
 
-.custom-card .card-img-top {
-    object-fit: cover;
+button:focus,
+button:active,
+button:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.list-group-item.active {
+    z-index: 2;
+    color: var(--bs-list-group-active-color);
+    background-color: none(--bs-list-group-active-bg);
+    border-color: none(--bs-list-group-active-border-color);
 }
