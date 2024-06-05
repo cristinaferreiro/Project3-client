@@ -7,6 +7,8 @@ import artworkServices from '../../services/artwork.services';
 import AuctionForm from '../../components/AuctionForm/AuctionForm';
 import AuctionList from '../../components/AuctionList/AuctionList';
 import bidServices from '../../services/bid.services';
+import ScrollToTop from "react-scroll-to-top";
+
 
 
 function ArtworkDetailsPage() {
@@ -104,6 +106,8 @@ function ArtworkDetailsPage() {
                         Edit Artwork
                     </Link>
                 </div>
+                <ScrollToTop smooth />
+
             </Container>
         </div>
     );

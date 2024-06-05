@@ -103,7 +103,7 @@ const AddExhibitionForm = () => {
                     <>
                         <Form onSubmit={handleExhibitionFormSubmit}>
 
-                            <Form.Group className="mb-3">
+                            <Form.Group className="mb-3 mt-3">
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control
                                     controlId="title"

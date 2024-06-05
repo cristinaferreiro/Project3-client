@@ -5,8 +5,6 @@ import { Row, Col, Form, Button } from "react-bootstrap"
 import './EditUserForm.css';
 import userServices from "../../services/user.services";
 
-
-
 const EditUserForm = () => {
 
     const [editUser, setEditUser] = useState({
@@ -52,6 +50,9 @@ const EditUserForm = () => {
             .then(() => navigate('/profile'))
             .catch(err => console.log(err));
     };
+    const handleCancel = () => {
+        navigate(`/profile`)
+    }
 
 
     return (
@@ -63,25 +64,15 @@ const EditUserForm = () => {
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" value={editUser.username} name="username" disabled />
                         <Form.Control type="text" value={editUser.lastname} name="username" disabled />
-
                     </Form.Group>
-
-                    {/* <Form.Group className="mb-3" controlId="lastName">
-                        <Form.Label>Last Name</Form.Label>
-                        <Form.Control type="text" value={editUser.lastname} name="lastname" placeholder='holaaa' onChange={handleInputChange} />
-                    </Form.Group> */}
-
-
                     <Form.Group className="mb-3" controlId="country">
                         <Form.Label>Country</Form.Label>
                         <Form.Control type="text" value={editUser.country} name="country" onChange={handleInputChange} />
                     </Form.Group>
-
                     <Form.Group className="mb-3" controlId="birthyear">
                         <Form.Label>Birthday year</Form.Label>
                         <Form.Control type="number" value={editUser.birthyear} name="birthyear" onChange={handleInputChange} />
                     </Form.Group>
-
                     <Form.Group className="mb-3" controlId="userimage">
                         <Form.Label>Profile image (URL)</Form.Label>
                         <Form.Control type="file" name="userimage" onChange={handleFileChange} />
@@ -96,7 +87,8 @@ const EditUserForm = () => {
                     </Form.Group>
 
                     <div className="d-grid">
-                        <Button variant="outline-danger" type="submit">Save changes</Button>
+                        <Button variant="outline-danger mb-2" onClick={handleUserSubmit} type="submit">Save changes</Button>
+                        <Button variant="outline-danger" onClick={handleCancel} type="submit">Cancel changes</Button>
                     </div>
                 </Form>
             )}

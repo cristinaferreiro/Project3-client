@@ -8,8 +8,12 @@
     background-color: white;
 }
 
-.EditExhibitionForm .form-check {
-
+.EditExhibitionForm .form-check-label {
     color: black !important;
 
+}
+
+.btn {
+
+    box-sizing: border-box !important;
 }

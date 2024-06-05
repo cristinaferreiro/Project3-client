@@ -127,8 +127,7 @@ const SignupForm = () => {
                             </Form.Group>
 
                             <div className="d-grid">
-                                {/* <Button variant="dark" type="submit">Create Profile</Button> */}
-                                <Button variant="primary" type="submit" disabled={loadingProfile}>
+                                <Button variant="outline-danger mb-5" type="submit" disabled={loadingProfile}>
                                     {loadingProfile ? 'Loading ...' : ' Create Profile'}
                                 </Button>
                             </div>

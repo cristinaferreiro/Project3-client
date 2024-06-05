@@ -2,9 +2,7 @@
 
 .offcanvas {
     backdrop-filter: blur(10px) !important;
-    /* Aumenta el blur */
     background-color: rgba(255, 0, 0, 0.7) !important;
-    /* Cambia el color de fondo a rojo con la misma transparencia */
     color: white !important;
     font-size: 1.5rem !important;
 }
@@ -22,7 +20,6 @@
     font-weight: 200;
     font-style: normal;
     font-size: 0.9em;
-    /* Cambia el tamaño de la fuente */
 }
 
 .offcanvas-title {
@@ -41,20 +38,14 @@ ul {
     font-size: 2rem !important;
     padding: 1.5rem !important;
     display: flex !important;
-    /* Cambia la disposición a flexbox */
     justify-content: center !important;
-    /* Centra los elementos horizontalmente */
     flex-wrap: wrap !important;
-    /* Permite que los elementos se envuelvan si es necesario */
     margin: 0 !important;
-    /* Elimina el margen predeterminado de la lista */
 }
 
 li {
     padding: 0.9rem !important;
-    /* No necesitas display: inline !important; */
     margin-right: 1rem !important;
-    /* Espaciado entre elementos de lista */
 }
 
 .form-control {

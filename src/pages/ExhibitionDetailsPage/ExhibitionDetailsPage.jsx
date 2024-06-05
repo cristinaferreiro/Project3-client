@@ -4,6 +4,8 @@ import { useParams, Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import exhibitionServices from '../../services/exhibition.services'
 import './ExhibitionDetailsPage.css'
+import ScrollToTop from "react-scroll-to-top";
+
 
 function ExhibitionDetailsPage() {
     const [exhibitionData, setExhibitionInfo] = useState({})
@@ -76,23 +78,24 @@ function ExhibitionDetailsPage() {
                 }
                 <Row>
                     <Col>
-                        <Button variant="outline-danger" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
+                        <Button variant="outline-danger mb-5" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
                     </Col>
                     <Col>
-                        <Button>
+                        <Button variant="outline-danger mb-5">
                             <Link to="/profile" className="btn" variant="outline-danger">
                                 Back
                             </Link>
                         </Button>
                     </Col>
                     <Col>
-                        <Button>
+                        <Button variant="outline-danger mb-5">
                             <Link to={`/edit-exhibition/${exhibitionId}`} className="btn" style={{ marginLeft: '10px' }} variant="outline-danger">
                                 Edit Exhibition
                             </Link>
                         </Button>
                     </Col>
                 </Row>
+                <ScrollToTop smooth />
 
             </Container >
         </div >
@@ -101,59 +104,4 @@ function ExhibitionDetailsPage() {
 
 export default ExhibitionDetailsPage
 
-
-
-// // // ExhibitionDetailsPage.jsx
-// // import React from 'react'
-// // import './ExhibitionDetailsPage.css'
-// // import { Container, Row, Col, Spinner } from 'react-bootstrap'
-// // import { useParams } from 'react-router-dom'
-// // import { useEffect, useState } from 'react'
-// // import exhibitionServices from '../../services/exhibition.services'
-// // import ExhibitionCard from '../../components/ExhibitionCard/ExhibitionCard'
-
-
-// // function ExhibitionDetailsPage() {
-// //     const [exhibition, setExhibition] = useState({})
-// //     const { exhibitionId } = useParams()
-// //     const [isLoading, setIsLoading] = useState(true)
-
-// //     useEffect(() => {
-// //         loadExhibitionDetails()
-// //     }, [exhibitionId])
-
-// //     const loadExhibitionDetails = () => {
-// //         exhibitionServices
-// //             .getOneExhibition(exhibitionId)
-// //             .then(({ data }) => {
-// //                 // Format the dates
-// //                 data.date = new Date(data.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric' })
-// //                 data.dateend = new Date(data.dateend).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
-// //                 setExhibition(data)
-// //                 setIsLoading(false)
-// //             })
-// //             .catch(err => console.log(err))
-// //     }
-
-// //     return (
-// //         <div className="ExhibitionDetailsPage">
-// //             <Container>
-// //                 <h1 className="text-center my-4">Exhibition Details</h1>
-// //                 {isLoading ? (
-// //                     <div className="d-flex justify-content-center">
-// //                         <Spinner animation="border" size="sm" />
-// //                     </div>
-// //                 ) : (
-// //                     <Row className="justify-content-center">
-// //                         <Col md={{ span: 6 }}>
-// //                             <ExhibitionCard {...exhibition} />
-// //                         </Col>
-// //                     </Row>
-// //                 )}
-// //             </Container>
-// //         </div>
-// //     )
-// // }
-
-// // export default ExhibitionDetailsPage
 
