@@ -4,7 +4,90 @@ body {
     color: #FF0000 !important;
 }
 
-/* Ajustar estilos globales de hr */
+.backgrdBlockone {
+    position: relative;
+    width: 100%;
+}
+
+.backgrdBlockone .blueOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FF0000;
+    z-index: 2;
+    transition: opacity 1s ease;
+    pointer-events: none;
+    margin-bottom: 30px;
+}
+
+.backgrdBlockone:hover .blueOverlay {
+    opacity: 0;
+
+}
+
+.backgrdBlockone .textOverlayBlockone {
+    color: white;
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.backgrdBlockone .textOverlayBlockone h1 {
+    position: absolute;
+    top: 65%;
+    left: 60px;
+    transform: translateY(-50%);
+    font-family: 'Poppins', sans-serif;
+    color: white !important;
+    font-size: 4em;
+    font-weight: 500 !important;
+    letter-spacing: 0.1em;
+    text-align: left !important;
+}
+
+
+
+.marquee-container {
+    white-space: nowrap;
+    overflow: hidden;
+    animation: marquee 10s linear infinite;
+    /* Ajusta la velocidad y la duración de la animación */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+        /* Inicia fuera de la pantalla a la derecha */
+    }
+
+    to {
+        transform: translateX(-100%);
+        /* Se desplaza hacia la izquierda */
+    }
+}
+
+.hr-full-width {
+    width: 100% !important;
+    margin: 40px auto !important;
+    border: 1px solid #FF0000 !important;
+}
+
+
 hr {
     border: 0 !important;
     border-top: 1px solid #FF0000 !important;
@@ -13,7 +96,6 @@ hr {
     background-color: transparent !important;
 }
 
-/* Clase específica para hr principal */
 .hr-principal {
     border: 0 !important;
     border-top: 2px solid #FF0000 !important;
@@ -22,11 +104,11 @@ hr {
     background-color: transparent !important;
 }
 
-/* Image Container */
 .image-container {
     position: relative;
     width: 100%;
     height: 400px;
+    margin-bottom: 40px;
 }
 
 .image-container img {
@@ -35,44 +117,30 @@ hr {
     object-fit: cover;
 }
 
-/* Specific alignment for artist background text */
-.artist-backgrd-text h1 {
-    position: absolute;
-    top: 65%;
-    left: 60px;
-    transform: translateY(-50%);
-    font-family: 'Poppins', sans-serif;
-    color: white !important;
-    font-size: 4em;
-    font-weight: semibold !important;
-    letter-spacing: 0.1em;
-    text-align: left !important;
-    /* Ensure it's aligned to the left */
-}
 
-/* Adjust font size for artist profile */
-/* En tu archivo CSS */
+
 .artist-profile {
     text-align: left;
-    /* Alinea el contenido a la izquierda */
-    margin: 0 auto;
+    margin: 20px auto 0;
+    /* Añade un margen superior de 20px y mantiene los márgenes laterales automáticos */
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300 !important;
 }
+
+
 
 .artist-profile h3,
 .artist-profile h4,
 .artist-profile h5 {
     text-align: left;
-    /* Alinea individualmente a la izquierda */
-    margin: 0 auto;
+    margin: 10px auto 0;
+    /* Ajusta el margen superior según sea necesario */
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300 !important;
     text-align: left !important;
 }
 
 
-/* User Info */
 .User-info h5 {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 100 !important;
@@ -80,24 +148,35 @@ hr {
     font-size: 1em;
     line-height: 1.5 !important;
     text-align: left !important;
-    /* Ensure it's aligned to the left */
+
 }
 
-/* Img Profile */
+
 .Img-profile img {
     width: 100%;
     height: auto;
     object-fit: cover;
 }
 
-/* Carousel */
-.carrusel {
-    width: 60%;
-    margin: 0 auto;
+
+
+.carousel-control-next-icon {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(100deg) brightness(200%) contrast(100%);
+}
+
+.carousel-control-prev-icon {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(100deg) brightness(200%) contrast(100%);
+}
+
+.carousel-image img {
+    width: 90% !important;
 
 }
 
-/* Artwork Container */
+.thumbnail-image img {
+    width: 60% !important;
+}
+
 .artwork-container {
     display: flex;
     flex-direction: column;
@@ -118,7 +197,6 @@ hr {
     font-family: 'Poppins', sans-serif !important;
     width: 100%;
     text-align: left !important;
-    /* Ensure it's aligned to the left */
 }
 
 .my-4 {
@@ -126,7 +204,6 @@ hr {
     margin-bottom: 1.5rem !important;
 }
 
-/* Exhibition List */
 .Exhibition-list {
     display: flex;
     flex-wrap: wrap;
@@ -134,14 +211,12 @@ hr {
     list-style-type: none;
     padding: 0;
     text-align: left !important;
-    /* Ensure it's aligned to the left */
 }
 
 .Exhibition-list>.col-md-3 {
     padding: 5px;
 }
 
-/* Exhibition Card */
 .exhibition-card {
     border: none !important;
     overflow: hidden !important;
@@ -152,14 +227,12 @@ hr {
     align-items: center !important;
     width: 100% !important;
     text-align: left !important;
-    /* Ensure it's aligned to the left */
 }
 
 .exhibition-card:hover {
     transform: scale(1.05) !important;
 }
 
-/* Exhibition Card specific styling */
 .ExhibitionCard {
     position: relative;
     overflow: hidden;
@@ -181,7 +254,6 @@ hr {
     margin-bottom: 10px;
 }
 
-/* Editable H5 */
 .editable-h5 {
     font-size: 0.8em !important;
     color: #FF0000 !important;
@@ -191,7 +263,6 @@ hr {
     border: 1px solid transparent;
     padding: 5px;
     text-align: left !important;
-    /* Ensure it's aligned to the left */
 }
 
 .editable-h5[contenteditable="true"] {
@@ -199,50 +270,34 @@ hr {
     outline: none !important;
 }
 
-/* Specific alignment for therow-title */
 .therow-title {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 900 !important;
     font-size: 2em;
     text-align: center !important;
-    /* Center the text horizontally */
     margin: 20px 0;
-    /* Add top and bottom margin */
     letter-spacing: 0.8em;
-    /* Add letter spacing */
 }
 
 .custom-button {
     background-color: transparent !important;
     font-size: 0.9em !important;
     color: #FF0000 !important;
-    /* Color de texto rojo */
     border: none !important;
-    /* Sin borde */
     padding: 10px 20px !important;
-    /* Padding */
     border-radius: 0px !important;
-    /* Bordes redondeados */
     cursor: pointer !important;
-    /* Cursor tipo puntero */
     margin-bottom: 10px !important;
-    /* Margen inferior */
     text-align: left !important;
-    /* Texto en negrita */
     width: 100% !important;
-    /* Ancho del botón al 100% */
 }
 
 .custom-button:hover {
     background-color: #fedddd !important;
-    /* Color rojo más oscuro al pasar el ratón */
 }
 
 .carousel-item img {
     height: 300px;
-    /* Establece una altura fija */
     width: 100%;
-    /* Ajusta el ancho automáticamente */
     object-fit: cover;
-    /* Ajusta la imagen para cubrir completamente el contenedor */
 }

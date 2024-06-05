@@ -1,5 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
 
+/* Estilos para el Container */
+.Container {
+    width: 100% !important;
+    max-width: 1200px !important;
+    /* Ancho máximo del container */
+    margin: 0 auto !important;
+    /* Centra el container horizontalmente */
+    padding: 0 15px !important;
+    /* Añade relleno a los lados del container */
+    box-sizing: border-box !important;
+    /* Asegura que el padding no aumente el ancho total */
+}
+
+.therow-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 0.8em;
+}
+
+.therow-title {
+    font-size: 1.5em !important;
+    text-align: center !important;
+    color: #FF0000 !important;
+}
+
+.hr-full-width {
+    width: 100% !important;
+    margin: 0 auto !important;
+    border: 1px solid #FF0000 !important;
+}
+
+.First-margin {
+    margin-top: 40px !important;
+    /* Espacio superior */
+}
+
+
+
 .ArtworkDetailsPage {
     padding-top: 20px !important;
     text-align: center !important;
@@ -8,15 +49,23 @@
     align-items: center;
 }
 
-.artwork-image {
-    width: 100% !important;
-    max-width: 100% !important;
+
+
+/* .artwork-image {
+    width: auto !important;
+    max-width: 10% !important;
     height: auto !important;
-    object-fit: cover !important;
     display: block !important;
     margin: 0 auto !important;
-    object-position: center;
-    object-fit: contain !important;
+} */
+
+.artwork-image {
+    width: auto !important;
+    max-width: 100% !important;
+    /* Cambiado de 10% a 100% */
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 .artwork-details {
@@ -83,11 +132,120 @@
     padding: 0 15px !important;
     box-sizing: border-box !important;
 
-
 }
 
 .hr-full-width {
     width: 100% !important;
     margin: 0 auto !important;
     border: 1px solid #FF0000 !important;
+}
+
+
+.artist-profile-card {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 300 !important;
+    /* Cambiado a 300 para thin */
+    font-style: normal !important;
+    font-size: 1em !important;
+    line-height: 1.5 !important;
+}
+
+.artist-profile-card h5 {
+    font-weight: 300 !important;
+    /* Aplica thin al h5 dentro de artist-profile-card */
+    margin: 0;
+    /* Ajusta el margen de los h5 */
+}
+
+.artist-profile-card h4 {
+    font-weight: 600 !important;
+    font-size: 1.2em !important;
+    font-style: bold !important;
+    /* Agregado estilo itálico */
+    margin: 0;
+    /* Ajusta el margen */
+}
+
+
+
+
+.biddata-area {
+
+    /* Background gris */
+    padding: 10px;
+    /* Añade espacio interno */
+}
+
+.biddata-area h3 {
+    font-size: 1.2em;
+    /* Tamaño de fuente para el título */
+    margin-bottom: 10px;
+    /* Espacio inferior */
+}
+
+.biddata-area ul {
+
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.biddata-area li {
+    font-size: .5em;
+    border: solid 2px #FF0000;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: normal;
+
+}
+
+.bid-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    color: white !important;
+    letter-spacing: 0.1em;
+}
+
+.user-info,
+.date-info {
+    font-size: 1em;
+    font-weight: 300 !important;
+}
+
+.small-date {
+    font-size: 0.8em;
+    font-weight: 200 !important;
+}
+
+.amount-info {
+    font-size: 1em;
+    font-weight: 500 !important;
+}
+
+
+.zoom-container {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.hover-zoom:hover .zoom-image {
+    transform: scale(1.2);
+
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+}
+
+
+.zoom-image {
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    transform-origin: center center;
+
+    transform: scale(1);
+
 }

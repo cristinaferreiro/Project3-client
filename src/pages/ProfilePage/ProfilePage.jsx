@@ -85,59 +85,72 @@
 //                 )}
 //             </Container >
 //         </div>
-//     );
+//     )
 // }
 // export default ProfilePage
 
 
 
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from './../../context/auth.context';
-import userServices from '../../services/user.services';
-import { Container, Row, Col, Spinner, Carousel, Button } from 'react-bootstrap';
-import ArtworkCard from '../../components/ArtworkCard/ArtworkCard';
-import './ProfilePage.css';
-import ExhibitionCard from '../../components/ExhibitionCard/ExhibitionCard';
+import React, { useContext, useEffect, useState } from 'react'
+import { AuthContext } from './../../context/auth.context'
+import userServices from '../../services/user.services'
+import { Container, Row, Col, Spinner, Carousel, Button } from 'react-bootstrap'
+import ArtworkCard from '../../components/ArtworkCard/ArtworkCard'
+import './ProfilePage.css'
+import ExhibitionCard from '../../components/ExhibitionCard/ExhibitionCard'
 
 
 function ProfilePage() {
-    const { user } = useContext(AuthContext);
-    const [userData, setUserInfo] = useState({});
-    const [artworkData, setArtworkInfo] = useState([]);
-    const [exhibitionData, setExhibitionInfo] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [isCarousel, setIsCarousel] = useState(true); // Estado para controlar si se muestra el carrusel
+    const { user } = useContext(AuthContext)
+    const [userData, setUserInfo] = useState({})
+    const [artworkData, setArtworkInfo] = useState([])
+    const [exhibitionData, setExhibitionInfo] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+    const [isCarousel, setIsCarousel] = useState(true) // Estado para controlar si se muestra el carrusel
 
     useEffect(() => {
-        loadUserInfo();
-    }, [user]);
+        loadUserInfo()
+    }, [user])
 
     const loadUserInfo = () => {
         userServices
             .getOneUsers(user._id)
             .then(({ data }) => {
-                setUserInfo(data.userInfo);
-                setArtworkInfo(data.artworksInfo);
-                setExhibitionInfo(data.exhibitionsInfo);
-                setIsLoading(false);
+                setUserInfo(data.userInfo)
+                setArtworkInfo(data.artworksInfo)
+                setExhibitionInfo(data.exhibitionsInfo)
+                setIsLoading(false)
             })
-            .catch((err) => console.log(err));
-    };
+            .catch((err) => console.log(err))
+    }
 
     const toggleCarouselView = () => {
-        setIsCarousel(!isCarousel);
-    };
+        setIsCarousel(!isCarousel)
+    }
+
+    const [isHoveredBlockOne, setIsHoveredBlockOne] = useState(false)
 
     return (
-        <div className="userProfile">
+
+        <div className="userProfile mb-5">
             <div className="image-container">
-                <img src={userData?.backgrdimage} alt="User Background" className="img-fluid w-100" />
-                <div className="artist-backgrd-text">
-                    <h1>{userData?.username} {userData?.lastname}</h1>
+                <div className='backgrdBlockone'
+                    onMouseEnter={() => setIsHoveredBlockOne(true)}
+                    onMouseLeave={() => setIsHoveredBlockOne(false)}>
+                    <img src={userData?.backgrdimage} alt="User Background" className="backgrdCoverOne" />
+                    <div className="textOverlayBlockone artist-backgrd-text">
+                        <h1 className="marquee-container">{userData?.username} {userData?.lastname}</h1>
+                    </div>
+                    <div>
+                        <div className={`blueOverlay ${isHoveredBlockOne ? 'hovered' : ''}`}></div>
+                    </div>
                 </div>
             </div>
 
-            <Container>
+            <hr className="hr-full-width" />
+
+
+            <Container className="conteiner mt-5">
                 <hr className="hr-principal" />
                 {isLoading ? (
                     <Spinner animation="border" size="sm" />
@@ -158,7 +171,7 @@ function ProfilePage() {
                             </Col>
                         </Row>
                         <hr />
-                        <Button className="custom-button" onClick={toggleCarouselView}>
+                        <Button className={isCarousel ? "custom-button carousel-button" : "custom-button thumbnail-button"} onClick={toggleCarouselView}>
                             {isCarousel ? 'THUMBNAILS' : 'FEATURED WORKS'}
                         </Button>
                         <h2 className="therow-title">ARTWORKS</h2>
@@ -166,7 +179,7 @@ function ProfilePage() {
                             <Carousel className="carrusel">
                                 {artworkData.map((artwork, index) => (
                                     <Carousel.Item key={index} interval={9000}>
-                                        <ArtworkCard {...artwork} />
+                                        <ArtworkCard {...artwork} className="artwork-carousel" />
                                     </Carousel.Item>
                                 ))}
                             </Carousel>
@@ -174,11 +187,15 @@ function ProfilePage() {
                             <Row>
                                 {artworkData.map((artwork, index) => (
                                     <Col md={3} key={index}>
-                                        <ArtworkCard {...artwork} />
+                                        <ArtworkCard {...artwork} className="artwork-thumbnail" />
                                     </Col>
                                 ))}
                             </Row>
                         )}
+
+
+
+
                         <hr />
                         <h2 className="therow-title">EXHIBITIONS</h2>
                         <Row className='Exhibition-list'>
@@ -191,8 +208,8 @@ function ProfilePage() {
                     </>
                 )}
             </Container>
-        </div>
-    );
+        </div >
+    )
 }
 
-export default ProfilePage;
+export default ProfilePage

@@ -1,0 +1,13 @@
+.red-button {
+    border: none;
+}
+
+.red-button {
+    border-radius: 0 !important;
+
+}
+
+
+.red-button.outline-danger {
+    border-radius: 0 !important;
+}

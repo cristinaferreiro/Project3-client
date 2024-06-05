@@ -9,7 +9,9 @@ function EditUserPage() {
 
         <div className="EditUserPage mt-3">
             <Container>
-                <h1 className="text-center" style={{ marginBottom: '20px' }}>Edit your profile </h1>
+                <h2 className="therow-title">ADD NEW ARTWORK</h2>
+                <hr className="hr-full-width" />
+                {/* <h1 className="text-center" style={{ marginBottom: '20px' }}>Edit your profile </h1> */}
                 <hr className="mx-auto d-block w-50" style={{ boxShadow: '0 4px 6px rgba(0, 0, 0, 10)' }} />
                 <Row>
                     <Col

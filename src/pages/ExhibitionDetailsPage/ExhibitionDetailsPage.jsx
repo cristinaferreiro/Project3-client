@@ -40,60 +40,64 @@ function ExhibitionDetailsPage() {
     return (
         <div className="exhibition-details">
             <Container>
-                <h1 className="text-center my-4">Exhibition Details</h1>
-                {isLoading ? (
-                    <div className="d-flex justify-content-center">
-                        <Spinner animation="border" size="sm" />
-                    </div>
-                ) : (
-                    <Row className="justify-content-center">
-                        <Col md={{ span: 8 }}>
-                            <hr />
 
-                            <div className="exhibition-details">
-                                <div className="exhibition-image">
-                                    <img src={exhibitionData.image} alt={exhibitionData.title} />
+                <h2 className="therow-title">EXHIBITION DETAILS</h2>
+                <hr className="hr-full-width" />
+
+                <div className="First-margin">
+
+                    {isLoading ? (
+                        <div className="d-flex justify-content-center">
+                            <Spinner animation="border" size="sm" />
+                        </div>
+                    ) : (
+                        <Row className="justify-content-center">
+                            <Col md={{ span: 8 }}>
+
+                                <div className="exhibition-details">
+                                    <div className="exhibition-image">
+                                        <img src={exhibitionData.image} alt={exhibitionData.title} />
+                                    </div>
+
+                                    <div className="exhibition-info">
+                                        <hr />
+                                        <h5><strong>{exhibitionData?.username} {exhibitionData?.lastname}</strong></h5>
+                                        <h5 className="exhibition-title"><strong>{exhibitionData.title}</strong></h5>
+                                        <h5><strong>{exhibitionData.date} - {exhibitionData.dateend}</strong></h5>
+                                        <h5><strong>{exhibitionData.place}</strong></h5>
+
+                                        <hr />
+
+                                        <h6>{exhibitionData.description}</h6>
+
+                                        <hr />
+                                    </div>
                                 </div>
 
-                                <div className="exhibition-info">
-                                    <hr />
-                                    <h5><strong>{exhibitionData?.username} {exhibitionData?.lastname}</strong></h5>
-                                    <h5 className="exhibition-title"><strong>{exhibitionData.title}</strong></h5>
-                                    <h5><strong>{exhibitionData.date} - {exhibitionData.dateend}</strong></h5>
-                                    <h5><strong>{exhibitionData.place}</strong></h5>
-
-                                    <hr />
-
-                                    <h6>{exhibitionData.description}</h6>
-
-                                    <hr />
-                                </div>
-                            </div>
-
+                            </Col>
+                        </Row>
+                    )
+                    }
+                    <Row>
+                        <Col>
+                            <Button variant="outline-danger" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
+                        </Col>
+                        <Col>
+                            <Button>
+                                <Link to="/profile" className="btn" variant="outline-danger">
+                                    Back
+                                </Link>
+                            </Button>
+                        </Col>
+                        <Col>
+                            <Button>
+                                <Link to={`/edit-exhibition/${exhibitionId}`} className="btn" style={{ marginLeft: '10px' }} variant="outline-danger">
+                                    Edit Exhibition
+                                </Link>
+                            </Button>
                         </Col>
                     </Row>
-                )
-                }
-                <Row>
-                    <Col>
-                        <Button variant="outline-danger" onClick={handleDeleteExhibition}>Delete Exhibition</Button>
-                    </Col>
-                    <Col>
-                        <Button>
-                            <Link to="/profile" className="btn" variant="outline-danger">
-                                Back
-                            </Link>
-                        </Button>
-                    </Col>
-                    <Col>
-                        <Button>
-                            <Link to={`/edit-exhibition/${exhibitionId}`} className="btn" style={{ marginLeft: '10px' }} variant="outline-danger">
-                                Edit Exhibition
-                            </Link>
-                        </Button>
-                    </Col>
-                </Row>
-
+                </div>
             </Container >
         </div >
     )

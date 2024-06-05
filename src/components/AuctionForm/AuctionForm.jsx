@@ -39,8 +39,8 @@ function AuctionForm({ artworkId, onBidPosted }) {
     return (
         <div className="AuctionForm">
             <Form onSubmit={handleAuctionFormSubmit}>
-                <Form.Group className="mb-3" controlId="formBidAmount">
-                    <Form.Label>Bid Amount</Form.Label>
+                <Form.Group className="mb-3 mt-5" controlId="formBidAmount">
+
                     <Form.Control
                         type="number"
                         name="bidAmount"
@@ -50,7 +50,7 @@ function AuctionForm({ artworkId, onBidPosted }) {
                     />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button className="red-button mt-2 mb-4" variant="outline-danger" type="submit">
                     Place Bid
                 </Button>
             </Form>
