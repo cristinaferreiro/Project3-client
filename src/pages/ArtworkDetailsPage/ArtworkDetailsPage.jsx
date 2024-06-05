@@ -174,12 +174,7 @@ function ArtworkDetailsPage() {
                     <hr />
                     <Row className="justify-content-center" >
                         <Col md={{ span: 6 }} className="mb-5r">
-                            <div className='auctionCommets'>
 
-                                <AuctionForm artworkId={artwork._id} bidsData={bidsData} onBidPosted={handleBidPosted} />
-                                <hr />
-                                <AuctionList artworkId={artwork._id} bidsData={bidsData} />
-                            </div>
                             <hr />
                         </Col>
                     </Row>

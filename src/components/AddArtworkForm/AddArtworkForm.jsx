@@ -86,7 +86,7 @@ const AddArtworkForm = () => {
                                 <InputGroup hasValidation>
                                     <Form.Control
                                         as="textarea"
-                                        placeholder="Enter your techniques work..."
+                                        placeholder="Enter your technique work..."
                                         name="technique"
                                         value={newArtwork.technique}
                                         onChange={handleArtworkChange}
@@ -99,7 +99,7 @@ const AddArtworkForm = () => {
                                 <InputGroup hasValidation>
                                     <Form.Control
                                         as="textarea"
-                                        placeholder="Enter your dimensions work..."
+                                        placeholder="Enter your dimension work..."
                                         name="dimension"
                                         value={newArtwork.dimension}
                                         onChange={handleArtworkChange}
@@ -112,7 +112,7 @@ const AddArtworkForm = () => {
                                 <InputGroup hasValidation>
                                     <Form.Control
                                         as="textarea"
-                                        placeholder="Enter your creations year work..."
+                                        placeholder="Enter your creation year work..."
                                         name="year"
                                         value={newArtwork.year}
                                         onChange={handleArtworkChange}
@@ -130,7 +130,7 @@ const AddArtworkForm = () => {
                                 <Form.Label>Price</Form.Label>
                                 <Form.Control
                                     type="number"
-                                    placeholder="Enter your prices work..."
+                                    placeholder="Enter your price work..."
                                     name="price"
                                     value={newArtwork.price}
                                     onChange={handleArtworkChange} />
