@@ -92,7 +92,50 @@ const ArtworkForm = ({ artworkId }) => {
                             required
                         />
                     </Form.Group>
-                    {/* Otros campos del formulario... */}
+
+                    <Form.Group className="mb-3" controlId="technique">
+                        <Form.Label>Technique</Form.Label>
+                        <InputGroup hasValidation>
+                            <Form.Control
+                                as="textarea"
+                                placeholder="Enter your technique work..."
+                                name="technique"
+                                value={artworkData.technique}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </InputGroup>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="dimension">
+                        <Form.Label>Dimension</Form.Label>
+                        <InputGroup hasValidation>
+                            <Form.Control
+                                as="textarea"
+                                placeholder="Enter your dimension work..."
+                                name="dimension"
+                                value={artworkData.dimension}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </InputGroup>
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="year">
+                        <Form.Label>Year of creation</Form.Label>
+                        <InputGroup hasValidation>
+                            <Form.Control
+                                as="textarea"
+                                placeholder="Enter your creation year work..."
+                                name="year"
+                                value={artworkData.year}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </InputGroup>
+                    </Form.Group>
+
+
+
+
 
                     <Row>
                         <Col>

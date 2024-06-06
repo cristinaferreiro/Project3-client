@@ -6,7 +6,7 @@ import ArtworkCard from '../ArtworkCard/ArtworkCard'
 
 function ArtworksList({ artworkData }) {
     if (!artworkData) {
-        return <div>No hay datos disponibles.</div>;
+        return <div>No hay datos disponibles.</div>
     }
 
     return (

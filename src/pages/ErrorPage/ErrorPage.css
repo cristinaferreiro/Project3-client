@@ -1,0 +1,41 @@
+.spinner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-size: 2em;
+}
+
+.spinner-text strong {
+    font: bold;
+}
+
+.spinner-text,
+.spinner-border {
+    color: black;
+
+}
+
+.spinner-text,
+.spinner-border {
+    color: #4050df;
+}
+
+
+.spinner-border {
+    --bs-spinner-width: 5rem !important;
+    /* Ajusta el ancho del spinner */
+    --bs-spinner-height: 5rem !important;
+    /* Ajusta la altura del spinner */
+    --bs-spinner-border-width: 0.3em !important;
+    /* Ajusta el ancho del borde */
+    --bs-spinner-animation-speed: 12s !important;
+    --bs-spinner-animation-name: spinner-border;
+    border: var(--bs-spinner-border-width) solid currentcolor;
+    border-right-color: #130cff;
+}
+
+.spinner:hover {
+    animation-play-state: paused;
+}

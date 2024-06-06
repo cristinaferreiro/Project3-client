@@ -21,10 +21,10 @@
 // export default ArtistsPage
 
 
-import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
-import ArtistsList from '../../components/ArtistsList/ArtistsList.jsx';
-import './ArtistsPage.css'; // Asegúrate de tener este archivo CSS en tu proyecto
+import React, { useState } from 'react'
+import { Container } from 'react-bootstrap'
+import ArtistsList from '../../components/ArtistsList/ArtistsList.jsx'
+import './ArtistsPage.css'
 
 function AboutUsPage() {
 
@@ -36,7 +36,7 @@ function AboutUsPage() {
                 <ArtistsList />
             </Container>
         </div>
-    );
+    )
 }
 
-export default AboutUsPage;
+export default AboutUsPage

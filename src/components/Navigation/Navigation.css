@@ -1,84 +1,94 @@
+/* Estilos generales */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Poppins:wght@300&family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&family=Poppins:ital,wght@0,300;0,400;0,700;1,300&family=Quicksand:wght@300..700&display=swap');
 
+/* Estilos de la barra de navegación */
 .navbar-container {
-    width: 100% !important;
-    position: fixed !important;
-    top: 0 !important;
-    z-index: 1000 !important;
-    /* backdrop-filter: blur(6px) !important; */
-    /* background-color: rgba(0, 0, 0, 0) !important; */
-}
-
-.bg-body-tertiary {
-    --bs-bg-opacity: 0.5 !important;
-    background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
-    width: 100% !important;
-    background-color: transparent !important;
+    width: 100%;
+    background-color: transparent;
 }
 
 .navbar-brand {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-grow: 1 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .navbar-brand a {
-    color: #FF0000 !important;
-    font-family: "Poppins", sans-serif !important;
-    font-weight: 200 !important;
-    font-style: normal !important;
-    text-decoration: none !important;
-    font-size: 1em !important;
+    color: #FF0000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1em;
 }
 
 .container-fluid {
-    width: 100% !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 .navbar-collapse {
-    padding-right: 10px !important;
+    display: flex;
+    flex-basis: 100%;
+    justify-content: flex-end;
+    padding-right: 10px;
 }
 
 .rounded-circle {
-    margin-right: 10px !important;
+    margin-right: 10px;
 }
 
-/* .btn-primary {
-    --bs-btn-bg: #000dff !important;
-    --bs-btn-border-color: #000dff !important;
-    --bs-btn-hover-bg: grey !important;
-    --bs-btn-hover-border-color: grey !important;
-} */
-
 .navbar-nav .nav-link {
-    color: #FF0000 !important;
-    font-family: "Poppins", sans-serif !important;
-    font-weight: 300 !important;
-    font-style: normal !important;
-    text-decoration: none !important;
-    font-size: 1em !important;
+    color: #FF0000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1em;
 }
 
 .navbar-nav .nav-link:not(:last-child) {
-    margin-right: 20px !important;
-}
-
-.bg-body-tertiary {
-    --bs-bg-opacity: 0.2 !important;
-    background-color: #E91E63 !important;
+    margin-right: 20px;
 }
 
 .navbar-logo {
-    font-family: "Montserrat", sans-serif !important;
-    font-size: 5em !important;
-    font-weight: 900 !important;
-    font-style: normal !important;
-    font-optical-sizing: auto !important;
+    font-family: "Montserrat", sans-serif;
+    font-size: 5em;
+    font-weight: 900;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+@media (max-width: 700px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: center !important;
+        padding: 10px 0 !important;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
 }

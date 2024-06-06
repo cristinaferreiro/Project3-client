@@ -26,6 +26,8 @@ class ArtworkServices {
     getAllArtworkByArtist(userId) {
         return this.axiosApp.get(`/artist/${userId}`)
     }
+
+
     getOneArtwork(artworkId) {
         return this.axiosApp.get(`/${artworkId}`)
     }

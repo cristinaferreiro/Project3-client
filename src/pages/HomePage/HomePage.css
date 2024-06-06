@@ -30,41 +30,13 @@ body {
     align-items: center;
 }
 
-.spinner-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-.spinner-box {
-    width: 250px;
-    height: 250px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.spinner {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .spinner-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    font-size: 7em;
-    white-space: nowrap;
+    font-size: 4em;
 }
 
 .spinner-text strong {
@@ -73,78 +45,29 @@ body {
 
 .spinner-text,
 .spinner-border {
-    color: none;
+    color: black;
 
 }
 
+.spinner-text,
+.spinner-border {
+    color: #4050df;
+}
 
 
 .spinner-border {
-    --bs-spinner-width: 2rem;
-    --bs-spinner-height: 2rem;
-    --bs-spinner-vertical-align: -0.125em;
-    --bs-spinner-border-width: 1em;
-    --bs-spinner-animation-speed: 15s !important;
+    --bs-spinner-width: 10rem !important;
+    /* Ajusta el ancho del spinner */
+    --bs-spinner-height: 10rem !important;
+    /* Ajusta la altura del spinner */
+    --bs-spinner-border-width: 0.3em !important;
+    /* Ajusta el ancho del borde */
+    --bs-spinner-animation-speed: 12s !important;
     --bs-spinner-animation-name: spinner-border;
     border: var(--bs-spinner-border-width) solid currentcolor;
     border-right-color: #130cff;
-    animation: spinner-border 1s linear infinite !important;
-    /* Hacer que el spinner gire */
 }
 
-/* HomePage.css */
-
-.video-background {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    z-index: -1 !important;
-}
-
-.video-background video {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-}
-
-.content {
-    position: relative !important;
-    z-index: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    height: 100vh !important;
-}
-
-.link {
-    text-decoration: none !important;
-}
-
-.spinner {
-    width: 250px !important;
-    height: 250px !important;
-}
-
-.spinner-text {
-    margin-top: 10px !important;
-    font-size: 1.5rem !important;
-    text-align: center !important;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg) !important;
-    }
-
-    100% {
-        transform: rotate(360deg) !important;
-    }
-}
-
-.spinner-border {
-    animation: spin 2s linear infinite !important;
-    /* Hacer que el spinner gire */
+.spinner:hover {
+    animation-play-state: paused;
 }

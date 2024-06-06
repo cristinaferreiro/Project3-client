@@ -11,7 +11,8 @@ const EditArtworkPage = () => {
         <Container>
             <Row className="justify-content-center">
                 <Col md={8} className="text-center">
-                    <h1>Edit your Artwork</h1>
+                    <h2 className="therow-title">EDIT ARTWORK</h2>
+                    <hr className="hr-full-width" />
                     <EditArtworkForm artworkId={artworkId} />
                 </Col>
             </Row>

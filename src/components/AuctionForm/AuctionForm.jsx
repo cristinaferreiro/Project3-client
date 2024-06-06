@@ -1,23 +1,23 @@
 
-import React, { useState } from "react";
-import { Button, Form } from "react-bootstrap";
-import artworkServices from './../../services/artwork.services';
-import "./AuctionForm.css";
-import bidServices from "../../services/bid.services";
+import React, { useState } from "react"
+import { Button, Form } from "react-bootstrap"
+import artworkServices from './../../services/artwork.services'
+import "./AuctionForm.css"
+import bidServices from "../../services/bid.services"
 
 function AuctionForm({ artworkId, onBidPosted }) {
-    const [bidAmount, setBidAmount] = useState("");
+    const [bidAmount, setBidAmount] = useState("")
 
     const handleInputChange = (event) => {
-        setBidAmount(event.target.value);
+        setBidAmount(event.target.value)
     }
 
     const handleAuctionFormSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
         if (!bidAmount) {
-            alert("Please enter a bid amount.");
-            return;
+            alert("Please enter a bid amount.")
+            return
         }
 
         const bidData = {
@@ -28,9 +28,9 @@ function AuctionForm({ artworkId, onBidPosted }) {
         bidServices
             .createBid(artworkId, bidData)
             .then((data) => {
-                setBidAmount("");
+                setBidAmount("")
                 if (onBidPosted) {
-                    onBidPosted(); // Notificar al componente principal que se ha publicado una nueva puja
+                    onBidPosted() // Notificar al componente principal que se ha publicado una nueva puja
                 }
             })
             .catch(err => console.log(err))
@@ -55,8 +55,8 @@ function AuctionForm({ artworkId, onBidPosted }) {
                 </Button>
             </Form>
         </div>
-    );
+    )
 }
 
-export default AuctionForm;
+export default AuctionForm
 

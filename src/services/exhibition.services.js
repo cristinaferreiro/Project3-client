@@ -23,6 +23,11 @@ class ExhibitionServices {
         return this.axiosApp.get('/')
     }
 
+    getAllArtworksForExhibition(exhibitionId, artworkData) {
+        return this.axiosApp.get(`/${exhibitionId}`, artworkData);
+    }
+
+
     getOneExhibition(exhibitionId) {
         return this.axiosApp.get(`/${exhibitionId}`)
     }
