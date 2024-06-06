@@ -33,7 +33,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    font-size: 4em;
+    font-size: 3em !important;
 }
 
 .spinner-text strong {
