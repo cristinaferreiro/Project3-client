@@ -50,13 +50,6 @@
     margin-right: 10px !important;
 }
 
-/* .btn-primary {
-    --bs-btn-bg: #000dff !important;
-    --bs-btn-border-color: #000dff !important;
-    --bs-btn-hover-bg: grey !important;
-    --bs-btn-hover-border-color: grey !important;
-} */
-
 .navbar-nav .nav-link {
     color: #FF0000 !important;
     font-family: "Poppins", sans-serif !important;
@@ -81,4 +74,28 @@
     font-weight: 900 !important;
     font-style: normal !important;
     font-optical-sizing: auto !important;
+}
+
+@media (max-width: 700px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link {
+        text-align: center !important;
+        padding: 10px 0 !important;
+    }
+
+    .navbar-toggler {
+        display: none;
+    }
 }

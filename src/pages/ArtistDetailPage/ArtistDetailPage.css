@@ -13,9 +13,6 @@ hr {
     background-color: transparent !important;
 }
 
-
-/* Image Container */
-
 .image-container img {
     width: 100%;
     height: 100%;
@@ -34,12 +31,10 @@ hr {
     letter-spacing: 0.1em;
 }
 
-/* Artist Profile */
 .artist-profile {
     font-size: 6em;
 }
 
-/* User Info */
 .User-info h5 {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 100 !important;
@@ -54,13 +49,11 @@ hr {
     object-fit: cover;
 }
 
-/* Carousel */
 .carrusel {
     width: 50%;
     margin: 0 auto;
 }
 
-/* Artwork Details */
 .artwork-container {
     display: flex;
     flex-direction: column;
@@ -87,7 +80,6 @@ hr {
     margin-bottom: 1.5rem !important;
 }
 
-/* Exhibition List */
 .Exhibition-list {
     display: flex;
     flex-wrap: wrap;
@@ -100,7 +92,6 @@ hr {
     padding: 5px;
 }
 
-/* Exhibition Card */
 .exhibition-card {
     border: none !important;
     overflow: hidden !important;
@@ -137,7 +128,6 @@ hr {
     margin-bottom: 10px;
 }
 
-/* Editable H5 */
 .editable-h5 {
     font-size: 0.8em !important;
     color: #FF0000 !important;
@@ -158,11 +148,8 @@ hr {
     font-weight: 900 !important;
     font-size: 2em;
     text-align: center;
-    /* Centra el texto horizontalmente */
     margin: 20px 0;
-    /* Añade margen superior e inferior */
     letter-spacing: 0.8em;
-    /* Añade separación entre letras */
 }
 
 .carousel-control-next-icon,

@@ -91,7 +91,7 @@ function ArtistDetailPage() {
                                 </Col>
                             ))}
                         </Row>
-                        <Button variant="outline-danger" type="cancel"
+                        <Button variant="outline-danger mb-3" type="cancel"
                             onClick={handleCancel}>
                             Back                                    </Button>
                     </>

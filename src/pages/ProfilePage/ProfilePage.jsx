@@ -63,9 +63,6 @@ function ProfilePage() {
                 </div>
             </div>
 
-            {/* <hr className="hr-full-width" /> */}
-
-
             <Container className="conteiner mt-5">
                 <hr className="hr-principal" />
                 {isLoading ? (

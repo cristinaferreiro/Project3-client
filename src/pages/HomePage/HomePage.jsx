@@ -12,7 +12,6 @@ function HomePage() {
 
             <div className="container-background">
                 <div className="spinner-container">
-                    {/* <Link to="/all-tracks" style={{ textDecoration: 'none' }}> */}
                     <div className="spinner-box">
                         <Spinner animation="border" role="status" className="spinner">
                             <span className="visually-hidden">THE ROW</span>
@@ -21,10 +20,6 @@ function HomePage() {
                             <strong>THE</strong> ROW
                         </div>
                     </div>
-                    {/* </Link>
-                    <div className="red-background">
-                        <h1>ROWROWROROW</h1>
-                    </div> */}
                 </div>
             </div>
         </>
