@@ -11,16 +11,7 @@ function HomePage() {
             </video>
 
             <div className="container-background">
-                {/* <div className="spinner-container">
-                    <Link to="/all-tracks" style={{ textDecoration: 'none' }}>
-                    <div className="spinner-box">
-                        <Spinner animation="border" role="status" className="spinner">
-                            <span className="visually-hidden">THE ROW</span>
-                        </Spinner>
-                        <div className="spinner-text">
-                            <strong>THE</strong> ROW
-                        </div>
-                    </div> */}
+
                 <div style={{ width: '250px', height: '250px', margin: 'auto' }}>
                     <Spinner
                         animation="border"

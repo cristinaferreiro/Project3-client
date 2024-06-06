@@ -25,11 +25,8 @@
 
 .spinner-border {
     --bs-spinner-width: 5rem !important;
-    /* Ajusta el ancho del spinner */
     --bs-spinner-height: 5rem !important;
-    /* Ajusta la altura del spinner */
     --bs-spinner-border-width: 0.3em !important;
-    /* Ajusta el ancho del borde */
     --bs-spinner-animation-speed: 12s !important;
     --bs-spinner-animation-name: spinner-border;
     border: var(--bs-spinner-border-width) solid currentcolor;
