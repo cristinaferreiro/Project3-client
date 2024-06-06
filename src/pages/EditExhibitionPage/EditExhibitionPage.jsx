@@ -8,9 +8,10 @@ const EditExhibitionPage = () => {
 
     return (
         <Container>
-            <Row className="justify-content-center mt-5">
+            <Row className="justify-content-center mt-5 mb-4" >
                 <Col md={8}>
-                    <h1>Edit your exhibition</h1>
+                    <h2 className="therow-title">EDIT EXHIBITION</h2>
+                    <hr className="hr-full-width" />
                     <EditExhibitionForm exhibitionId={exhibitionId} />
                 </Col>
             </Row>

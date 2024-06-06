@@ -30,7 +30,7 @@ function AuctionForm({ artworkId, onBidPosted }) {
             .then((data) => {
                 setBidAmount("")
                 if (onBidPosted) {
-                    onBidPosted() // Notificar al componente principal que se ha publicado una nueva puja
+                    onBidPosted()
                 }
             })
             .catch(err => console.log(err))

@@ -1,4 +1,3 @@
-/* Establece la fuente y color para todo el contenido */
 body,
 h1,
 h2,
@@ -16,11 +15,9 @@ textarea {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300 !important;
     color: #FF0000 !important;
-    /* Color rojo */
     text-align: center !important;
 }
 
-/* Estilos específicos para la tarjeta de exposición */
 .exhibition-card {
     border: none !important;
     overflow: hidden !important;
@@ -47,7 +44,6 @@ textarea {
 
 .exhibition-details h5,
 .cedulacard {
-    /* Aplica el estilo a cedulacard también */
     font-weight: 300 !important;
     color: #FF0000 !important;
     font-size: 0.9em !important;
@@ -63,7 +59,6 @@ textarea {
 .exhibition-profile-card {
     font-family: 'Poppins', sans-serif !important;
     font-weight: 300 !important;
-    /* Cambiado a 300 para thin */
     font-style: normal !important;
     font-size: 1em !important;
     line-height: 1.5 !important;
@@ -72,15 +67,11 @@ textarea {
 
 .exhibition-profile-card h5 {
     font-weight: 300 !important;
-    /* Aplica thin al h5 dentro de artist-profile-card */
     margin: 0 !important;
-    /* Ajusta el margen de los h5 */
 }
 
 .exhibition-profile-card h4 {
     font-weight: 300 !important;
     font-size: 1.3em !important;
-    /* Agregado estilo itálico */
     margin: 0 !important;
-    /* Ajusta el margen */
 }

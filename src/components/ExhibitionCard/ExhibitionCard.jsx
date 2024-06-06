@@ -1,10 +1,9 @@
 
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Card, ListGroup, Spinner } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import './ExhibitionCard.css';
-import { AuthContext } from '../../context/auth.context';
-import userServices from '../../services/user.services';
+
 
 const ExhibitionCard = ({ _id, title, date, place, image, owner }) => {
 
@@ -19,7 +18,6 @@ const ExhibitionCard = ({ _id, title, date, place, image, owner }) => {
                     <Card.Img variant="top" src={image} alt={title} />
                 </Link>
                 <Card.Body className="exhibition-details">
-                    {/* <Card.Title>{userData?.username} {userData?.lastname}</Card.Title> */}
                     <Card.Title>{owner.username} {owner.lastname}</Card.Title>
 
                     <div className='exhibition-profile-card'>

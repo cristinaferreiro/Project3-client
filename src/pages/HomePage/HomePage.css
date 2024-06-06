@@ -33,7 +33,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: 0;
-    font-size: 4em;
+    font-size: 3em !important;
 }
 
 .spinner-text strong {
@@ -54,11 +54,8 @@ body {
 
 .spinner-border {
     --bs-spinner-width: 10rem !important;
-    /* Ajusta el ancho del spinner */
     --bs-spinner-height: 10rem !important;
-    /* Ajusta la altura del spinner */
     --bs-spinner-border-width: 0.3em !important;
-    /* Ajusta el ancho del borde */
     --bs-spinner-animation-speed: 12s !important;
     --bs-spinner-animation-name: spinner-border;
     border: var(--bs-spinner-border-width) solid currentcolor;

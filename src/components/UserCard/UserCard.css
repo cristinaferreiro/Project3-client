@@ -5,34 +5,26 @@
 
 .user-card {
     padding: 1em;
-    /* Agregar un padding al contenedor */
     border: 1px solid #ccc;
-    /* Agregar un borde opcional */
 }
 
 .user-card .row {
     display: flex;
     justify-content: space-between;
-    /* Espaciar las columnas */
     align-items: center;
-    /* Alinear verticalmente */
 }
 
 .user-card .user-info {
     flex: 0 0 75%;
-    /* Establecer el ancho del texto al 75% */
 }
 
 .user-card .user-image {
     flex: 0 0 25%;
-    /* Establecer el ancho de la imagen al 25% */
     text-align: right;
-    /* Alinear la imagen a la derecha */
 }
 
 .user-card img {
     max-width: 100%;
     height: auto;
     border-radius: 50%;
-    /* Opcional: redondear la imagen */
 }

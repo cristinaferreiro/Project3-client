@@ -111,7 +111,7 @@ const EditExhibitionForm = ({ exhibitionId }) => {
     }
 
     return (
-        <div className="EditExhibitionForm">
+        <div className="EditExhibitionForm mt-3">
             {
                 isLoading
                     ? <Spinner animation="border" size="sm" />

@@ -6,3 +6,24 @@
 
 
 }
+
+.therow-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 2em;
+    text-align: center;
+    margin: 20px 0;
+    letter-spacing: 0.8em;
+}
+
+.therow-title {
+    font-size: 1.5em !important;
+    text-align: center !important;
+    color: #FF0000 !important;
+}
+
+.hr-full-width {
+    width: 100% !important;
+    margin: 0 auto !important;
+    border: 1px solid #FF0000 !important;
+}
