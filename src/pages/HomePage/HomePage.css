@@ -4,11 +4,8 @@ body {
 
 .home-page {
     background-color: rgb(239, 214, 214);
-    /* Color de fondo rojo */
     width: 100vw;
-    /* Ancho igual al ancho de la ventana del navegador */
     height: 100vh;
-    /* Altura igual a la altura de la ventana del navegador */
 }
 
 .video-background {

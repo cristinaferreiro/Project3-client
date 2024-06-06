@@ -3,9 +3,6 @@
     font-weight: 900 !important;
     font-size: 2em;
     text-align: center;
-    /* Centra el texto horizontalmente */
     margin: 20px 0;
-    /* Añade margen superior e inferior */
     letter-spacing: 0.8em;
-    /* Añade separación entre letras */
 }

@@ -62,11 +62,11 @@
 }
 
 .navbar-logo {
-    font-family: "Montserrat", sans-serif;
-    font-size: 5em;
-    font-weight: 900;
-    font-style: normal;
-    font-optical-sizing: auto;
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 5em !important;
+    font-weight: 900 !important;
+    font-style: normal !important;
+    font-optical-sizing: auto !important;
 }
 
 @media (max-width: 700px) {

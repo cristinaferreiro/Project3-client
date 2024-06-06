@@ -173,25 +173,17 @@ function ArtworkDetailsPage() {
                             </div>
                         </Col>
                     </Row>
-                    {/* <hr className="hr-full-width" /> */}
-
-                    {/* <div>
-                        <Button variant="outline-danger" onClick={handleDeleteArtwork}>Delete Artwork</Button>
-                    </div>
-                    <div>
-                        <Link to={`/artists/${artwork.owner?._id}`} className="btn btn-secondary">
-                            Back
-                        </Link>
-                        <Link to={`/edit-artwork/${artworkId}`} className="btn btn-primary" style={{ marginLeft: '10px' }}>
-                            Edit Artwork
-                        </Link>
-                    </div> */}
 
                     <div>
                         <ButtonGroup className="mb-2">
+<<<<<<< HEAD
                             {/* <Button variant="outline-danger mt-4 mb-5" as={Link} to={`/artists/${artwork.owner?._id}`}>Back</Button> */}
                             <Button variant="outline-danger mt-4 mb-5" as={Link} to={`/profile`}>Back</Button>
                             <Button variant="outline-danger mt-4 mb-5" as={Link} to={`/edit-artwork/${artworkId}`} style={{ marginLeft: '10px' }}>Edit Artwork</Button>
+=======
+                            <Button variant="outline-danger mt-4 mb-5" as={Link} to={`/artists/${artwork.owner?._id}`}>Back</Button>
+                            <Button variant="outline-danger mt-4 mb-5" as={Link} to={`/edit-artwork/${artworkId}`}>Edit Artwork</Button>
+>>>>>>> 6ccaf09062d613866b0a4515e784038588797bd9
                             <Button variant="outline-danger mt-4 mb-5" onClick={handleDeleteArtwork}>Delete Artwork</Button>
                         </ButtonGroup>
 
